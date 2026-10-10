@@ -86,11 +86,12 @@ assert hashlib.md5(blob).hexdigest() == entry["checksum"].removeprefix("md5:")
 ratios, skipped = [], []
 with zipfile.ZipFile(io.BytesIO(blob)) as z:
     for name in z.namelist():
-        table = pd.read_csv(io.StringIO(z.read(name).decode()), index_col=0)
-        cols = list(table.columns)
+        text = z.read(name).decode()
+        cols = text.splitlines()[0].split(",")[1:]  # raw header: pandas would rename duplicates silently
         if len(set(cols)) != len(cols) or not any(c.endswith(" hist") for c in cols):
             skipped.append({"file": name, "header": cols})
             continue
+        table = pd.read_csv(io.StringIO(text), index_col=0)
         for col in cols:
             duration, scenario = col.split()
             if scenario == "hist":
