@@ -33,7 +33,15 @@ nbclient = "*"
 ipykernel = "*"
 # --- pipeline driver ---
 snakemake = "*"
-# --- replace/extend with the deps your replication needs ---
+# --- scenario-study deps ---
+requests = "*"
+geopandas = "*"            # vector I/O (buildings, flood extents)
+pyogrio = "*"
+shapely = "*"
+pyproj = "*"               # EPSG:32632 -> EPSG:25830 (REACHOUT CRS label)
+rasterio = "*"             # REACHOUT flood-depth GeoTIFFs
+netcdf4 = "*"              # intermediate arrays (NetCDF, never .npz — DOMAIN.md)
+# --- further examples ---
 # Examples (uncomment as needed):
 # statsmodels = "*"          # GLM/GLMM regression
 # scikit-learn = "*"         # classical ML
@@ -50,7 +58,15 @@ snakemake = "*"
 # dask = "*"                 # out-of-core / parallel
 
 # Pip-only deps go in [pypi-dependencies]. Conda-forge is preferred where available.
-# [pypi-dependencies]
+[pypi-dependencies]
+# The method: hazard-agnostic core + pluvial module, regression-tested on the
+# authors' Hamburg example. v0.2.1 splits city-wide polygons before overlays.
+building-climate-risk = { git = "https://github.com/annefou/building-climate-risk", tag = "v0.2.1" }
+# Destination Earth Climate DT retrieval (scripts/climatedt.py): earthkit-data runs
+# the Polytope request and decodes the CoverageJSON the polygon feature returns.
+earthkit-data = "*"
+covjsonkit = "*"
+polytope-client = "*"
 # pygbif = "*"               # GBIF occurrences
 # polytope-client = "*"      # Destination Earth Climate DT
 # earthkit-data = "*"
