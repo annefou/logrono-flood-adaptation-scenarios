@@ -22,6 +22,49 @@ replication. Candidate PICO question (refine with Anne in Phase 1):
 It also asks how much heavier the **storms that actually flooded Logroño (2018–2024)** would be
 in a +2 °C climate, using the Destination Earth Climate DT storylines.
 
+## Prior nanopublications — connect to them
+
+This work builds on two published FORRT chains on the same paper and two coverage nanopubs.
+Use the template's own mechanism so the new chain is linked to them, not just mentioned:
+
+1. **During `/init-template`**, when asked whether this work extends a prior FORRT chain, give
+   the **Logroño CiTO** URI below. It is stored in `CITATION.cff` `references:`.
+2. **Then run `/import-from-nanopub https://w3id.org/sciencelive/np/RAoFYugT7OVk5eoHuxKCO9HeqA08jMfSn7TeUxwZcbezE`**
+   (entry point B, `docs/nanopub-chain-discovery.md`). It writes
+   `nanopubs/imported/CHAIN_SUMMARY.md` (gitignored, regenerable) with each chain's scope,
+   method, deviations, verdict and limitations — through the Logroño CiTO's `extends` it also
+   reaches the Hamburg chain.
+3. **In Phase 5**, the new CiTO should cite the Logroño Outcome (e.g. `usesConclusionsFrom` or
+   `extends` — the scenarios build on its validated hazard component and its caveats), the
+   paper with a method relation (`usesMethodIn`; this chain does not re-test the paper's claim),
+   and its data (`usesDataFrom` REACHOUT; Climate DT). Check the relation list with the
+   `vocabulary` tool (`cito_relation`).
+
+**Logroño replication** (2026-10-10; verdict *partially supported*, CiTO *qualifies* the paper and
+*extends* the Hamburg chain; repository = release v0.1.1, 10.5281/zenodo.23285198):
+
+```
+01 quote    https://w3id.org/sciencelive/np/RAbgREdIegl6pbTP_E4E2Eg9JR28whinZDteeGueXg1Wc
+02 aida     https://w3id.org/sciencelive/np/RAPjP2vEln1AzhH3QpkUK6lRB99xicwcRkdUp35bxk9U4
+03 claim    https://w3id.org/sciencelive/np/RAQDtKtTjDH3tbUuBwmzk2mWYe7vyMKHMI1cquwB-Pltk
+04 study    https://w3id.org/sciencelive/np/RABBJpiR9zQUaRlSclmmv5wvIJr8wWl_hyo-NBK2o10pI
+05 outcome  https://w3id.org/sciencelive/np/RAzO2FoYqdwvPCDDkfVmf-SKOl2mUpsf_qZeje0i_LP_U
+06 citation https://w3id.org/sciencelive/np/RAoFYugT7OVk5eoHuxKCO9HeqA08jMfSn7TeUxwZcbezE
+```
+
+**Hamburg reproduction** (2026-10-09; *validated*, CiTO *confirms*; release v0.1.1,
+10.5281/zenodo.23270558): Outcome https://w3id.org/sciencelive/np/RA6V_jAy2OFjYBwQMOH92fIM6199bjez7hRkY90vkxx7U,
+CiTO https://w3id.org/sciencelive/np/RAI00BYTAPLTsNoY19DGNKF04vAjTuVv6K3WbYmo055CA
+(all URIs: `nanopubs/PUBLISHED.md` in annefou/hamburg-pluvial-flood-replication).
+
+**Geographic coverage** ("Document geographical coverage" template):
+- Logroño, La Rioja, Spain — https://w3id.org/sciencelive/np/RAzds1z9t2ac7XFvx_Hsv18__p5nUTNA0NHIsskSyLVPQ
+  (cites the replication's v0.1.0 release). This repository's own study area is the same
+  municipality: publish a new coverage nanopub citing **this** repository's release once it has
+  one (same WKT, `nanopubs/geo/logrono.wkt` in the replication repo), rather than reusing it.
+- Hamburg, Germany (the paper's area) — https://w3id.org/sciencelive/np/RA1NTaGnBgz1AFkx-Xbpl8FLq16t6wINM-XyP4PrsXnK8
+  (an earlier bounding-box version, RAXrw7VY…, is superseded and disapproved by the author).
+
 ## Decisions already taken with Anne
 
 1. **Separate repository** from the replication: different claim and chain (question-rooted),
