@@ -157,22 +157,75 @@ print(f"{len(maps)} maps in {time.time() - t0:.0f} s")
 # domain (above).
 
 # %%
-residents = buildings[(buildings["R"] > 0) & buildings["in_domain"]].reset_index(drop=True)
+#
+# Social vulnerability does not depend on the flood map, so it is ranked (TOPSIS) over all
+# residential buildings of the city, as in the replication; risk and its classes are then
+# computed over the buildings inside the domain.
+
+# %%
+all_residents = buildings[buildings["R"] > 0].reset_index(drop=True)
 sections = city("sections").set_index("CUSEC")
-VARIANTS = {
-    "counts": residents,
-    "rates": residents.assign(**{k: residents["CUSEC"].map(sections[f"{k}_rate"]) for k in ("C", "ES", "WR", "EDQ")}),
+RATE_COLS = ("C", "ES", "WR", "EDQ")
+VARIANT_DATA = {
+    "counts": all_residents,
+    "rates": all_residents.assign(**{k: all_residents["CUSEC"].map(sections[f"{k}_rate"]) for k in RATE_COLS}),
 }
+V = SPEC["vulnerability"]
+SVPF = {v: pd.Series(bcr.social_vulnerability(
+            d, sensitivity_cols=V["sensitivity"]["columns"], sensitivity_weights=V["sensitivity"]["weights"],
+            coping_cols=V["coping"]["columns"], coping_weights=V["coping"]["weights"], svi_weights=V["svi_weights"],
+            threshold=V["threshold"], exponent=V["exponent"])["SVPF"].to_numpy(), index=d["ID"])
+        for v, d in VARIANT_DATA.items()}
+residents = all_residents[all_residents["in_domain"]].reset_index(drop=True)
+VARIANTS = {v: residents.assign(SVPF=SVPF[v].reindex(residents["ID"]).to_numpy()) for v in VARIANT_DATA}
 hz_res = hz[hz["ID"].isin(residents["ID"])].set_index(["land_cover", "climate", "rp", "ID"])
 
 
 def assess_map(data: pd.DataFrame, lc: str, cl: str, rp: int) -> pd.DataFrame:
+    """Risk = SVPF (city-wide ranking) x exposure x hazard of this map; classes by the authors' rule."""
     h = hz_res.loc[(lc, cl, rp)].reindex(data["ID"])
-    out = bcr.assess(data, {"HWB": h["HWB"].to_numpy(), "HMA": h["HMA"].to_numpy()}, SPEC)
-    out = out.rename(columns={f"{r}_class": f"{r}_class_own" for r in RISKS})
-    return out.assign(ID=data["ID"].values, R=data["R"].values, R_G=data["R_G"].values,
-                      land_cover=lc, climate=cl, rp=rp)
+    out = pd.DataFrame({"ID": data["ID"].values, "R": data["R"].values, "R_G": data["R_G"].values,
+                        "SVPF": data["SVPF"].values, "HWB": h["HWB"].to_numpy(), "HMA": h["HMA"].to_numpy()})
+    for r, spec in SPEC["risks"].items():
+        out[r] = bcr.risk(out["SVPF"], data[spec["exposure"]].to_numpy(float), out[spec["hazard"]])
+        out[f"{r}_class_own"] = bcr.risk_class(out[r], bcr.iterated_means(out[r], SPEC["classes"]["iterations"]))
+    return out.assign(land_cover=lc, climate=cl, rp=rp)
 
+
+# %% [markdown]
+# **Check against the replication.** Inside the domain, the present-climate Baseline
+# (RP100) is the replication's own flood map with the replication's rule, so every
+# building's hazards must equal those in the replication's published `risk_buildings.csv`.
+# So must social vulnerability (ranked city-wide, as there). Classes may differ only because
+# the residential buildings near the domain edge are left out of the class limits (the
+# authors' rule is relative to the buildings classed).
+
+# %%
+published = pd.read_csv(REPLICATION / "results/risk_buildings.csv").set_index("ID")
+mine = hz_res.loc[("Baseline", "present", 100)].reindex(residents["ID"])
+theirs = published.reindex(residents["ID"])
+assert np.allclose(mine["HWB"], theirs["HWB"], atol=1e-9) and np.allclose(mine["HMA"], theirs["HMA"], atol=1e-9)
+assert np.allclose(VARIANTS["counts"]["SVPF"], theirs["SVPF"], rtol=1e-9)
+print(f"hazards and social vulnerability of all {len(residents):,} residential buildings in the domain "
+      "equal the replication's")
+base_here = assess_map(VARIANTS["counts"], "Baseline", "present", 100).set_index("ID")
+check = pd.DataFrame({r: [int((published[f"{r}_class"] >= HOT).sum()), int((base_here[f"{r}_class_own"] >= HOT).sum()),
+                          int(((published[f"{r}_class"] >= HOT) & published.index.isin(base_here.index)).sum())]
+                      for r in RISKS}, index=["replication (all residential buildings)", "here (inside the domain)",
+                                              "replication hotspots inside the domain"])
+check.to_csv(RESULTS / "check_replication_hotspots.csv")
+print(check.to_string())
+
+# %% [markdown]
+# **Fixed limits.** For the 100-year storm with the paper's indicators (counts), the limits
+# are the replication's published ones (its baseline over all residential buildings), so this
+# study's baseline hotspots are the replication's. For other return periods and for the
+# rates version, which the replication did not publish, the limits come from this study's
+# present-climate Baseline inside the domain.
+
+# %%
+REPLICATION_LIMITS = {r: bcr.iterated_means(published[r], SPEC["classes"]["iterations"]) for r in RISKS}
+print({r: [round(x, 4) for x in b] for r, b in REPLICATION_LIMITS.items()})
 
 risk = []
 for variant, data in VARIANTS.items():
@@ -181,7 +234,10 @@ for variant, data in VARIANTS.items():
     for (lc, cl, rp), out in per_map.items():
         ref = per_map[("Baseline", "present", rp)]
         for r in RISKS:
-            breaks = bcr.iterated_means(ref[r], SPEC["classes"]["iterations"])
+            if variant == "counts" and rp == 100:
+                breaks = REPLICATION_LIMITS[r]
+            else:
+                breaks = bcr.iterated_means(ref[r], SPEC["classes"]["iterations"])
             out[f"{r}_class_fixed"] = bcr.risk_class(out[r], breaks)
         risk.append(out.assign(variant=variant))
 risk = pd.concat(risk, ignore_index=True)
