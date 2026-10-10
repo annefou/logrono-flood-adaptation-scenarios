@@ -2,13 +2,13 @@
 
 > This is a working scratchpad for the paper-analysis phase. The output of this file feeds the Quote / AIDA / Claim drafts. It is not itself a nanopub.
 
-**Reference paper:** {{PAPER_TITLE}}
+**Reference paper:** A high-resolution framework for urban pluvial flood risk mapping
 
-**DOI:** {{PAPER_DOI}}
+**DOI:** 10.5194/nhess-26-2765-2026
 
 **Authors:** _add._
 
-**Year:** {{PAPER_YEAR}}
+**Year:** 2026
 
 ## Headline claim
 

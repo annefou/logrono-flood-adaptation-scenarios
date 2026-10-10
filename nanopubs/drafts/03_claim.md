@@ -54,7 +54,7 @@ Pick one. See `docs/claim-type-vocabulary.md` for the seven options and how to c
 Full URL form: `https://doi.org/...` (NOT bare DOI).
 
 ```
-https://doi.org/{{PAPER_DOI}}
+https://doi.org/10.5194/nhess-26-2765-2026
 ```
 
 ## Publication note

@@ -40,7 +40,7 @@ Write the chosen type in the block below (a vocabulary label such as `cites as a
 ##### DOI or other URL of the cited work (text input)
 
 ```
-https://doi.org/{{PAPER_DOI}}
+https://doi.org/10.5194/nhess-26-2765-2026
 ```
 
 #### Additional citations (optional)
