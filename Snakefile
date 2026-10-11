@@ -53,6 +53,8 @@ rule analysis:
         f"{RESULTS}/hotspot_fate.csv",
         f"{RESULTS}/impact_places_scenarios.csv",
         f"{RESULTS}/building_risk.parquet",
+        f"{RESULTS}/vulnerability_comparisons.csv",
+        f"{RESULTS}/vulnerability_by_building.csv",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 03_analysis.py"
 
@@ -76,11 +78,13 @@ rule climate:
 rule figures:
     input:
         f"{RESULTS}/scenario_summary.csv",
+        f"{RESULTS}/vulnerability_by_building.csv",
         f"{RESULTS}/climatedt_projection_change.csv",
         f"{RESULTS}/storyline_change.csv",
     output:
         f"{FIGURES}/main_result.png",
         f"{FIGURES}/land_cover_rp100.png",
         f"{FIGURES}/rainfall_change.png",
+        f"{FIGURES}/priority_map.png",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 05_figures.py"

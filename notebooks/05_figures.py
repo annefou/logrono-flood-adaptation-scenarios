@@ -174,3 +174,55 @@ fig.tight_layout()
 assert_layout(fig)
 fig.savefig(FIGURES / "rainfall_change.png", dpi=DPI, bbox_inches="tight")
 plt.show()
+
+# %% [markdown]
+# ## Where to look first: vulnerable residents at risk
+#
+# Residential buildings inside the modelled domain, 100-year storm, current green cover.
+# A building is at risk when either risk index is above zero; its colour is the
+# vulnerability of its residents (census-section rates, five groups of equal population,
+# light = least, dark = most vulnerable). Other buildings are grey. Left: at risk with
+# present rainfall. Right: newly at risk with future rainfall (Q90).
+# Vulnerability was not validated against impact data, and the measures were modelled only
+# as infiltration (SaferRAIN): a map of where to look, not of where to build.
+
+# %%
+import geopandas as gpd  # noqa: E402
+
+GROUP_COLOUR = {1: "#86b6ef", 2: "#5598e7", 3: "#2a78d6", 4: "#1c5cab", 5: "#104281"}
+GROUP_LABEL = {1: "least vulnerable fifth", 2: "2nd", 3: "3rd", 4: "4th", 5: "most vulnerable fifth"}
+sources = __import__("json").loads((Path("../data/raw/sources.json")).read_text())
+CITY = Path(sources["replication"]["path"]) / "data/interim/logrono.gpkg"
+geom = gpd.read_file(CITY, layer="buildings")[["ID", "geometry"]]
+groups = pd.read_csv(RESULTS / "vulnerability_by_building.csv")
+br = pd.read_parquet(RESULTS / "building_risk.parquet",
+                     filters=[("variant", "==", "rates"), ("land_cover", "==", "Baseline"), ("rp", "==", 100)])
+br["at_risk"] = (br["PFRWB"] > 0) | (br["PFRMA"] > 0)
+status = br.pivot_table(index="ID", columns="climate", values="at_risk", aggfunc="first")
+gdf = (geom.merge(groups, on="ID").merge(status.reset_index(), on="ID")
+       .merge(br[br["climate"] == "present"][["ID", "R"]], on="ID"))
+panels = {"At risk with present rainfall": gdf["present"],
+          "Newly at risk with future rainfall (Q90)": gdf["CC_Q90"] & ~gdf["present"]}
+
+urban = gpd.read_file(CITY, layer="urban_area").total_bounds
+fig, axes = plt.subplots(1, 2, figsize=(13, 5.6))
+for ax, (title, mask) in zip(axes, panels.items()):
+    geom.plot(ax=ax, color="#e4e3df", linewidth=0)
+    for g, colour in GROUP_COLOUR.items():
+        sel = gdf[mask & (gdf["vulnerability_group"] == g)]
+        if len(sel):  # outline in the fill colour keeps small buildings visible at city scale
+            sel.plot(ax=ax, color=colour, edgecolor=colour, linewidth=1.2)
+    ax.set_title(f"{title}\n{int(mask.sum())} buildings, {gdf.loc[mask, 'R'].sum():,.0f} residents",
+                 loc="left", fontsize=11, color=TEXT)
+    ax.set_axis_off()
+    ax.set_xlim(urban[0], urban[2])
+    ax.set_ylim(urban[1], urban[3])
+handles = [plt.Line2D([], [], marker="s", ls="", color=c, markersize=9, label=GROUP_LABEL[g])
+           for g, c in GROUP_COLOUR.items()]
+fig.legend(handles=handles, loc="upper center", ncol=5, fontsize=8.5, frameon=False, bbox_to_anchor=(0.5, 0.02))
+fig.suptitle("Logroño, 100-year storm: residential buildings at risk by residents' social vulnerability",
+             x=0.01, ha="left", fontsize=12.5, color=TEXT)
+fig.tight_layout()
+assert_layout(fig)
+fig.savefig(FIGURES / "priority_map.png", dpi=DPI, bbox_inches="tight")
+plt.show()

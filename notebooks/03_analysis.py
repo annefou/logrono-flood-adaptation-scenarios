@@ -310,7 +310,107 @@ fate.to_csv(RESULTS / "hotspot_fate.csv", index=False)
 print(fate[(fate["rp"] == 100) & (fate["variant"] == "counts")].to_string(index=False))
 
 # %% [markdown]
-# ## 5. Recorded impact places under each scenario
+# ## 5. Who is affected: social vulnerability of the residents at risk
+#
+# Vulnerability here is the **rates** version (census-section shares of children, elderly
+# people living alone, unemployed, residents without higher education): it describes who
+# the residents are, where the paper's counts per building mostly describe how many there
+# are (§2 of the replication). It is the same in every scenario; only who is reached by
+# the water changes. It was not validated against impact data (the replication could not).
+#
+# Residents are split into five groups of equal size by their building's vulnerability
+# (Q1 least, Q5 most vulnerable). A building is at risk when its risk index is above zero.
+#
+# - **Residents at risk per group**, per land cover, climate and return period.
+# - **Newly at risk vs already at risk.** Buildings at risk under a future climate but not
+#   at present (same land cover, same return period) against those at risk in both: the
+#   residents' mean vulnerability percentile in each, and permutation tests (buildings
+#   shuffled between the two sets, 10,000 times, fixed seed), one-sided in each direction:
+#   "more vulnerable" and "less vulnerable". Many comparisons are made (land covers ×
+#   climates × return periods × risks), so an isolated small p-value is expected by chance;
+#   only a direction that holds across return periods is read as a finding.
+# - **Taken out of risk by greening all open space** (`Allgreen`) against those remaining
+#   at risk, the same way.
+
+# %%
+RNG_VULN = np.random.default_rng(20261011)
+vuln = risk[(risk["variant"] == "rates") & (risk["land_cover"] == "Baseline") & (risk["climate"] == "present")
+            & (risk["rp"] == 100)].set_index("ID")["SVPF"]
+order = vuln.sort_values().index
+cum = residents.set_index("ID")["R"].reindex(order).cumsum()
+percentile = (cum - 0.5 * residents.set_index("ID")["R"].reindex(order)) / cum.iloc[-1]
+VULN_PCT = percentile.reindex(vuln.index)
+VULN_GROUP = pd.Series(np.minimum((VULN_PCT * 5).astype(int) + 1, 5), index=vuln.index)
+pd.DataFrame({"ID": vuln.index, "vulnerability_percentile": VULN_PCT.values,
+              "vulnerability_group": VULN_GROUP.values}).to_csv(RESULTS / "vulnerability_by_building.csv", index=False)
+print(residents.set_index("ID")["R"].groupby(VULN_GROUP).sum().round(0).rename("residents per group").to_string())
+
+
+def weighted_mean_pct(ids: pd.Index, weights: pd.Series) -> float:
+    w = weights.reindex(ids)
+    return float((VULN_PCT.reindex(ids) * w).sum() / w.sum()) if w.sum() > 0 else np.nan
+
+
+def compare_sets(a: pd.Index, b: pd.Index, weights: pd.Series, n: int = 10_000) -> dict:
+    """Resident-weighted mean vulnerability percentile of set a vs set b, and a one-sided
+    permutation p-values for 'a is more' and 'a is less vulnerable than b' (buildings shuffled)."""
+    observed = weighted_mean_pct(a, weights) - weighted_mean_pct(b, weights)
+    pooled = a.append(b)
+    w = weights.reindex(pooled).to_numpy()
+    wp = w * VULN_PCT.reindex(pooled).to_numpy()
+    # every permutation at once: rows of a random assignment of buildings to set a
+    in_a = np.argsort(RNG_VULN.random((n, len(pooled))), axis=1) < len(a)
+    wa, wpa = in_a @ w, in_a @ wp
+    null = wpa / wa - (wp.sum() - wpa) / (w.sum() - wa)
+    return {"n_a": len(a), "n_b": len(b), "residents_a": float(weights.reindex(a).sum()),
+            "residents_b": float(weights.reindex(b).sum()), "mean_pct_a": weighted_mean_pct(a, weights),
+            "mean_pct_b": weighted_mean_pct(b, weights), "difference": observed,
+            "p_a_more_vulnerable": float((1 + (null >= observed).sum()) / (1 + n)),
+            "p_a_less_vulnerable": float((1 + (null <= observed).sum()) / (1 + n))}
+
+
+rates = risk[risk["variant"] == "rates"]
+weights = residents.set_index("ID")["R"]
+group_rows, compare_rows = [], []
+for (lc, cl, rp), g in rates.groupby(["land_cover", "climate", "rp"], sort=False):
+    for r in RISKS:
+        at_risk = g.loc[g[r] > 0, "ID"]
+        by_group = weights.reindex(at_risk).groupby(VULN_GROUP.reindex(at_risk)).sum().reindex(range(1, 6), fill_value=0)
+        group_rows.append({"land_cover": lc, "climate": cl, "rp": rp, "risk": r,
+                           **{f"residents_at_risk_Q{q}": v for q, v in by_group.items()}})
+for (lc, rp), g in rates.groupby(["land_cover", "rp"], sort=False):
+    present = g[g["climate"] == "present"].set_index("ID")
+    for cl in ("CC_Q50", "CC_Q90"):
+        fut = g[g["climate"] == cl].set_index("ID")
+        if fut.empty:
+            continue
+        for r in RISKS:
+            new = fut.index[(fut[r] > 0) & ~(present[r].reindex(fut.index) > 0)]
+            both = fut.index[(fut[r] > 0) & (present[r].reindex(fut.index) > 0)]
+            if len(new) and len(both):
+                compare_rows.append({"comparison": "newly at risk vs already at risk", "land_cover": lc,
+                                     "climate": cl, "rp": rp, "risk": r, **compare_sets(new, both, weights)})
+base_rates = rates[(rates["land_cover"] == "Baseline")].set_index(["climate", "rp", "ID"])
+for (cl, rp), g in rates[rates["land_cover"] == "Allgreen"].groupby(["climate", "rp"], sort=False):
+    ref = base_rates.loc[(cl, rp)]
+    g = g.set_index("ID")
+    for r in RISKS:
+        was = ref.index[ref[r] > 0]
+        out_ = was[~(g[r].reindex(was) > 0)]
+        stay = was[g[r].reindex(was) > 0]
+        if len(out_) and len(stay):
+            compare_rows.append({"comparison": "taken out of risk by Allgreen vs remaining", "land_cover": "Allgreen",
+                                 "climate": cl, "rp": rp, "risk": r, **compare_sets(out_, stay, weights)})
+vuln_groups = pd.DataFrame(group_rows)
+vuln_compare = pd.DataFrame(compare_rows)
+vuln_groups.to_csv(RESULTS / "vulnerability_groups_at_risk.csv", index=False)
+vuln_compare.to_csv(RESULTS / "vulnerability_comparisons.csv", index=False)
+print(vuln_groups[(vuln_groups["rp"] == 100) & (vuln_groups["land_cover"].isin(["Baseline", "Allgreen"]))]
+      .round(0).to_string(index=False))
+print(vuln_compare[vuln_compare["rp"] == 100].round(3).to_string(index=False))
+
+# %% [markdown]
+# ## 6. Recorded impact places under each scenario
 #
 # The replication's measure, per scenario and return period: the flooded share
 # (depth ≥ 30 cm) of the open ground (not building, not water) within 20 m of each place
