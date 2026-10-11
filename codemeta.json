@@ -3,7 +3,7 @@
   "@type": "SoftwareSourceCode",
   "name": "Building-level pluvial flood risk in Logroño under future rainfall and nature-based solution scenarios",
   "description": "Building-level pluvial flood risk for Logroño (Spain) under the REACHOUT flood scenarios: present and future design rainfall combined with current green cover, the planned nature-based solutions and an all-green city, using the Vogelbacher et al. (2026) framework (building-climate-risk) and the open city inputs of the Logroño replication; the future rainfall is checked against Destination Earth Climate DT projections and storylines. Shared analysis behind three FORRT nanopublication chains.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dateCreated": "2026-10-10",
   "dateModified": "2026-10-11",
   "license": "https://spdx.org/licenses/MIT",

@@ -9,7 +9,7 @@ authors:
   affiliation: "LifeWatch ERIC"
 repository-code: "https://github.com/annefou/logrono-flood-adaptation-scenarios"
 license: MIT
-version: "0.1.0"
+version: "0.2.0"
 date-released: "2026-10-11"
 abstract: >-
   Building-level pluvial flood risk (social vulnerability x exposure x hazard) for
