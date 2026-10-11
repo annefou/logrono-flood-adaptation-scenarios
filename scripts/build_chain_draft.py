@@ -75,10 +75,14 @@ BACK_LINKS: dict[str, list[dict]] = {
 }
 
 
-def carried_placeholders(step: str) -> set[str]:
-    """Snapshot field ids that the wizard fills via carry-forward (skip here)."""
+def carried_placeholders(step: str, present: set[str] | None = None) -> set[str]:
+    """Snapshot field ids that the wizard fills via carry-forward (skip here).
+
+    A side-branch back-link only carries when the step it comes from is in the
+    same draft (``present``); otherwise the field is read from the draft itself."""
     skip = {CARRY_FIELD[step]} if step in CARRY_FIELD else set()
-    skip.update(bl["placeholder"] for bl in BACK_LINKS.get(step, []))
+    skip.update(bl["placeholder"] for bl in BACK_LINKS.get(step, [])
+                if present is None or bl["from"] in present)
     return skip
 
 # Short slug per step, for the "Short URI suffix" id fields (<org>-<repo>-<step>).
@@ -124,6 +128,9 @@ REPEATABLE_TEXT_FIELDS = {
 REPEATABLE_OBJECT_FIELDS = {
     ("02_aida", "dataset"): ("st3", "dataset", "Supported by datasets"),
     ("02_aida", "publication"): ("st4", "publication", "Supported by other publications"),
+    # Carried from 05_outcome when the Outcome is in the same draft; read from the
+    # draft when it is not (a synthesis of already-published chains, --steps).
+    ("08_synthesis", "source"): ("sources", "source", "Supporting sources"),
 }
 
 # Scalar content fields whose draft heading doesn't contain the placeholder label,
@@ -356,7 +363,8 @@ def draft_urls(draft_text: str, heading: str) -> list[str]:
     body = _draft_sections(draft_text).get(_norm(heading)) or ""
     out = []
     for line in body.splitlines():
-        if not re.match(r"^\s*[-*]\s+", line):
+        bare = _URL_RE.fullmatch(line.strip())         # one URL per line, as in a fenced block
+        if not (re.match(r"^\s*[-*]\s+", line) or bare):
             continue
         m = _URL_RE.search(line)
         if m:
@@ -694,7 +702,7 @@ def build_step(step: str, spec: dict, registry_meta: dict, cff: dict,
                draft_text: str | None, published_uri: str | None, *,
                org: str | None = None, repo: str | None = None,
                cito_relation: str | None = None, resolve=None,
-               drafts_label: str = "nanopubs/drafts") -> dict:
+               drafts_label: str = "nanopubs/drafts", present: set[str] | None = None) -> dict:
     prefill: dict = {}
     provenance: dict = {}
     manual: list[str] = []
@@ -722,7 +730,7 @@ def build_step(step: str, spec: dict, registry_meta: dict, cff: dict,
                                   + (f"; further rows = {drafts_label}/{step}.md" if extra_rows else ""))
         return _finish(step, registry_meta, prefill, provenance, manual, published_uri)
 
-    carried = carried_placeholders(step)
+    carried = carried_placeholders(step, present)
     for idx, f in enumerate(spec["fields"]):
         name = f["id"]
         if name in carried:
@@ -818,7 +826,8 @@ def detect_anchor(drafts_dir: Path) -> str:
 
 def build_chain_draft(repo_root: Path, *, repository: str, commit: str,
                       resolve_wikidata=resolve_wikidata,
-                      drafts_dir: Path | None = None) -> dict:
+                      drafts_dir: Path | None = None,
+                      only_steps: list[str] | None = None) -> dict:
     templates = repo_root / "nanopubs" / "templates"
     registry = json.loads((templates / "registry.json").read_text())
     snapshot = json.loads((templates / "fields.snapshot.json").read_text())["steps"]
@@ -836,11 +845,18 @@ def build_chain_draft(repo_root: Path, *, repository: str, commit: str,
     published = parse_published(pub_path.read_text()) if pub_path.exists() else {}
 
     anchor = detect_anchor(drafts_dir)
-    step_ids = [anchor] + CORE_STEPS
-    for opt in OPTIONAL_STEPS:                     # append only if actually drafted
-        p = drafts_dir / f"{opt}.md"
-        if p.exists() and draft_has_content(p.read_text(), snapshot.get(opt, {}), opt):
-            step_ids.append(opt)
+    if only_steps:                                 # e.g. a synthesis of published chains
+        unknown = [x for x in only_steps if x not in snapshot]
+        if unknown:
+            raise ValueError(f"unknown step(s) {unknown}; known: {sorted(snapshot)}")
+        step_ids = list(only_steps)
+    else:
+        step_ids = [anchor] + CORE_STEPS
+        for opt in OPTIONAL_STEPS:                 # append only if actually drafted
+            p = drafts_dir / f"{opt}.md"
+            if p.exists() and draft_has_content(p.read_text(), snapshot.get(opt, {}), opt):
+                step_ids.append(opt)
+    present = set(step_ids)
 
     org, repo = _org_repo(repository)
     steps = []
@@ -857,7 +873,7 @@ def build_chain_draft(repo_root: Path, *, repository: str, commit: str,
             step, snapshot[step], registry["steps"][step], cff,
             dp.read_text() if dp.exists() else None, published.get(step[:2]),
             org=org, repo=repo, cito_relation=relation, resolve=resolve_wikidata,
-            drafts_label=drafts_label,
+            drafts_label=drafts_label, present=present,
         )
         if step == "05_outcome":
             outcome_status = st["prefill"].get("validationStatus")
@@ -865,7 +881,6 @@ def build_chain_draft(repo_root: Path, *, repository: str, commit: str,
 
     carry = [{"from": a, "into": b, "field": CARRY_FIELD[b]}
              for a, b in zip(step_ids, step_ids[1:]) if b in CARRY_FIELD]
-    present = set(step_ids)
     for target, links in BACK_LINKS.items():                # side-branch back-links
         if target not in present:
             continue
@@ -886,7 +901,7 @@ def build_chain_draft(repo_root: Path, *, repository: str, commit: str,
     return {
         "schema_version": SCHEMA_VERSION,
         "kind": "forrt-chain-draft",
-        "chain_shape": ANCHORS[anchor],
+        "chain_shape": ANCHORS[anchor] if step_ids[0] in ANCHORS else "synthesis" if step_ids == ["08_synthesis"] else "partial",
         "source": source,
         "steps": steps,
         "carry_forward": carry,
@@ -961,6 +976,10 @@ def main(argv: list[str] | None = None) -> int:
                    help="Drafts directory (default: <repo-root>/nanopubs/drafts). Point "
                         "at a sibling set (e.g. nanopubs/drafts-turbidity/) to build a "
                         "second limb's chain from the same CITATION.cff and templates.")
+    p.add_argument("--steps", nargs="+", default=None,
+                   help="Build only these steps, e.g. `--steps 08_synthesis` for a Research "
+                        "Synthesis of chains already published (its sources are then read "
+                        "from the draft instead of carried from an Outcome).")
     args = p.parse_args(argv)
 
     root = Path(args.repo_root).resolve()
@@ -972,7 +991,7 @@ def main(argv: list[str] | None = None) -> int:
 
     drafts_dir = Path(args.drafts_dir).resolve() if args.drafts_dir else None
     draft = build_chain_draft(root, repository=repo_url, commit=commit,
-                              drafts_dir=drafts_dir)
+                              drafts_dir=drafts_dir, only_steps=args.steps)
     out = Path(args.out) if args.out else root / "nanopubs" / "chain-draft.json"
     out.write_text(json.dumps(draft, indent=2, ensure_ascii=False) + "\n")
 

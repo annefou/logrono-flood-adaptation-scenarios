@@ -827,3 +827,44 @@ def test_restricted_choice_is_also_found_under_the_template_label():
             "- [x] descriptive research question - (What are the characteristics of X?)\n")
     st = bcd.build_step("01_pico", spec, meta, {}, text, None)
     assert st["prefill"]["type"].endswith("DescriptiveResearchQuestion")
+
+
+# --- a synthesis of chains already published (--steps 08_synthesis) ------
+
+_SYNTH_SOURCES = ["https://w3id.org/sciencelive/np/RAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "https://w3id.org/sciencelive/np/RAbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"]
+
+
+def _synthesis_only(tmp_path, sources_block: str):
+    root = _fixture_repo(tmp_path)
+    text = SYNTHESIS.split("<!-- field: source -->")[0] + (
+        "<!-- field: source -->\n### Supporting sources (text input, required)\n\n" + sources_block + "\n")
+    (root / "nanopubs" / "drafts" / "08_synthesis.md").write_text(text)
+    return bcd.build_chain_draft(root, repository="https://github.com/annefou/bombus-thermal-replication",
+                                 commit="abc123", resolve_wikidata=_mock_wikidata, only_steps=["08_synthesis"])
+
+
+@pytest.mark.parametrize("block", [
+    "\n".join(f"- {u}" for u in _SYNTH_SOURCES),               # bullets
+    "```\n" + "\n".join(_SYNTH_SOURCES) + "\n```",             # fenced, one URL per line
+])
+def test_synthesis_only_reads_its_sources_from_the_draft(tmp_path, block):
+    d = _synthesis_only(tmp_path, block)
+    assert d["chain_shape"] == "synthesis"
+    assert [s["step"] for s in d["steps"]] == ["08_synthesis"]
+    assert d["carry_forward"] == []
+    pre = _step(d, "08_synthesis")["prefill"]
+    assert pre["sources"] == [{"source": u} for u in _SYNTH_SOURCES]
+    assert "source" not in pre                     # never the paper DOI as a metadata value
+
+
+def test_synthesis_in_a_full_chain_still_carries_its_source(draft_full):
+    assert {"from": "05_outcome", "into": "08_synthesis", "field": "sources",
+            "mode": "uriObjectList", "itemKey": "source"} in draft_full["carry_forward"]
+
+
+def test_unknown_step_is_refused(tmp_path):
+    root = _fixture_repo(tmp_path)
+    with pytest.raises(ValueError, match="unknown step"):
+        bcd.build_chain_draft(root, repository="https://github.com/a/b", commit="c",
+                              resolve_wikidata=_mock_wikidata, only_steps=["09_nope"])
