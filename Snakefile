@@ -17,6 +17,7 @@ rule all:
     input:
         f"{FIGURES}/main_result.png",
         f"{RESULTS}/cordex_match.csv",
+        f"{FIGURES}/where_vulnerable.png",
 
 
 # ---------- 01: Data download ----------
@@ -99,3 +100,18 @@ rule figures:
         f"{FIGURES}/method.png",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 05_figures.py"
+
+
+# ---------- 06: Where the most vulnerable residents at risk live ----------
+rule where_vulnerable:
+    input:
+        f"{DATA}/raw/sources.json",
+        f"{RESULTS}/building_risk.parquet",
+        f"{RESULTS}/vulnerability_by_building.csv",
+    output:
+        f"{RESULTS}/where_vulnerable.csv",
+        f"{RESULTS}/where_vulnerable_counts.json",
+        f"{RESULTS}/where_vulnerable_sections.csv",
+        f"{FIGURES}/where_vulnerable.png",
+    shell:
+        f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 06_where_vulnerable.py"

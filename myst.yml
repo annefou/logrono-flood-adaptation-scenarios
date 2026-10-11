@@ -15,6 +15,7 @@ project:
     - file: notebooks/03_analysis.ipynb
     - file: notebooks/04_climate.ipynb
     - file: notebooks/05_figures.ipynb
+    - file: notebooks/06_where_vulnerable.ipynb
     - file: nanopubs/PUBLISHED.md
 site:
   title: "logrono-flood-adaptation-scenarios"
