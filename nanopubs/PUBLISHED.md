@@ -4,10 +4,11 @@ This repository is the shared analysis behind four findings. It has no FORRT cha
 
 ## Research Synthesis
 
+<!-- tools read the LAST step-08 row as the apex: keep the current synthesis last -->
 | Step | Template | URI | Published |
 |---|---|---|---|
-| 08 | Research Synthesis of the **four** chains (current) | <https://w3id.org/sciencelive/np/RAT-AEOeE-pt2wTVXyagR5fa-0yPSZHW7TRVKgm7fEMTs> | 2026-10-11 |
 | 08 | Research Synthesis of the first three chains (earlier; still valid for its three chains, not superseded) | <https://w3id.org/sciencelive/np/RALq-EHWcx22c8cqC7G1E94H95CT9Upq7f3ZqbvslVuog> | 2026-10-11 |
+| 08 | Research Synthesis of the **four** chains (current) | <https://w3id.org/sciencelive/np/RAT-AEOeE-pt2wTVXyagR5fa-0yPSZHW7TRVKgm7fEMTs> | 2026-10-11 |
 
 ## AI plain-language summaries of the synthesis
 

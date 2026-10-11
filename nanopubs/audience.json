@@ -1,8 +1,13 @@
 {
   "glance": {
     "title": "What this study found, at a glance",
-    "note": "In this model, heavier future rain puts more of Logroño's residents at flood risk, the planned green measures offset little of it, and greening all open space mainly protects the less vulnerable.",
+    "note": "In this model, heavier future rain puts more of Logroño's residents at flood risk, the planned green measures offset little of it, greening all open space mainly protects the less vulnerable, and the most vulnerable have the least room to green near their homes.",
     "items": [
+      {
+        "label": "Room to green near the most vulnerable",
+        "sub": "Land that could be greened within 100 m of homes at risk",
+        "says": "about a quarter of what the least vulnerable have"
+      },
       {
         "label": "Greening all open space",
         "sub": "All-green scenario, by social vulnerability",
@@ -41,26 +46,26 @@
       "sections": [
         {
           "h": "What was looked at",
-          "p": "REACHOUT computer flood maps for 15-minute downpours from storms expected every 2 years to once in 200 years. For each building: how deep the water gets nearby, how many people live there, and how socially vulnerable they are."
+          "p": "REACHOUT computer flood maps for 15-minute downpours, from storms expected every 2 years to once in 200 years. For each building: how deep the water gets nearby, how many people live there, and how socially vulnerable they are."
         },
         {
           "h": "Heavier rain puts more people at risk",
-          "p": "In every case examined: a few percent more residents at risk in the middle scenario, up to about one in ten more in the high one. How much depends on how much heavier the rain becomes, which is uncertain. Today's once-in-100-years flooding could come roughly twice as often, or more. Destination Earth data support the middle scenario's order of magnitude."
+          "p": "In every case examined: a few percent more residents at risk in the middle scenario, up to about one in ten more in the high one. Today's once-in-100-years flooding could come roughly twice as often, or more. Destination Earth data support the middle scenario's order of magnitude."
         },
         {
           "h": "The planned green measures help only a little",
-          "p": "As REACHOUT modelled them, they cut the number of residents at risk by a few percent at most, only for frequent storms, and not at all for the biggest ones. They do not offset heavier rain in this model."
+          "p": "As REACHOUT modelled them, they cut the number of residents at risk by a few percent at most, only for frequent storms, and not at all for the biggest ones."
         },
         {
           "h": "More green space helps — but not those who need it most",
-          "p": "Turning all open space green takes roughly one in ten to one in five of the residents at risk out of risk. But in every comparison, those who leave risk are less socially vulnerable than those who stay; the most vulnerable fifth benefits least."
+          "p": "Turning all open space green takes roughly one in ten to one in five of the residents at risk out of risk, but mostly the less vulnerable; the most vulnerable fifth benefits least. They also have the least room for green: near their homes, about a quarter of the land that could be greened near the homes of the least vulnerable."
         },
         {
           "h": "What it means, and what it cannot say",
-          "p": "Place green measures where vulnerable residents are at risk, not just where there is space, and re-check the planned measures with a model that includes sewers and storage. Uncertainties are large — one flood model without sewers, scenario rainfall, census-based vulnerability — so the direction of each finding is more reliable than its size."
+          "p": "Plan measures first where vulnerable residents are at risk. For them, greening alone will likely not be enough: storage, drainage or protecting buildings may be needed. Re-check the planned measures with a model that includes sewers. Uncertainties are large, so the direction of each finding is more reliable than its size."
         }
       ],
-      "closing": "Heavier rain is expected, though by how much is uncertain; where green measures are placed decides who they protect."
+      "closing": "Heavier rain is expected; where measures are placed, and which kind, decides who they protect."
     },
     {
       "id": "schools",
@@ -80,7 +85,7 @@
         },
         {
           "h": "The result",
-          "p": "Heavier future rain puts more people at risk in every case tested. The planned green measures help only a little, and not at all for the biggest storms. Turning all open space green helps more — roughly one in ten to one in five of the people at risk become safe — but mostly the less vulnerable. The most vulnerable fifth benefits least."
+          "p": "Heavier future rain puts more people at risk in every case tested. The planned green measures help only a little, and not at all for the biggest storms. Turning all open space green helps more, but mostly the less vulnerable. The most vulnerable fifth benefits least, and near their homes there is the least room for green: about a quarter of what the least vulnerable have. So protecting them may need other ideas, like storing or draining water."
         },
         {
           "h": "The lesson: how science checks itself",
