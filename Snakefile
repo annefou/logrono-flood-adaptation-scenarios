@@ -96,5 +96,6 @@ rule figures:
         f"{FIGURES}/land_cover_rp100.png",
         f"{FIGURES}/rainfall_change.png",
         f"{FIGURES}/priority_map.png",
+        f"{FIGURES}/method.png",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 05_figures.py"

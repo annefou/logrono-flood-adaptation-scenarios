@@ -267,3 +267,65 @@ fig.tight_layout()
 assert_layout(fig)
 fig.savefig(FIGURES / "priority_map.png", dpi=DPI, bbox_inches="tight")
 plt.show()
+
+# %% [markdown]
+# ## How the results were computed
+#
+# The pipeline behind all three findings, from inputs (top) to building-level risk
+# (bottom). Only the flood maps differ between scenarios: vulnerability and exposure are
+# the same in every scenario. The Climate DT and EURO-CORDEX check how plausible the
+# future rainfall is; they do not feed the flood maps.
+
+# %%
+from matplotlib.patches import FancyBboxPatch  # noqa: E402
+
+BOX = {"input": ("#e9f1fc", "#2a78d6"), "step": ("#f4f3ef", "#52514e"),
+       "result": ("#fde8df", "#eb6834"), "check": ("#ffffff", "#1baf7a")}
+
+
+def box(ax, x: float, y: float, w: float, h: float, text: str, kind: str, dashed: bool = False) -> None:
+    face, edge = BOX[kind]
+    ax.add_patch(FancyBboxPatch((x - w / 2, y - h / 2), w, h, boxstyle="round,pad=0.008,rounding_size=0.015",
+                                facecolor=face, edgecolor=edge, linewidth=1.4, linestyle="--" if dashed else "-"))
+    ax.text(x, y, text, ha="center", va="center", fontsize=8.6, color=TEXT, linespacing=1.35)
+
+
+def arrow(ax, start: tuple[float, float], end: tuple[float, float], dashed: bool = False) -> None:
+    ax.annotate("", xy=end, xytext=start, arrowprops={"arrowstyle": "-|>", "color": MUTED, "lw": 1.2,
+                                                       "linestyle": "--" if dashed else "-", "shrinkA": 0, "shrinkB": 0})
+
+
+fig, ax = plt.subplots(figsize=(12, 7.2))
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.set_axis_off()
+W, H = 0.2, 0.1
+box(ax, 0.13, 0.88, W, H, "Design rainfall (REACHOUT)\npresent, future Q50, future Q90\n7 return periods, 15 min", "input")
+box(ax, 0.37, 0.88, W, H, "Land cover (REACHOUT)\ncurrent, planned NBS,\nplanned NBS + ponds, all green", "input")
+box(ax, 0.645, 0.88, W, H, "Buildings and residents\nSpanish Cadastre,\nCensus 2021", "input")
+box(ax, 0.87, 0.88, W, H, "Vulnerability indicators\nCensus 2021 by section\n(counts or rates)", "input")
+box(ax, 0.25, 0.66, 0.3, H, "Flood depth maps, 2 m (SaferRAIN)\n12 scenarios x 7 return periods\ninside the domain modelled by every map", "step")
+box(ax, 0.25, 0.44, 0.3, H, "Hazard per building\nflooded share of the rings around it\n(well-being: 2 m; mobility: 5, 15, 30 m)", "step")
+box(ax, 0.645, 0.44, W, H, "Exposure\nresidents (mobility),\nground-floor residents (well-being)", "step")
+box(ax, 0.87, 0.44, W, H, "Social vulnerability\nTOPSIS, ranked\nover the whole city", "step")
+box(ax, 0.5, 0.24, 0.42, H, "Risk per building = vulnerability x exposure x hazard\nclasses with the limits of the present-day baseline\n(building-climate-risk v0.2.1)", "result")
+box(ax, 0.17, 0.06, 0.26, 0.08, "1  Future rainfall vs present", "result")
+box(ax, 0.5, 0.06, 0.26, 0.08, "2  Planned NBS vs current cover", "result")
+box(ax, 0.83, 0.06, 0.26, 0.08, "3  All green: who leaves risk,\nby vulnerability", "result")
+box(ax, 0.505, 0.66, 0.17, H, "Plausibility of the\nfuture rainfall\nEURO-CORDEX, Climate DT", "check", dashed=True)
+arrow(ax, (0.13, 0.83), (0.2, 0.71))
+arrow(ax, (0.37, 0.83), (0.3, 0.71))
+arrow(ax, (0.25, 0.61), (0.25, 0.49))
+arrow(ax, (0.645, 0.83), (0.645, 0.49))
+arrow(ax, (0.87, 0.83), (0.87, 0.49))
+arrow(ax, (0.47, 0.71), (0.235, 0.83), dashed=True)
+for x in (0.25, 0.645, 0.87):
+    arrow(ax, (x, 0.39), (0.5 + (x - 0.5) * 0.35, 0.29))
+for x in (0.17, 0.5, 0.83):
+    arrow(ax, (0.5 + (x - 0.5) * 0.35, 0.19), (x, 0.1))
+fig.suptitle("Logroño flood-adaptation scenarios: how building-level risk is computed",
+             x=0.01, ha="left", fontsize=12.5, color=TEXT)
+fig.tight_layout()
+assert_layout(fig)
+fig.savefig(FIGURES / "method.png", dpi=DPI, bbox_inches="tight")
+plt.show()
