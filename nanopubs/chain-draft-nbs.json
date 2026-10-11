@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "kind": "forrt-chain-draft",
+  "chain_shape": "pico",
+  "source": {
+    "repository": "https://github.com/annefou/logrono-flood-adaptation-scenarios",
+    "commit": "03af4a7e9147e43ea8dcd4232bad2179b2e4311c",
+    "figure": "figures/main_result.png"
+  },
+  "steps": [
+    {
+      "step": "01_pico",
+      "template_key": "PICO_RESEARCH_QUESTION",
+      "template_uri": "https://w3id.org/np/RA5e5XeXy_-aNK5giB7kBAEQslTLVydHeM4YYEzhmEE2w",
+      "prefill": {
+        "pico": "logrono-planned-nbs-flood-risk",
+        "label": "Do Logroño's planned nature-based solutions reduce building-level pluvial flood risk?",
+        "description": "In Logroño (Spain), compared with the current green cover, do the nature-based solutions planned by the city (bioswales, ponds, rain gardens and a green corridor) reduce building-level pluvial flood hazard and the number of residents in buildings at risk, under present and future design rainfall?",
+        "type": "https://w3id.org/sciencelive/o/terms/EffectivenessResearchQuestions",
+        "populationDescription": "Residential buildings and their residents in Logroño (La Rioja, Spain), a mid-sized city exposed to pluvial flooding from short, intense rainstorms.",
+        "interventionGroupDescription": "The nature-based solutions planned for the city through a co-design process: bioswales and ponds, a green corridor, and additional small ponds and rain gardens.",
+        "comparatorGroupDescription": "The city's current green cover, under the same design rainfall.",
+        "outcomeGroupDescription": "Building-level pluvial flood hazard around each residential building, and building-level pluvial flood risk: the number of residents in buildings at risk."
+      },
+      "provenance": {
+        "pico": "nanopubs/drafts-nbs/01_pico.md",
+        "label": "nanopubs/drafts-nbs/01_pico.md",
+        "description": "nanopubs/drafts-nbs/01_pico.md",
+        "type": "nanopubs/drafts-nbs/01_pico.md",
+        "populationDescription": "nanopubs/drafts-nbs/01_pico.md",
+        "interventionGroupDescription": "nanopubs/drafts-nbs/01_pico.md",
+        "comparatorGroupDescription": "nanopubs/drafts-nbs/01_pico.md",
+        "outcomeGroupDescription": "nanopubs/drafts-nbs/01_pico.md"
+      },
+      "manual": [
+        "type"
+      ],
+      "published_uri": null
+    },
+    {
+      "step": "02_aida",
+      "template_key": "AIDA_SENTENCE",
+      "template_uri": "https://w3id.org/np/RALmXhDw3rHcMveTgbv8VtWxijUHwnSqhCmtJFIPKWVaA",
+      "prefill": {},
+      "published_uri": null
+    },
+    {
+      "step": "03_claim",
+      "template_key": "FORRT_CLAIM",
+      "template_uri": "https://w3id.org/np/RAZWyM8D16ya3S1zhCvrG1f0iSpd9-8onVWp0FTvvX7LQ",
+      "prefill": {
+        "claim": "annefou-logrono-flood-adaptation-scenarios-claim",
+        "source": "https://doi.org/10.5194/nhess-26-2765-2026"
+      },
+      "provenance": {
+        "claim": "derived (<org>-<repo>-<step>)",
+        "source": "CITATION.cff"
+      },
+      "manual": [
+        "forrtType"
+      ],
+      "published_uri": null
+    },
+    {
+      "step": "04_study",
+      "template_key": "FORRT_REPLICATION",
+      "template_uri": "https://w3id.org/np/RAuLEjPp-4dTvPwMkfHggTto1CgjIftiGRAgHlyeEonjQ",
+      "prefill": {
+        "study": "annefou-logrono-flood-adaptation-scenarios-study"
+      },
+      "provenance": {
+        "study": "derived (<org>-<repo>-<step>)"
+      },
+      "manual": [
+        "type"
+      ],
+      "published_uri": null
+    },
+    {
+      "step": "05_outcome",
+      "template_key": "FORRT_REPLICATION_OUTCOME",
+      "template_uri": "https://w3id.org/np/RA2zljn0Nw9SadppOyxZoh-_Rxosslrq-vYG-p9SttnJE",
+      "prefill": {
+        "outcome": "annefou-logrono-flood-adaptation-scenarios-outcome",
+        "date": "2026-10-10"
+      },
+      "provenance": {
+        "outcome": "derived (<org>-<repo>-<step>)",
+        "date": "CITATION.cff"
+      },
+      "manual": [
+        "validationStatus",
+        "confidenceLevel"
+      ],
+      "published_uri": null
+    },
+    {
+      "step": "06_citation",
+      "template_key": "CITATION_CITO",
+      "template_uri": "https://w3id.org/np/RA43F9EoOuzF0xoNUnCMNyFsfIqlsuWDdPHCnN0wCdCAw",
+      "prefill": {
+        "st02": [
+          {
+            "cited": "https://doi.org/10.5194/nhess-26-2765-2026"
+          }
+        ]
+      },
+      "provenance": {
+        "st02": "cites = validation status (see 05_outcome); cited = CITATION.cff references[article]"
+      },
+      "published_uri": null
+    }
+  ],
+  "carry_forward": [
+    {
+      "from": "01_pico",
+      "into": "02_aida",
+      "field": "project"
+    },
+    {
+      "from": "02_aida",
+      "into": "03_claim",
+      "field": "aida"
+    },
+    {
+      "from": "03_claim",
+      "into": "04_study",
+      "field": "claim"
+    },
+    {
+      "from": "04_study",
+      "into": "05_outcome",
+      "field": "study"
+    },
+    {
+      "from": "05_outcome",
+      "into": "06_citation",
+      "field": "work"
+    }
+  ]
+}
