@@ -61,7 +61,8 @@ Or with Docker: `docker run --rm ghcr.io/annefou/logrono-flood-adaptation-scenar
 
 - The Logroño replication's FORRT chain (CiTO citation): <https://w3id.org/sciencelive/np/RAoFYugT7OVk5eoHuxKCO9HeqA08jMfSn7TeUxwZcbezE>
 - Study area, Logroño (geographic coverage): <https://w3id.org/sciencelive/np/RAzds1z9t2ac7XFvx_Hsv18__p5nUTNA0NHIsskSyLVPQ>
-- The three finding chains and their Research Synthesis: listed in [`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md) once published.
+- Research Synthesis of the three findings: <https://w3id.org/sciencelive/np/RALq-EHWcx22c8cqC7G1E94H95CT9Upq7f3ZqbvslVuog>
+- The three finding chains: listed in [`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md).
 
 ## Data and credits
 

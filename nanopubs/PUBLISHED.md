@@ -1,37 +1,26 @@
-# Published nanopub chain — URI registry
+# Published nanopublications — URI registry
 
-This file is the canonical registry of published nanopub URIs for this replication. Update it as you publish each step.
+This repository is the shared analysis behind three findings. It has no FORRT chain of its own: each finding is published as a question-rooted FORRT chain in its own repository, and this repository publishes the **Research Synthesis** that brings the three together.
 
-## Chain
-
-| Step | Template | URI | Published |
-|---|---|---|---|
-| 01 | Quote-with-comment (or PICO / PCC) | _not yet published_ | |
-| 02 | AIDA Sentence | _not yet published_ | |
-| 03 | FORRT Claim | _not yet published_ | |
-| 04 | FORRT Replication Study | _not yet published_ | |
-| 05 | FORRT Replication Outcome | _not yet published_ | |
-| 06 | CiTO Citation | _not yet published_ | |
-
-## Optional layers
+## Research Synthesis
 
 | Step | Template | URI | Published |
 |---|---|---|---|
-| 07 | Research Software (if applicable) | _not applicable / not yet published_ | |
-| 08 | Research Synthesis (if applicable) | _not applicable / not yet published_ | |
+| 08 | Research Synthesis | <https://w3id.org/sciencelive/np/RALq-EHWcx22c8cqC7G1E94H95CT9Upq7f3ZqbvslVuog> | 2026-10-11 |
 
-## Format
+## Sources of the synthesis — the three finding chains
 
-URIs from Science Live are of the form `https://w3id.org/sciencelive/np/RA…`. URIs from Nanodash (used as a fallback when the Science Live UI hits a bug) are of the form `https://w3id.org/np/RA…`. Both are valid and citable.
+| Finding | Repository | Replication Outcome | CiTO Citation |
+|---|---|---|---|
+| Future rainfall | [logrono-future-rainfall-flood-risk](https://github.com/annefou/logrono-future-rainfall-flood-risk) | <https://w3id.org/sciencelive/np/RA0Xdfwi2iNgVwH3KD4Bx5-pZ4JqKAt3-I4iyJSojbfCg> | <https://w3id.org/sciencelive/np/RAwDNLtJ-iEQUlF4ywPwiRBHmiwYakaQI9MZb9MrBN2_Y> |
+| Planned nature-based solutions | [logrono-planned-nbs-flood-risk](https://github.com/annefou/logrono-planned-nbs-flood-risk) | <https://w3id.org/sciencelive/np/RAYfm7-Pxkf34WyNY81poZJ-_6z7kqROLOS_NUTGiXNTM> | <https://w3id.org/sciencelive/np/RAb0wpTP4vtOlSlanvRYMXo0cfp2Nq-JjRDWctdE5x5GM> |
+| Greening and vulnerability | [logrono-greening-flood-risk-vulnerability](https://github.com/annefou/logrono-greening-flood-risk-vulnerability) | <https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA> | <https://w3id.org/sciencelive/np/RAbEYU8rm6cKE7_1iSKXBUr1SLo5krtS27_IT1Km1BVqU> |
 
-If a URI is not in the Science Live namespace, view it via the Science Live viewer by wrapping the URI:
+Each finding repository's `nanopubs/PUBLISHED.md` lists all six steps of its chain.
 
-```
-https://platform.sciencelive4all.org/np/?uri=<full-URI>
-```
+## Related
 
-## Cross-references
+- Study area, Logroño (geographic coverage): <https://w3id.org/sciencelive/np/RAzds1z9t2ac7XFvx_Hsv18__p5nUTNA0NHIsskSyLVPQ>
+- The Logroño replication's FORRT chain (CiTO citation): <https://w3id.org/sciencelive/np/RAoFYugT7OVk5eoHuxKCO9HeqA08jMfSn7TeUxwZcbezE>
 
-- Drafts: `nanopubs/drafts/`
-- Form structure: `docs/forrt-form-fields.md`
-- Chain shape decision: `docs/chain-decision-tree.md`
+View any URI in the Science Live viewer: `https://platform.sciencelive4all.org/np/?uri=<full-URI>`.

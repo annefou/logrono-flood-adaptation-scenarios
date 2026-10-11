@@ -15,7 +15,7 @@ project:
     - file: notebooks/03_analysis.ipynb
     - file: notebooks/04_climate.ipynb
     - file: notebooks/05_figures.ipynb
-    - file: nanopubs/README.md
+    - file: nanopubs/PUBLISHED.md
 site:
   title: "logrono-flood-adaptation-scenarios"
 # IMPORTANT: do NOT set base_url here — MyST silently ignores the key.
