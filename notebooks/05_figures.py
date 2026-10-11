@@ -106,7 +106,8 @@ for ax, risk in zip(axes, ["PFRMA", "PFRWB"]):
     ax.set_xlabel("Residents in buildings at risk (thousands)", color=MUTED, fontsize=9)
     ax.set_title(RISK_LABEL[risk], loc="left", fontsize=11, color=TEXT)
     style_axis(ax)
-axes[1].legend(loc="lower right", fontsize=8.5, frameon=False)
+fig.legend(*axes[0].get_legend_handles_labels(), loc="upper right", ncol=3, fontsize=8.5, frameon=False,
+           bbox_to_anchor=(1.0, 0.94))
 fig.suptitle("100-year storm: residents in buildings at risk by land cover and rainfall climate",
              x=0.01, ha="left", fontsize=12.5, color=TEXT)
 fig.tight_layout()
@@ -119,8 +120,8 @@ plt.show()
 # Relative change of short-duration rainfall extremes by return period: REACHOUT's scaling
 # of its 15-minute design storms (from EURO-CORDEX, 2041–2070 vs 1976–2005), the Climate DT
 # projection (IFS-NEMO, SSP3-7.0, 2030–2049 vs 1990–2009, La Rioja; 1-hour and 3-hour
-# accumulations, 90 % intervals from resampled years), and the Climate DT storylines
-# (+2 °C against the present, 2017–2024, five members; 1 hour).
+# accumulations, 90 % interval from resampled years shown for 1 hour), and the Climate DT
+# storylines (+2 °C against the present, 2017–2024, five members; 1 hour; 90 % interval).
 
 # %%
 inventory = pd.read_csv(RESULTS / "reachout_inventory.csv").drop_duplicates(["climate", "rp"])
@@ -138,7 +139,8 @@ for q, ls in (("CC_Q50", "-"), ("CC_Q90", "--")):
                 textcoords="offset points", va="center", fontsize=8.5, color=TEXT)
 for dur, ls in ((1, "-"), (3, "--")):
     p = proj[proj["duration_h"] == dur].sort_values("rp")
-    ax.fill_between(p["rp"], 100 * p["ci_lo"], 100 * p["ci_hi"], color="#eb6834", alpha=0.12, lw=0)
+    if dur == 1:  # one band per source keeps the intervals readable
+        ax.fill_between(p["rp"], 100 * p["ci_lo"], 100 * p["ci_hi"], color="#eb6834", alpha=0.12, lw=0)
     ax.plot(p["rp"], 100 * p["change"], color="#eb6834", lw=2, ls=ls, marker="o", ms=5,
             markeredgecolor="white", markeredgewidth=1.5)
     ax.annotate(f"Climate DT projection ({dur} h)", (p["rp"].iloc[-1], 100 * p["change"].iloc[-1]),
@@ -151,7 +153,7 @@ ax.annotate("Climate DT storylines, +2 °C (1 h)", (s["rp"].iloc[-1], 100 * s["c
             xytext=(6, 0), textcoords="offset points", va="center", fontsize=8.5, color=TEXT)
 ax.axhline(0, color="#a3a29b", lw=1)
 ax.set_xscale("log")
-ax.set_xticks([2, 5, 10, 20, 25, 50, 100, 200], labels=["2", "5", "10", "20", "25", "50", "100", "200"])
+ax.set_xticks([2, 5, 10, 20, 50, 100, 200], labels=["2", "5", "10", "20", "50", "100", "200"])
 ax.set_xlim(1.7, 1200)
 ax.set_xlabel("Return period (years)", color=MUTED, fontsize=9)
 ax.set_ylabel("Change in rainfall extreme (%)", color=MUTED, fontsize=9)
