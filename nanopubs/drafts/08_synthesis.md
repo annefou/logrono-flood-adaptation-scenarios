@@ -41,7 +41,10 @@ Three FORRT chains from one shared analysis of building-level pluvial flood risk
 Actionable guidance for practitioners.
 
 ```
-Plan for today's 100-year flood risk arriving with a 25- to 50-year storm, and assess adaptation under both a median and a high-end rainfall scenario. Prioritise nature-based solutions where socially vulnerable residents are at risk — in Logroño, mainly the historic centre — rather than where open space happens to be available; city-wide greening alone mainly benefits the less vulnerable. Before relying on the planned measures, test them with a flood model that represents storage, overflow and the sewer network, and with the measures' actual layout: in a fill-and-spill model without sewers their effect is small, partly because of the model. Publish the layout of planned measures and the scenario data openly, so that their effect can be checked and compared.
+1. Adaptation planning in Logroño should assume that the pluvial flood risk of today's 100-year design storm will be reached by the 50-year storm under the median EURO-CORDEX scenario and by the 25-year storm under the 90th percentile (2041-2070), and should test measures under both scenarios; the Destination Earth Climate DT supports the median scenario's order of magnitude.
+2. Nature-based solutions should be placed according to where socially vulnerable residents are at risk, not according to available open space: converting all open space to green surfaces mainly takes less vulnerable residents out of risk.
+3. The small effect of REACHOUT's planned nature-based solutions (less than 4 % fewer residents at risk, none for the 100- and 200-year storms) should be re-assessed with a hydrodynamic model that represents storage, overflow and the sewer network, and with the measures' actual layout, before it is used to accept or reject them; in SaferRAIN they enter only as infiltration and terrain changes.
+4. The layout of planned measures and the scenario inputs should be published openly, so that their effect can be reproduced and compared across models.
 ```
 
 <!-- field: conditions -->
