@@ -41,6 +41,8 @@ shapely = "*"
 pyproj = "*"               # EPSG:32632 -> EPSG:25830 (REACHOUT CRS label)
 rasterio = "*"             # REACHOUT flood-depth GeoTIFFs
 netcdf4 = "*"              # intermediate arrays (NetCDF, never .npz — DOMAIN.md)
+contextily = "*"           # basemap tiles for the map figure (context only)
+xyzservices = "*"          # tile provider definitions (contextily dependency, used directly)
 # --- further examples ---
 # Examples (uncomment as needed):
 # statsmodels = "*"          # GLM/GLMM regression

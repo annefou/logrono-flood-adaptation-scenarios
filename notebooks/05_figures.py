@@ -185,9 +185,22 @@ plt.show()
 # present rainfall. Right: newly at risk with future rainfall (Q90).
 # Vulnerability was not validated against impact data, and the measures were modelled only
 # as infiltration (SaferRAIN): a map of where to look, not of where to build.
+#
+# Basemap: Esri World Light Gray Canvas and its reference (labels) layer, fetched when the
+# figure is built — context only, nothing is computed from it; the labels are drawn above
+# the buildings. CARTO's tiles now require an API key and OpenStreetMap's own tile servers
+# refuse automated use, so neither is used. Without network access the map is drawn
+# without a basemap.
 
 # %%
+import contextily as cx  # noqa: E402
 import geopandas as gpd  # noqa: E402
+import xyzservices  # noqa: E402
+
+BASE = cx.providers.Esri.WorldGrayCanvas
+LABELS = xyzservices.TileProvider(
+    name="Esri.WorldGrayReference", attribution=BASE.attribution, max_zoom=16,
+    url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}")
 
 GROUP_COLOUR = {1: "#86b6ef", 2: "#5598e7", 3: "#2a78d6", 4: "#1c5cab", 5: "#104281"}
 GROUP_LABEL = {1: "least vulnerable fifth", 2: "2nd", 3: "3rd", 4: "4th", 5: "most vulnerable fifth"}
@@ -204,23 +217,50 @@ gdf = (geom.merge(groups, on="ID").merge(status.reset_index(), on="ID")
 panels = {"At risk with present rainfall": gdf["present"],
           "Newly at risk with future rainfall (Q90)": gdf["CC_Q90"] & ~gdf["present"]}
 
+def add_basemap(ax) -> bool:
+    """Light tiles below the data and their labels above it; False if the tiles cannot be fetched."""
+    try:
+        cx.add_basemap(ax, crs=geom.crs, source=BASE, attribution=False, zorder=0)
+        cx.add_basemap(ax, crs=geom.crs, source=LABELS, attribution=False, zorder=10)
+        return True
+    except Exception as exc:  # noqa: BLE001 - context layer only, never fail the figure on it
+        print(f"basemap not drawn ({type(exc).__name__}): {str(exc)[:120]}")
+        return False
+
+
+def scale_bar(ax, length_m: float = 1000.0) -> None:
+    x0, x1 = ax.get_xlim()
+    y0, y1 = ax.get_ylim()
+    x, y = x0 + 0.04 * (x1 - x0), y0 + 0.05 * (y1 - y0)
+    ax.plot([x, x + length_m], [y, y], color=TEXT, lw=3, solid_capstyle="butt", zorder=11)
+    ax.text(x + length_m / 2, y + 0.015 * (y1 - y0), f"{length_m / 1000:g} km", ha="center", va="bottom",
+            fontsize=8.5, color=TEXT, zorder=11)
+
+
 urban = gpd.read_file(CITY, layer="urban_area").total_bounds
 fig, axes = plt.subplots(1, 2, figsize=(13, 5.6))
+basemap = []
 for ax, (title, mask) in zip(axes, panels.items()):
-    geom.plot(ax=ax, color="#e4e3df", linewidth=0)
+    ax.set_xlim(urban[0], urban[2])
+    ax.set_ylim(urban[1], urban[3])
+    geom.plot(ax=ax, color="#d6d5d0", linewidth=0, alpha=0.6)
     for g, colour in GROUP_COLOUR.items():
         sel = gdf[mask & (gdf["vulnerability_group"] == g)]
         if len(sel):  # outline in the fill colour keeps small buildings visible at city scale
             sel.plot(ax=ax, color=colour, edgecolor=colour, linewidth=1.2)
+    ax.set_xlim(urban[0], urban[2])
+    ax.set_ylim(urban[1], urban[3])
+    basemap.append(add_basemap(ax))
+    scale_bar(ax)
     ax.set_title(f"{title}\n{int(mask.sum())} buildings, {gdf.loc[mask, 'R'].sum():,.0f} residents",
                  loc="left", fontsize=11, color=TEXT)
     ax.set_axis_off()
-    ax.set_xlim(urban[0], urban[2])
-    ax.set_ylim(urban[1], urban[3])
+if all(basemap):
+    fig.text(0.99, 0.08, f"Basemap: {BASE.attribution}", ha="right", fontsize=7, color=MUTED)
 handles = [plt.Line2D([], [], marker="s", ls="", color=c, markersize=9, label=GROUP_LABEL[g])
            for g, c in GROUP_COLOUR.items()]
 fig.legend(handles=handles, loc="upper center", ncol=5, fontsize=8.5, frameon=False, bbox_to_anchor=(0.5, 0.02))
-fig.suptitle("Logroño, 100-year storm: residential buildings at risk by residents' social vulnerability",
+fig.suptitle("Logroño (La Rioja, Spain), 100-year storm: residential buildings at risk by residents' social vulnerability",
              x=0.01, ha="left", fontsize=12.5, color=TEXT)
 fig.tight_layout()
 assert_layout(fig)
