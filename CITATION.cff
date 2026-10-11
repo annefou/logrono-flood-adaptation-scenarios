@@ -38,6 +38,12 @@ identifiers:
   value: 10.5281/zenodo.23298912
   description: Concept DOI (resolves to the latest version) — cite the project
 - type: doi
+  value: 10.5281/zenodo.23302113
+  description: Version DOI for v0.2.0 — pins this exact release; cite this from nanopubs
+- type: swh
+  value: swh:1:rev:c3772d8996b570a6518c2041e5c62082dd1ec02d;origin=https://github.com/annefou/logrono-flood-adaptation-scenarios
+  description: Software Heritage ID of the v0.2.0 source tree
+- type: doi
   value: 10.5281/zenodo.23298913
   description: Version DOI for v0.1.0 — pins this exact release; cite this from nanopubs
 - type: swh
