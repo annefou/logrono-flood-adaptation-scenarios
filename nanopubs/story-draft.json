@@ -1,16 +1,16 @@
 {
   "template": "https://w3id.org/np/RAfjXiLtYji0w1Y3AtKmtL_S21esoh5jprGWAPpRQ1zUk",
-  "apex": "https://w3id.org/sciencelive/np/RALq-EHWcx22c8cqC7G1E94H95CT9Upq7f3ZqbvslVuog",
+  "apex": "https://w3id.org/sciencelive/np/RAT-AEOeE-pt2wTVXyagR5fa-0yPSZHW7TRVKgm7fEMTs",
   "headline": "Heavier rain puts more of Logroño at flood risk, and the planned measures help little",
-  "framing": "Flood maps show where water goes. The risk framework of Vogelbacher et al. (2026), developed for Hamburg, also asks who lives there and how socially vulnerable they are. Applied building by building in Logroño, three signed studies find that today's 100-year storm becomes a 50- or 25-year storm, that the nature-based solutions planned so far, as modelled, offset little of this, and that greening all open space mainly protects the less vulnerable residents. The studies recommend placing measures first where the most vulnerable residents are at risk. Retold below for citizens and for schools.",
+  "framing": "Flood maps show where water goes. The risk framework of Vogelbacher et al. (2026), developed for Hamburg, also asks who lives there and how socially vulnerable they are. Applied building by building in Logroño, four signed studies find that today's 100-year storm becomes a 50- or 25-year storm, that the nature-based solutions planned so far, as modelled, offset little of this, and that greening all open space mainly protects the less vulnerable residents. The most vulnerable residents at risk also have the least room to green near their homes, so protecting them will likely need other measures, in the neighbourhoods where they are at risk. Retold below for citizens and for schools.",
   "summaries": [
     {
-      "uri": "https://w3id.org/np/RApNOm7iJ8fZrFH33FTIyMHwUwlpHmR4onxWghO6KCcn4",
+      "uri": "https://w3id.org/np/RAi1P0HTwTkaYT2HXGol2dLjYFjeJez_zsY_JlfkmqqmE",
       "audience": "Secondary school (ages 13–16)",
       "position": 1
     },
     {
-      "uri": "https://w3id.org/np/RACDnq5lJ307TWOLMx1qjzANsc47Kbgjkf3Sh7STlGjPQ",
+      "uri": "https://w3id.org/np/RAz93ofHeIsBBpCs9MJsLkbV7KEfDy2VtAFyKr3bEB7Fc",
       "audience": "General public",
       "position": 2
     }
@@ -41,6 +41,13 @@
       "doi": "https://doi.org/10.5281/zenodo.23300577",
       "about": "https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA",
       "position": 3
+    },
+    {
+      "contentUrl": "https://raw.githubusercontent.com/annefou/logrono-vulnerable-room-to-green/v0.1.0/figures/main_result.png",
+      "caption": "The most socially vulnerable residents at pluvial flood risk in Logroño have less room to green near their homes",
+      "doi": "https://doi.org/10.5281/zenodo.23302695",
+      "about": "https://w3id.org/sciencelive/np/RAqR5hOKuB3vur8eG39w_lsCsx_I0VEnf9YIsfNnxRmMg",
+      "position": 4
     }
   ],
   "_notes": [
