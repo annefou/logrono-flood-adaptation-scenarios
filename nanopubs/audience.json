@@ -3,11 +3,31 @@
     "title": "What this study found, at a glance",
     "note": "In this model, heavier future rain puts more of Logroño's residents at flood risk, the planned green measures offset little of it, and greening all open space mainly protects the less vulnerable.",
     "items": [
-      {"label": "Greening all open space", "sub": "All-green scenario, by social vulnerability", "says": "mainly helps the less vulnerable"},
-      {"label": "The planned green measures", "sub": "REACHOUT's planned nature-based solutions", "says": "help only a little, only for frequent storms"},
-      {"label": "Heavier future rain", "sub": "EURO-CORDEX future design rainfall", "says": "more residents at risk in every case"},
-      {"label": "Is building-by-building more accurate?", "sub": "Earlier replication: building level vs sub-city units", "says": "partly confirmed"},
-      {"label": "Can the method be repeated?", "sub": "Earlier replication: independent open implementation", "says": "yes, every building in the same class"}
+      {
+        "label": "Greening all open space",
+        "sub": "All-green scenario, by social vulnerability",
+        "says": "mainly helps the less vulnerable"
+      },
+      {
+        "label": "The planned green measures",
+        "sub": "REACHOUT's planned nature-based solutions",
+        "says": "help only a little, only for frequent storms"
+      },
+      {
+        "label": "Heavier future rain",
+        "sub": "EURO-CORDEX future design rainfall",
+        "says": "more residents at risk in every case"
+      },
+      {
+        "label": "Is building-by-building more accurate?",
+        "sub": "Earlier replication: building level vs sub-city units",
+        "says": "partly confirmed"
+      },
+      {
+        "label": "Can the method be repeated?",
+        "sub": "Earlier replication: independent open implementation",
+        "says": "yes, every building in the same class"
+      }
     ]
   },
   "audiences": [
@@ -17,27 +37,27 @@
       "icon": "users",
       "level": "General public — no science background needed",
       "title": "Will heavy rain flood more homes in Logroño, and do green spaces help?",
-      "lead": "This study looked at every residential building in Logroño and asked how many residents are at risk when a short, heavy downpour floods the streets — today, with heavier future rain, and with more green space in the city.",
+      "lead": "For every residential building in Logroño: how many residents are at risk when a short, heavy downpour floods the streets — today, with heavier future rain, and with more green space?",
       "sections": [
         {
           "h": "What was looked at",
-          "p": "The study used computer flood maps of Logroño made by the REACHOUT project for 15-minute downpours, from storms expected every 2 years to storms expected once in 200 years. For each residential building it combined three things: how deep the water gets nearby, how many people live there, and how socially vulnerable they are. It compared today's rain with heavier future rain, the green measures planned in REACHOUT's scenario, and an extreme case where all open space becomes green."
+          "p": "REACHOUT computer flood maps for 15-minute downpours from storms expected every 2 years to once in 200 years. For each building: how deep the water gets nearby, how many people live there, and how socially vulnerable they are."
         },
         {
           "h": "Heavier rain puts more people at risk",
-          "p": "With heavier future rain, more residents live in buildings at risk in every case examined: a few percent more in the middle scenario, and up to about one in ten more in the high one. How much more depends strongly on how much heavier the rain becomes, which is itself uncertain. Put simply, the flooding we expect today from a once-in-100-years storm could come roughly twice as often, or more in the high scenario. Data from the European Destination Earth project support the middle scenario's order of magnitude."
+          "p": "In every case examined: a few percent more residents at risk in the middle scenario, up to about one in ten more in the high one. How much depends on how much heavier the rain becomes, which is uncertain. Today's once-in-100-years flooding could come roughly twice as often, or more. Destination Earth data support the middle scenario's order of magnitude."
         },
         {
           "h": "The planned green measures help only a little",
-          "p": "The planned measures, as REACHOUT modelled them, reduce the number of residents at risk by a few percent at most, only for frequent storms, and not at all for the biggest storms (once in 100 or 200 years). In this model, they do not offset the effect of heavier rain."
+          "p": "As REACHOUT modelled them, they cut the number of residents at risk by a few percent at most, only for frequent storms, and not at all for the biggest ones. They do not offset heavier rain in this model."
         },
         {
-          "h": "More green space helps — but not the people who need it most",
-          "p": "Turning all open space green takes roughly one in ten to one in five of the residents at risk out of risk. But these are mainly less socially vulnerable residents: in every comparison made, the residents who leave risk are less socially vulnerable than those who stay at risk, and the most vulnerable fifth of residents benefits least."
+          "h": "More green space helps — but not those who need it most",
+          "p": "Turning all open space green takes roughly one in ten to one in five of the residents at risk out of risk. But in every comparison, those who leave risk are less socially vulnerable than those who stay; the most vulnerable fifth benefits least."
         },
         {
           "h": "What it means, and what it cannot say",
-          "p": "The study recommends placing green measures where vulnerable residents are at risk, not simply where there is open space, and checking the planned measures again with a model that includes sewers and storage, using their real layout. These are scenarios from one flood model, not predictions, and the uncertainties are large: the model has no sewers, the future rain is a scenario, vulnerability is estimated from census areas, and the measures may work differently when built. The direction of each finding is more reliable than its exact size."
+          "p": "Place green measures where vulnerable residents are at risk, not just where there is space, and re-check the planned measures with a model that includes sewers and storage. Uncertainties are large — one flood model without sewers, scenario rainfall, census-based vulnerability — so the direction of each finding is more reliable than its size."
         }
       ],
       "closing": "Heavier rain is expected, though by how much is uncertain; where green measures are placed decides who they protect."
@@ -52,19 +72,19 @@
       "sections": [
         {
           "h": "The question",
-          "p": "Logroño is a city in northern Spain. When a lot of rain falls in a short time, streets and underpasses can flood. This is called pluvial flooding: flooding caused directly by rain, not by a river. The study asks three things. Does heavier future rain put more people at risk? Do the planned green measures help? And when the city goes green, who is protected?"
+          "p": "Logroño is a city in northern Spain. When a lot of rain falls in a short time, streets can flood: pluvial flooding, caused by rain, not by a river. Does heavier future rain put more people at risk? Do the planned green measures help? And when the city goes green, who is protected?"
         },
         {
           "h": "The test",
-          "p": "Scientists used flood maps made by a computer model. For every home building, they combined three things: how deep the water gets nearby, how many people live there, and how vulnerable they are — for example, young children or older people living alone. A '100-year storm' means a storm so strong that, on average, it comes once in 100 years. They tested storms from every 2 years to every 200 years."
+          "p": "Scientists used flood maps from a computer model. For every home building they combined how deep the water gets nearby, how many people live there, and how vulnerable they are — for example young children or older people living alone. A '100-year storm' comes on average once in 100 years; storms from every 2 to every 200 years were tested."
         },
         {
           "h": "The result",
-          "p": "Heavier future rain puts more people at risk in every case tested. The planned green measures cut the number of people at risk only a little, and not at all for the biggest storms. Turning all open space green helps more: roughly one in ten to one in five of the people at risk become safe. But most of them are the less vulnerable people. The most vulnerable fifth of residents benefits least."
+          "p": "Heavier future rain puts more people at risk in every case tested. The planned green measures help only a little, and not at all for the biggest storms. Turning all open space green helps more — roughly one in ten to one in five of the people at risk become safe — but mostly the less vulnerable. The most vulnerable fifth benefits least."
         },
         {
           "h": "The lesson: how science checks itself",
-          "p": "Before using the method, it was checked. First, the method was rebuilt independently with open tools: every building got the same risk class as in the original study. Second, the flood maps were compared with places that really flooded in Logroño: they matched well, but this only partly confirmed the whole method, because real flood reports do not say who was affected. Finally, every result here comes from one computer model, with large uncertainties: for example, the model has no sewers, and nobody knows exactly how much heavier future rain will be. So scientists trust the direction of a result (more risk, small help, unequal help) more than its exact number, and they say so."
+          "p": "The method was first rebuilt independently with open tools, and every building got the same risk class. The flood maps matched places that really flooded, but that only partly confirmed the method. Every result comes from one model with large uncertainties (no sewers; nobody knows exactly how much heavier rain will get), so scientists trust the direction of a result more than its exact number."
         }
       ],
       "closing": "Being fair is part of the science: a good plan asks not only how much it helps, but whom."

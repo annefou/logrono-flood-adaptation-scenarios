@@ -8,6 +8,15 @@ This repository is the shared analysis behind three findings. It has no FORRT ch
 |---|---|---|---|
 | 08 | Research Synthesis | <https://w3id.org/sciencelive/np/RALq-EHWcx22c8cqC7G1E94H95CT9Upq7f3ZqbvslVuog> | 2026-10-11 |
 
+## AI plain-language summaries of the synthesis
+
+Retellings of the synthesis for two audiences, signed by the AI agent identity (`claude-ai-agent`), written from `nanopubs/audience.json` by `scripts/publish_audience_summaries.py`. They feed the "For citizens" / "For schools" tabs of the story page.
+
+| Audience | URI | Published |
+|---|---|---|
+| General public | <https://w3id.org/np/RACDnq5lJ307TWOLMx1qjzANsc47Kbgjkf3Sh7STlGjPQ> | 2026-10-11 |
+| Secondary school (ages 13–16) | <https://w3id.org/np/RApNOm7iJ8fZrFH33FTIyMHwUwlpHmR4onxWghO6KCcn4> | 2026-10-11 |
+
 ## Sources of the synthesis — the three finding chains
 
 | Finding | Repository | Replication Outcome | CiTO Citation |

@@ -99,6 +99,8 @@ def apply_figure_spec(draft, spec):
         draft["_notes"].append("figures taken from the committed figure spec")
     if spec.get("hero"):
         draft["_notes"] = [n for n in draft["_notes"] if "no hero" not in n]
+    if spec.get("headline"):
+        draft["headline"] = spec["headline"]
     if spec.get("framing"):
         draft["framing"] = spec["framing"]
     return draft
