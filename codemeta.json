@@ -8,8 +8,12 @@
   "dateModified": "2026-10-11",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/annefou/logrono-flood-adaptation-scenarios",
-  "identifier": "{{ZENODO_DOI}}",
-  "@id": "{{ZENODO_DOI}}",
+  "identifier": [
+    "https://doi.org/10.5281/zenodo.23298912",
+    "https://doi.org/10.5281/zenodo.23298913",
+    "swh:1:rev:b3abe71f468ea7a085c006aadec54eb1d3881643;origin=https://github.com/annefou/logrono-flood-adaptation-scenarios"
+  ],
+  "@id": "https://doi.org/10.5281/zenodo.23298912",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "Python",

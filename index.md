@@ -35,6 +35,6 @@ pixi run snakemake --cores 1
 
 ## Citation
 
-Cite this analysis via [`CITATION.cff`](CITATION.cff) → DOI [{{ZENODO_DOI}}]({{ZENODO_DOI}}), and the method paper [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026).
+Cite this analysis via [`CITATION.cff`](CITATION.cff) → DOI [10.5281/zenodo.23298912](https://doi.org/10.5281/zenodo.23298912), and the method paper [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026).
 
 Climate DT: *this data is created based on data of the European Union, using the Destination Earth Platform, but has been modified by Anne Fouilloux.*

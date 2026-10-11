@@ -4,7 +4,7 @@
 [![Jupyter Book](https://github.com/annefou/logrono-flood-adaptation-scenarios/actions/workflows/jupyter-book.yml/badge.svg)](https://annefou.github.io/logrono-flood-adaptation-scenarios/)
 [![Docker](https://github.com/annefou/logrono-flood-adaptation-scenarios/actions/workflows/docker.yml/badge.svg)](https://github.com/annefou/logrono-flood-adaptation-scenarios/pkgs/container/logrono-flood-adaptation-scenarios)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/{{ZENODO_DOI}}.svg)]({{ZENODO_DOI}})
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23298912.svg)](https://doi.org/10.5281/zenodo.23298912)
 [![FAIR4RS](https://img.shields.io/badge/FAIR4RS-conformant-brightgreen)](docs/fair4rs-checklist.md)
 [![FORRT](https://img.shields.io/badge/FORRT-analysis-blue)](https://forrt.org/)
 [![Science Live](https://img.shields.io/badge/Science%20Live-nanopub%20chain-purple)](nanopubs/PUBLISHED.md)
@@ -69,7 +69,7 @@ Framework: Vogelbacher, von Szombathely, Lennartz, Poschlod, Sillmann (2026). Fl
 
 ## Citation
 
-Cite this analysis via [`CITATION.cff`](CITATION.cff) → DOI [{{ZENODO_DOI}}]({{ZENODO_DOI}}), and the method paper [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026).
+Cite this analysis via [`CITATION.cff`](CITATION.cff) → DOI [10.5281/zenodo.23298912](https://doi.org/10.5281/zenodo.23298912), and the method paper [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026).
 
 ## Built from a template
 
