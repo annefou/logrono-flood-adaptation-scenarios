@@ -139,7 +139,8 @@ pub = inventory.pivot(index="rp", columns="climate", values="published_mm")
 proj = pd.read_csv(RESULTS / "climatedt_projection_change.csv")
 proj = proj[proj["domain"] == "La Rioja"]
 story = pd.read_csv(RESULTS / "storyline_change.csv")
-story = story[(story["climate"] == "Tplus2.0K") & (story["duration_h"] == 1)]
+story = story[(story["climate"] == "Tplus2.0K") & (story["duration_h"] == 1)
+              & (story.get("domain", "La Rioja") == "La Rioja")]
 
 fig, ax = plt.subplots(figsize=(8.5, 4.6))
 for q, ls in (("CC_Q50", "-"), ("CC_Q90", "--")):

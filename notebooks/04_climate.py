@@ -154,6 +154,49 @@ match.to_csv(RESULTS / "cordex_match.csv", index=False)
 print(match.head(6).round(3).to_string(index=False))
 
 # %% [markdown]
+# ## HEALPix cells on the sphere and on WGS84
+#
+# The Climate DT's HEALPix grid is defined on a sphere, and Polytope's polygon feature
+# keeps the cells whose spherical centre lies inside La Rioja. On the WGS84 ellipsoid
+# (authalic latitude, healpix-geo) the same cell index lies up to 0.128° (~14 km) further
+# north, so border cells can be inside on one convention and outside on the other. All
+# cells around the region are listed with healpix-geo (NESTED), at the projections' level
+# 10 and the storylines' level 9; the sphere set must equal the delivered cells. The
+# changes in §2–3 are then also computed over the cells inside on **both** conventions —
+# reported, not used to replace the delivered domain. Cells inside only on WGS84 were not
+# retrieved.
+
+# %%
+import healpix_domain as hd  # noqa: E402
+
+MEMBERSHIP = {depth: hd.membership(climatedt.region_polygon(), depth) for depth in (10, 9)}
+member_rows = []
+for depth, m in MEMBERSHIP.items():
+    member_rows.append({"healpix_level": depth, "inside_sphere": int(m["in_sphere"].sum()),
+                        "inside_both": int((m["in_sphere"] & m["in_wgs84"]).sum()),
+                        "leaving_on_wgs84": int((m["in_sphere"] & ~m["in_wgs84"]).sum()),
+                        "entering_on_wgs84": int((~m["in_sphere"] & m["in_wgs84"]).sum()),
+                        "max_latitude_shift_deg": float((m["lat_wgs84"] - m["lat_sphere"]).abs().max())})
+membership_summary = pd.DataFrame(member_rows)
+membership_summary.to_csv(RESULTS / "healpix_membership.csv", index=False)
+print(membership_summary.round(3).to_string(index=False))
+
+
+def inside_both(lat: np.ndarray, lon: np.ndarray, depth: int) -> np.ndarray:
+    """For delivered cells (spherical centres): inside La Rioja on both conventions."""
+    m = MEMBERSHIP[depth].set_index("cell_id")
+    ids = hd.match_delivered(m, lat, hd.wrap(lon), depth)
+    assert set(ids) == set(m.index[m["in_sphere"]]), "delivered cells differ from the sphere membership"
+    return (m.loc[ids, "in_sphere"] & m.loc[ids, "in_wgs84"]).to_numpy()
+
+
+def wgs84_centres(lat: np.ndarray, lon: np.ndarray, depth: int) -> tuple[np.ndarray, np.ndarray]:
+    m = MEMBERSHIP[depth].set_index("cell_id")
+    ids = hd.match_delivered(m, lat, hd.wrap(lon), depth)
+    return m.loc[ids, "lat_wgs84"].to_numpy(), m.loc[ids, "lon_wgs84"].to_numpy()
+
+
+# %% [markdown]
 # ## 2. Climate DT projections: 1–6 h return levels over La Rioja
 #
 # Hourly precipitation (`avg_tprate` × 3600 = mm per hour) on HEALPix level 10, clipped
@@ -217,8 +260,12 @@ if HAVE_CLIMATEDT:
         for window, spec in climatedt.WINDOWS.items():
             y0, y1 = spec["years"]
             _, am[window], sample = annual_maxima(monthly_files(f"proj_{model}_{window}_{{ym}}.nc", range(y0, y1 + 1)))
-        lat, lon = sample["latitude"].values, sample["longitude"].values
-        domains = {"La Rioja": np.ones(lat.size, bool), "within 25 km of Logroño": distance_km(lat, lon, LOGRONO) <= 25}
+        lat, lon = sample["latitude"].values, hd.wrap(sample["longitude"].values)
+        lat_e, lon_e = wgs84_centres(lat, lon, 10)
+        domains = {"La Rioja": np.ones(lat.size, bool),
+                   "La Rioja, inside on sphere and WGS84": inside_both(lat, lon, 10),
+                   "within 25 km of Logroño": distance_km(lat, lon, LOGRONO) <= 25,
+                   "within 25 km of Logroño (WGS84 centres)": distance_km(lat_e, lon_e, LOGRONO) <= 25}
         for dname, cells in domains.items():
             for d in climatedt.DURATIONS_H:
                 rows.append(change_with_ci(am["hist"][d], am["ssp370"][d], cells).assign(
@@ -268,21 +315,24 @@ if HAVE_CLIMATEDT:
             _, am, sample = annual_maxima(monthly_files(f"story_{climate}_m{member}_{{ym}}.nc", STORY_YEARS))
             per_member.append(am)
         story_am[climate] = {d: np.concatenate([m[d] for m in per_member]) for d in climatedt.DURATIONS_H}
-    all_cells = np.ones(sample.sizes["cell"], bool)
+    story_domains = {"La Rioja": np.ones(sample.sizes["cell"], bool),
+                     "La Rioja, inside on sphere and WGS84": inside_both(sample["latitude"].values,
+                                                                       sample["longitude"].values, 9)}
     story_rows = []
-    for climate in ("cont", "Tplus2.0K"):
-        for d in climatedt.DURATIONS_H:
-            story_rows.append(change_with_ci(story_am["hist"][d], story_am[climate][d], all_cells).assign(
-                climate=climate, against="hist", duration_h=d, n_cells=int(all_cells.sum())))
+    for dname, cells in story_domains.items():
+        for climate in ("cont", "Tplus2.0K"):
+            for d in climatedt.DURATIONS_H:
+                story_rows.append(change_with_ci(story_am["hist"][d], story_am[climate][d], cells).assign(
+                    climate=climate, against="hist", duration_h=d, domain=dname, n_cells=int(cells.sum())))
     storyline_change = pd.concat(story_rows, ignore_index=True)
     storyline_change["rp"] = storyline_change["rp"].astype(float)
     storyline_change = storyline_change[storyline_change["rp"] <= 10]
     storyline_change.to_csv(RESULTS / "storyline_change.csv", index=False)
-    print(storyline_change.pivot_table(index=["climate", "duration_h"], columns="rp", values="change").round(3).to_string())
+    print(storyline_change.pivot_table(index=["domain", "climate", "duration_h"], columns="rp", values="change").round(3).to_string())
 else:
     storyline_change = pd.read_csv(RESULTS / "storyline_change.csv")
     print(COMMITTED_NOTE)
-    print(storyline_change.pivot_table(index=["climate", "duration_h"], columns="rp", values="change").round(3).to_string())
+    print(storyline_change.pivot_table(index=["domain", "climate", "duration_h"], columns="rp", values="change").round(3).to_string())
 
 # %% [markdown]
 # **The four storms.** For each storm, the regional maximum (over La Rioja's cells) of the

@@ -43,6 +43,7 @@ rasterio = "*"             # REACHOUT flood-depth GeoTIFFs
 netcdf4 = "*"              # intermediate arrays (NetCDF, never .npz — DOMAIN.md)
 contextily = "*"           # basemap tiles for the map figure (context only)
 xyzservices = "*"          # tile provider definitions (contextily dependency, used directly)
+healpix-geo = "*"          # Climate DT cells on sphere vs WGS84 (NESTED; DOMAIN.md)
 # --- further examples ---
 # Examples (uncomment as needed):
 # statsmodels = "*"          # GLM/GLMM regression

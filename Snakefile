@@ -77,6 +77,7 @@ rule climate:
     output:
         f"{RESULTS}/cordex_match.csv",
         f"{RESULTS}/cordex_factors.csv",
+        f"{RESULTS}/healpix_membership.csv",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 04_climate.py"
 
