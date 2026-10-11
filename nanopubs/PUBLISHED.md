@@ -21,6 +21,16 @@ Retellings of the synthesis for two audiences, signed by the AI agent identity (
 
 These retell the four-chain synthesis and supersede (`npx:supersedes`, same agent key) the earlier summaries of the three-chain synthesis: general public <https://w3id.org/np/RACDnq5lJ307TWOLMx1qjzANsc47Kbgjkf3Sh7STlGjPQ>, school <https://w3id.org/np/RApNOm7iJ8fZrFH33FTIyMHwUwlpHmR4onxWghO6KCcn4>.
 
+## Story
+
+The Science Live story of the four-chain synthesis (headline, framing, hero map, one figure per finding, the two summaries), built from `nanopubs/story-draft.json` and published by `scripts/publish_story.py`. Attributed to the author; signed by the `claude-ai-agent` key, so later versions can supersede it.
+
+| | URI | Published |
+|---|---|---|
+| Story | <https://w3id.org/np/RAdvJRAT2-VMBjq-rSlRnpr1UB5vsSITkxWwTl2LKtnRE> | 2026-10-11 |
+
+Story page: <https://platform.sciencelive4all.org/np/story?uri=https://w3id.org/np/RAdvJRAT2-VMBjq-rSlRnpr1UB5vsSITkxWwTl2LKtnRE>
+
 ## Sources of the synthesis — the four finding chains
 
 | Finding | Repository | Replication Outcome | CiTO Citation |
