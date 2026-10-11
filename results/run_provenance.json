@@ -1,0 +1,51 @@
+{
+  "building-climate-risk": "0.2.1",
+  "python": "3.12.13",
+  "geopandas": "1.2.0",
+  "shapely": "2.2.0",
+  "spec": {
+    "vulnerability": {
+      "sensitivity": {
+        "columns": [
+          "C",
+          "ES"
+        ],
+        "weights": [
+          0.3,
+          0.7
+        ]
+      },
+      "coping": {
+        "columns": [
+          "WR",
+          "EDQ"
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ]
+      },
+      "svi_weights": [
+        0.5,
+        0.5
+      ],
+      "threshold": 0.25,
+      "exponent": 2.0
+    },
+    "risks": {
+      "PFRWB": {
+        "exposure": "R_G",
+        "hazard": "HWB"
+      },
+      "PFRMA": {
+        "exposure": "R",
+        "hazard": "HMA"
+      }
+    },
+    "classes": {
+      "iterations": 3
+    }
+  },
+  "hotspot_classes": ">= 3",
+  "maps": 82
+}

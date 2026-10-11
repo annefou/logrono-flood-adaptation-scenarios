@@ -452,6 +452,62 @@ print(imp[imp["rp"] == 100].pivot_table(index="place", columns=["land_cover", "c
                                          values="flooded_share_20m").round(3).to_string())
 
 # %% [markdown]
+# **Water on and around each place, by land cover.** The flooded share alone cannot tell
+# a flooded road from a filled pond beside it. On the native grid (present climate, RP100),
+# per place: mean depth within 5 m of the place's geometry, and the change of stored water
+# 20–150 m away, for each land cover against `NBSplanned` (the planned measures without
+# the extra ponds). SaferRAIN's fill-and-spill fills terrain hollows completely, so large
+# depths here are hollows in the terrain model, not realistic flood depths.
+
+# %%
+import rasterio  # noqa: E402
+import rasterio.features  # noqa: E402
+import rasterio.windows  # noqa: E402
+
+ARCHIVE = REPLICATION / "data/raw/PluvialFloodMap_Logrono.zip"
+LAND_COVERS_ORDER = ["Baseline", "NBSplanned", "NBSplanned_plus", "Allgreen"]
+
+
+def window_bounds(geom_25830, outer: float = 150.0) -> tuple[float, ...]:
+    """Bounds of the zone snapped to the NBSplanned grid, so every land cover reads the same cells."""
+    zone = gpd.GeoSeries([geom_25830.buffer(outer)], crs=CRS).to_crs("EPSG:32632").iloc[0]
+    with rasterio.open(f"/vsizip/{ARCHIVE}/Logrono/NBSplanned/F_RP100.tif") as src:
+        win = rasterio.windows.from_bounds(*zone.bounds, transform=src.transform).round_offsets().round_lengths()
+        win = win.intersection(rasterio.windows.Window(0, 0, src.width, src.height))  # long roads leave the grid
+        return rasterio.windows.bounds(win, src.transform)
+
+
+def depth_around(land_cover: str, bounds: tuple[float, ...]) -> tuple[np.ndarray, rasterio.Affine]:
+    with rasterio.open(f"/vsizip/{ARCHIVE}/Logrono/{land_cover}/F_RP100.tif") as src:
+        w = rasterio.windows.from_bounds(*bounds, transform=src.transform)
+        # nearest cell, not floor: offsets on the larger grid land a hair below whole numbers
+        win = rasterio.windows.Window(round(w.col_off), round(w.row_off), round(w.width), round(w.height))
+        raw = src.read(1, window=win)
+        return np.where(raw == src.nodata, np.nan, np.nan_to_num(raw, nan=0.0)), src.window_transform(win)
+
+
+def mask_of(geom_25830, shape, transform) -> np.ndarray:
+    g = gpd.GeoSeries([geom_25830], crs=CRS).to_crs("EPSG:32632").iloc[0]
+    return rasterio.features.geometry_mask([g], shape, transform, invert=True)
+
+
+local = []
+for place, geom in zip(places["place"], places.geometry):
+    bounds = window_bounds(geom)
+    ref, tf = depth_around("NBSplanned", bounds)
+    near = mask_of(geom.buffer(5.0), ref.shape, tf)
+    ring = mask_of(geom.buffer(150.0).difference(geom.buffer(20.0)), ref.shape, tf)
+    for lc in LAND_COVERS_ORDER:
+        d, tf_lc = depth_around(lc, bounds)
+        assert d.shape == ref.shape and tf_lc.almost_equals(tf)
+        local.append({"place": place, "land_cover": lc, "mean_depth_5m": float(np.nanmean(d[near])),
+                      "cells_ge30_5m": int((d[near] >= 0.3).sum()),
+                      "volume_change_20_150m_m3_vs_NBSplanned": float(np.nansum((d - ref)[ring]) * 4.0)})
+local = pd.DataFrame(local)
+local.to_csv(RESULTS / "impact_places_local_depth.csv", index=False)
+print(local.pivot_table(index="place", columns="land_cover", values="mean_depth_5m")[LAND_COVERS_ORDER].round(2).to_string())
+
+# %% [markdown]
 # ## Provenance
 
 # %%

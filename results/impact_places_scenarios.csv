@@ -1,0 +1,1067 @@
+place,zone_in_domain,flooded_share_20m,land_cover,climate,rp
+"calle Clavijo, bajo la N-111",False,0.284604472589265,Baseline,present,2
+calle Clavijo,True,0.02060014306981842,Baseline,present,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Baseline,present,2
+circunvalación LO-20,False,0.03714132048114234,Baseline,present,2
+calle Ebro,True,0.000671636201536968,Baseline,present,2
+avenida Colón,True,0.0011950585853829946,Baseline,present,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.03778016684358229,Baseline,present,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.001761743162710403,Baseline,present,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04091575973339981,Baseline,present,2
+calle San Gregorio,True,0.34631454298304915,Baseline,present,2
+Paseo del Espolón,True,0.0,Baseline,present,2
+rotonda de club Deportivo,True,0.01369633321737294,Baseline,present,2
+avenida de Burgos,True,0.0010415348735568792,Baseline,present,2
+"calle Clavijo, bajo la N-111",False,0.3078739749896713,Baseline,present,5
+calle Clavijo,True,0.09580967254853093,Baseline,present,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Baseline,present,5
+circunvalación LO-20,False,0.043603838897931825,Baseline,present,5
+calle Ebro,True,0.009063027684251077,Baseline,present,5
+avenida Colón,True,0.004565388578648456,Baseline,present,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.056611766599412916,Baseline,present,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.004404363912343372,Baseline,present,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04902038038565524,Baseline,present,5
+calle San Gregorio,True,0.3466209662320102,Baseline,present,5
+Paseo del Espolón,True,0.0,Baseline,present,5
+rotonda de club Deportivo,True,0.01369633321737294,Baseline,present,5
+avenida de Burgos,True,0.002466522627090012,Baseline,present,5
+"calle Clavijo, bajo la N-111",False,0.3157220647957738,Baseline,present,10
+calle Clavijo,True,0.09580967254853093,Baseline,present,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Baseline,present,10
+circunvalación LO-20,False,0.046680603959591005,Baseline,present,10
+calle Ebro,True,0.009708539275226911,Baseline,present,10
+avenida Colón,True,0.004743426909262337,Baseline,present,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963400604,Baseline,present,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.007046985991352913,Baseline,present,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.054804421498197364,Baseline,present,10
+calle San Gregorio,True,0.34662096643337553,Baseline,present,10
+Paseo del Espolón,True,0.0,Baseline,present,10
+rotonda de club Deportivo,True,0.01369633321737294,Baseline,present,10
+avenida de Burgos,True,0.0034939815814609212,Baseline,present,10
+"calle Clavijo, bajo la N-111",False,0.32487816856596374,Baseline,present,25
+calle Clavijo,True,0.09613001683072644,Baseline,present,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Baseline,present,25
+circunvalación LO-20,False,0.04874086944522023,Baseline,present,25
+calle Ebro,True,0.015391805316501715,Baseline,present,25
+avenida Colón,True,0.004867449699308754,Baseline,present,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05869575971803302,Baseline,present,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011157733766634717,Baseline,present,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05983659202941587,Baseline,present,25
+calle San Gregorio,True,0.34662096643337553,Baseline,present,25
+Paseo del Espolón,True,0.0,Baseline,present,25
+rotonda de club Deportivo,True,0.01369633321737294,Baseline,present,25
+avenida de Burgos,True,0.005299000095686377,Baseline,present,25
+"calle Clavijo, bajo la N-111",False,0.33403427277042397,Baseline,present,50
+calle Clavijo,True,0.09613001683072644,Baseline,present,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0030854067662418514,Baseline,present,50
+circunvalación LO-20,False,0.04989453924956925,Baseline,present,50
+calle Ebro,True,0.024453785964968736,Baseline,present,50
+avenida Colón,True,0.004867449699308754,Baseline,present,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.059817909855283125,Baseline,present,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011891798791524648,Baseline,present,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06124496568832206,Baseline,present,50
+calle San Gregorio,True,0.3541024775587012,Baseline,present,50
+Paseo del Espolón,True,0.0,Baseline,present,50
+rotonda de club Deportivo,True,0.01369633321737294,Baseline,present,50
+avenida de Burgos,True,0.005695240471900478,Baseline,present,50
+"calle Clavijo, bajo la N-111",False,0.343190376576495,Baseline,present,100
+calle Clavijo,True,0.09656654556634887,Baseline,present,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942052127,Baseline,present,100
+circunvalación LO-20,False,0.05129723038304167,Baseline,present,100
+calle Ebro,True,0.04586689762754708,Baseline,present,100
+avenida Colón,True,0.004867449699308754,Baseline,present,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.060940059943707575,Baseline,present,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.012919480435116303,Baseline,present,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276642269,Baseline,present,100
+calle San Gregorio,True,0.3541024775587012,Baseline,present,100
+Paseo del Espolón,True,0.0,Baseline,present,100
+rotonda de club Deportivo,True,0.01369633321737294,Baseline,present,100
+avenida de Burgos,True,0.007770256851974542,Baseline,present,100
+"calle Clavijo, bajo la N-111",False,0.362810600980058,Baseline,present,200
+calle Clavijo,True,0.09716575714350431,Baseline,present,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.02591739355544439,Baseline,present,200
+circunvalación LO-20,False,0.05299835978991035,Baseline,present,200
+calle Ebro,True,0.05190916335019623,Baseline,present,200
+avenida Colón,True,0.0050455979404654475,Baseline,present,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751650157,Baseline,present,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.016002544560630976,Baseline,present,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07383698769457128,Baseline,present,200
+calle San Gregorio,True,0.3554878720856521,Baseline,present,200
+Paseo del Espolón,True,0.0,Baseline,present,200
+rotonda de club Deportivo,True,0.01369633321737294,Baseline,present,200
+avenida de Burgos,True,0.00922385609956737,Baseline,present,200
+"calle Clavijo, bajo la N-111",False,0.30394993250384794,Baseline,CC_Q50,2
+calle Clavijo,True,0.03271320646013682,Baseline,CC_Q50,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Baseline,CC_Q50,2
+circunvalación LO-20,False,0.03787109296221188,Baseline,CC_Q50,2
+calle Ebro,True,0.0006716362020288386,Baseline,CC_Q50,2
+avenida Colón,True,0.004565388579575662,Baseline,CC_Q50,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.04115136425663085,Baseline,CC_Q50,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0017617431628344994,Baseline,CC_Q50,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04091575973573996,Baseline,CC_Q50,2
+calle San Gregorio,True,0.34662096628365924,Baseline,CC_Q50,2
+Paseo del Espolón,True,0.0,Baseline,CC_Q50,2
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q50,2
+avenida de Burgos,True,0.0010948609524423598,Baseline,CC_Q50,2
+"calle Clavijo, bajo la N-111",False,0.30918198915163264,Baseline,CC_Q50,5
+calle Clavijo,True,0.09580967254994979,Baseline,CC_Q50,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Baseline,CC_Q50,5
+circunvalación LO-20,False,0.04584303264489366,Baseline,CC_Q50,5
+calle Ebro,True,0.009708539275263647,Baseline,CC_Q50,5
+avenida Colón,True,0.004565388579575662,Baseline,CC_Q50,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.056772073674036305,Baseline,CC_Q50,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0044043639122390175,Baseline,CC_Q50,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05131081378353956,Baseline,CC_Q50,5
+calle San Gregorio,True,0.34662096648438084,Baseline,CC_Q50,5
+Paseo del Espolón,True,0.0,Baseline,CC_Q50,5
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q50,5
+avenida de Burgos,True,0.00258847821512534,Baseline,CC_Q50,5
+"calle Clavijo, bajo la N-111",False,0.3157220648022443,Baseline,CC_Q50,10
+calle Clavijo,True,0.09580967254994979,Baseline,CC_Q50,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Baseline,CC_Q50,10
+circunvalación LO-20,False,0.047856791241285924,Baseline,CC_Q50,10
+calle Ebro,True,0.012837534642675709,Baseline,CC_Q50,10
+avenida Colón,True,0.004743426910163405,Baseline,CC_Q50,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963573767,Baseline,CC_Q50,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.00704698599138725,Baseline,CC_Q50,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.0562127941510442,Baseline,CC_Q50,10
+calle San Gregorio,True,0.34662096648438084,Baseline,CC_Q50,10
+Paseo del Espolón,True,0.0,Baseline,CC_Q50,10
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q50,10
+avenida de Burgos,True,0.0043542023606126315,Baseline,CC_Q50,10
+"calle Clavijo, bajo la N-111",False,0.3340342727797619,Baseline,CC_Q50,25
+calle Clavijo,True,0.09613001683219703,Baseline,CC_Q50,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0030854067667169674,Baseline,CC_Q50,25
+circunvalación LO-20,False,0.04987342482194988,Baseline,CC_Q50,25
+calle Ebro,True,0.024453785969806092,Baseline,CC_Q50,25
+avenida Colón,True,0.004867449700194369,Baseline,CC_Q50,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05981790985736616,Baseline,CC_Q50,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011891798791512866,Baseline,CC_Q50,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.061244965687994875,Baseline,CC_Q50,25
+calle San Gregorio,True,0.35410247760857494,Baseline,CC_Q50,25
+Paseo del Espolón,True,0.0,Baseline,CC_Q50,25
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q50,25
+avenida de Burgos,True,0.005641914301604489,Baseline,CC_Q50,25
+"calle Clavijo, bajo la N-111",False,0.34319037658607093,Baseline,CC_Q50,50
+calle Clavijo,True,0.09656654556777963,Baseline,CC_Q50,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942578779,Baseline,CC_Q50,50
+circunvalación LO-20,False,0.051191338223917714,Baseline,CC_Q50,50
+calle Ebro,True,0.04586689763475174,Baseline,CC_Q50,50
+avenida Colón,True,0.004867449700194369,Baseline,CC_Q50,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.0609400599458198,Baseline,CC_Q50,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.012919480435027386,Baseline,CC_Q50,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276512214,Baseline,CC_Q50,50
+calle San Gregorio,True,0.35410247760857494,Baseline,CC_Q50,50
+Paseo del Espolón,True,0.0,Baseline,CC_Q50,50
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q50,50
+avenida de Burgos,True,0.00777025685194402,Baseline,CC_Q50,50
+"calle Clavijo, bajo la N-111",False,0.3628106009938197,Baseline,CC_Q50,100
+calle Clavijo,True,0.0971657571450893,Baseline,CC_Q50,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.025917393554217856,Baseline,CC_Q50,100
+circunvalación LO-20,False,0.053225576714471735,Baseline,CC_Q50,100
+calle Ebro,True,0.05190916335648492,Baseline,CC_Q50,100
+avenida Colón,True,0.0050455979412991625,Baseline,CC_Q50,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751912678,Baseline,CC_Q50,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.016002544560928204,Baseline,CC_Q50,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07430644659781732,Baseline,CC_Q50,100
+calle San Gregorio,True,0.355487872136664,Baseline,CC_Q50,100
+Paseo del Espolón,True,0.0,Baseline,CC_Q50,100
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q50,100
+avenida de Burgos,True,0.009328775232274263,Baseline,CC_Q50,100
+"calle Clavijo, bajo la N-111",False,0.36542663269528836,Baseline,CC_Q50,200
+calle Clavijo,True,0.09751697593336371,Baseline,CC_Q50,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534120038,Baseline,CC_Q50,200
+circunvalación LO-20,False,0.054286855879399507,Baseline,CC_Q50,200
+calle Ebro,True,0.07060303627151847,Baseline,CC_Q50,200
+avenida Colón,True,0.0050455979412991625,Baseline,CC_Q50,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06366528208044027,Baseline,CC_Q50,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01849835357652779,Baseline,CC_Q50,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07704706532159733,Baseline,CC_Q50,200
+calle San Gregorio,True,0.355487872136664,Baseline,CC_Q50,200
+Paseo del Espolón,True,0.0,Baseline,CC_Q50,200
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q50,200
+avenida de Burgos,True,0.011555675118654013,Baseline,CC_Q50,200
+"calle Clavijo, bajo la N-111",False,0.30394993250604324,Baseline,CC_Q90,2
+calle Clavijo,True,0.06654563511587207,Baseline,CC_Q90,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Baseline,CC_Q90,2
+circunvalación LO-20,False,0.04033635859947514,Baseline,CC_Q90,2
+calle Ebro,True,0.0006716362020288386,Baseline,CC_Q90,2
+avenida Colón,True,0.004565388579575662,Baseline,CC_Q90,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05613084537957365,Baseline,CC_Q90,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0029362468545875886,Baseline,CC_Q90,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.045506613680030894,Baseline,CC_Q90,2
+calle San Gregorio,True,0.34662096628365924,Baseline,CC_Q90,2
+Paseo del Espolón,True,0.0,Baseline,CC_Q90,2
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q90,2
+avenida de Burgos,True,0.0015605102463011763,Baseline,CC_Q90,2
+"calle Clavijo, bajo la N-111",False,0.3157220648022443,Baseline,CC_Q90,5
+calle Clavijo,True,0.09580967254994979,Baseline,CC_Q90,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Baseline,CC_Q90,5
+circunvalación LO-20,False,0.04713781949786874,Baseline,CC_Q90,5
+calle Ebro,True,0.012837534642675709,Baseline,CC_Q90,5
+avenida Colón,True,0.004743426910163405,Baseline,CC_Q90,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963573767,Baseline,CC_Q90,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.00704698599138725,Baseline,CC_Q90,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.055273879509777066,Baseline,CC_Q90,5
+calle San Gregorio,True,0.34662096648438084,Baseline,CC_Q90,5
+Paseo del Espolón,True,0.0,Baseline,CC_Q90,5
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q90,5
+avenida de Burgos,True,0.0038135660763142106,Baseline,CC_Q90,5
+"calle Clavijo, bajo la N-111",False,0.32487816857099083,Baseline,CC_Q90,10
+calle Clavijo,True,0.09613001683219703,Baseline,CC_Q90,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Baseline,CC_Q90,10
+circunvalación LO-20,False,0.04923252983362576,Baseline,CC_Q90,10
+calle Ebro,True,0.015391805317900775,Baseline,CC_Q90,10
+avenida Colón,True,0.004867449700194369,Baseline,CC_Q90,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.058695759719587744,Baseline,CC_Q90,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011157733766771405,Baseline,CC_Q90,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06030604963309039,Baseline,CC_Q90,10
+calle San Gregorio,True,0.34662096648438084,Baseline,CC_Q90,10
+Paseo del Espolón,True,0.0,Baseline,CC_Q90,10
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q90,10
+avenida de Burgos,True,0.005299000095668123,Baseline,CC_Q90,10
+"calle Clavijo, bajo la N-111",False,0.34319037658607093,Baseline,CC_Q90,25
+calle Clavijo,True,0.09656654556777963,Baseline,CC_Q90,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942578779,Baseline,CC_Q90,25
+circunvalación LO-20,False,0.051299739751539924,Baseline,CC_Q90,25
+calle Ebro,True,0.04586689763475174,Baseline,CC_Q90,25
+avenida Colón,True,0.004867449700194369,Baseline,CC_Q90,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.0609400599458198,Baseline,CC_Q90,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.012919480435027386,Baseline,CC_Q90,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276512214,Baseline,CC_Q90,25
+calle San Gregorio,True,0.35410247760857494,Baseline,CC_Q90,25
+Paseo del Espolón,True,0.0,Baseline,CC_Q90,25
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q90,25
+avenida de Burgos,True,0.00777025685194402,Baseline,CC_Q90,25
+"calle Clavijo, bajo la N-111",False,0.3628106009938197,Baseline,CC_Q90,50
+calle Clavijo,True,0.0971657571450893,Baseline,CC_Q90,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.025917393554217856,Baseline,CC_Q90,50
+circunvalación LO-20,False,0.05340792407405701,Baseline,CC_Q90,50
+calle Ebro,True,0.05190916335648492,Baseline,CC_Q90,50
+avenida Colón,True,0.0050455979412991625,Baseline,CC_Q90,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751912678,Baseline,CC_Q90,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.016002544560928204,Baseline,CC_Q90,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07516922976553463,Baseline,CC_Q90,50
+calle San Gregorio,True,0.355487872136664,Baseline,CC_Q90,50
+Paseo del Espolón,True,0.0,Baseline,CC_Q90,50
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q90,50
+avenida de Burgos,True,0.00937310982925053,Baseline,CC_Q90,50
+"calle Clavijo, bajo la N-111",False,0.3745827392938614,Baseline,CC_Q90,100
+calle Clavijo,True,0.0975169759332857,Baseline,CC_Q90,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534120038,Baseline,CC_Q90,100
+circunvalación LO-20,False,0.05478210474714086,Baseline,CC_Q90,100
+calle Ebro,True,0.07555267791969558,Baseline,CC_Q90,100
+avenida Colón,True,0.007183376912813818,Baseline,CC_Q90,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.0647874325111071,Baseline,CC_Q90,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.02011329707247713,Baseline,CC_Q90,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.08866093703333491,Baseline,CC_Q90,100
+calle San Gregorio,True,0.355487872136664,Baseline,CC_Q90,100
+Paseo del Espolón,True,0.0,Baseline,CC_Q90,100
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q90,100
+avenida de Burgos,True,0.012865101101542244,Baseline,CC_Q90,100
+"calle Clavijo, bajo la N-111",False,0.38504685856129695,Baseline,CC_Q90,200
+calle Clavijo,True,0.09772790012822084,Baseline,CC_Q90,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534120038,Baseline,CC_Q90,200
+circunvalación LO-20,False,0.05704588403207049,Baseline,CC_Q90,200
+calle Ebro,True,0.07911288671080662,Baseline,CC_Q90,200
+avenida Colón,True,0.008391675735630662,Baseline,CC_Q90,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06606988983246807,Baseline,CC_Q90,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.024664472396245037,Baseline,CC_Q90,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.10209122058863998,Baseline,CC_Q90,200
+calle San Gregorio,True,0.3600106866641969,Baseline,CC_Q90,200
+Paseo del Espolón,True,0.0,Baseline,CC_Q90,200
+rotonda de club Deportivo,True,0.013696333218489577,Baseline,CC_Q90,200
+avenida de Burgos,True,0.01801505866942876,Baseline,CC_Q90,200
+"calle Clavijo, bajo la N-111",False,0.2788411311818238,NBSplanned,present,2
+calle Clavijo,True,0.011350742426883524,NBSplanned,present,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,present,2
+circunvalación LO-20,False,0.03714132048145394,NBSplanned,present,2
+calle Ebro,True,0.0006716362019673548,NBSplanned,present,2
+avenida Colón,True,0.001195058585610061,NBSplanned,present,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.03707382556519843,NBSplanned,present,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.001761743162796018,NBSplanned,present,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04091575973543686,NBSplanned,present,2
+calle San Gregorio,True,0.346314543035483,NBSplanned,present,2
+Paseo del Espolón,True,0.0,NBSplanned,present,2
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,present,2
+avenida de Burgos,True,0.0010415348736208324,NBSplanned,present,2
+"calle Clavijo, bajo la N-111",False,0.30787397500083347,NBSplanned,present,5
+calle Clavijo,True,0.08055357648921677,NBSplanned,present,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,present,5
+circunvalación LO-20,False,0.043529924396189204,NBSplanned,present,5
+calle Ebro,True,0.009063027684002467,NBSplanned,present,5
+avenida Colón,True,0.004565388579565406,NBSplanned,present,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05661176660064683,NBSplanned,present,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.004404363912548095,NBSplanned,present,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04902038038724868,NBSplanned,present,5
+calle San Gregorio,True,0.34662096628396805,NBSplanned,present,5
+Paseo del Espolón,True,0.0,NBSplanned,present,5
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,present,5
+avenida de Burgos,True,0.0024665226267458805,NBSplanned,present,5
+"calle Clavijo, bajo la N-111",False,0.31572206480702325,NBSplanned,present,10
+calle Clavijo,True,0.09580967255102069,NBSplanned,present,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,present,10
+circunvalación LO-20,False,0.04667004577233657,NBSplanned,present,10
+calle Ebro,True,0.009708539275322399,NBSplanned,present,10
+avenida Colón,True,0.0047434269101517,NBSplanned,present,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963525067,NBSplanned,present,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0070469859919889575,NBSplanned,present,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.054804421499115775,NBSplanned,present,10
+calle San Gregorio,True,0.3466209664848125,NBSplanned,present,10
+Paseo del Espolón,True,0.0,NBSplanned,present,10
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,present,10
+avenida de Burgos,True,0.003493981581191322,NBSplanned,present,10
+"calle Clavijo, bajo la N-111",False,0.32487816857823193,NBSplanned,present,25
+calle Clavijo,True,0.09613001683309821,NBSplanned,present,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,present,25
+circunvalación LO-20,False,0.048719753069387826,NBSplanned,present,25
+calle Ebro,True,0.015391805318116663,NBSplanned,present,25
+avenida Colón,True,0.004867449700189887,NBSplanned,present,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05869575971940249,NBSplanned,present,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011157733767471907,NBSplanned,present,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05983659202931595,NBSplanned,present,25
+calle San Gregorio,True,0.3466209664848125,NBSplanned,present,25
+Paseo del Espolón,True,0.0,NBSplanned,present,25
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,present,25
+avenida de Burgos,True,0.00529900009545625,NBSplanned,present,25
+"calle Clavijo, bajo la N-111",False,0.33403427278578424,NBSplanned,present,50
+calle Clavijo,True,0.09613001683309821,NBSplanned,present,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0030854067660417905,NBSplanned,present,50
+circunvalación LO-20,False,0.04987342287370222,NBSplanned,present,50
+calle Ebro,True,0.024453785969948714,NBSplanned,present,50
+avenida Colón,True,0.004867449700189887,NBSplanned,present,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05981790985703154,NBSplanned,present,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011891798792240806,NBSplanned,present,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06124496568869296,NBSplanned,present,50
+calle San Gregorio,True,0.3541024776167465,NBSplanned,present,50
+Paseo del Espolón,True,0.0,NBSplanned,present,50
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,present,50
+avenida de Burgos,True,0.005695240471611063,NBSplanned,present,50
+"calle Clavijo, bajo la N-111",False,0.3431903765909777,NBSplanned,present,100
+calle Clavijo,True,0.09656654556858743,NBSplanned,present,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942642866,NBSplanned,present,100
+circunvalación LO-20,False,0.051276114007157494,NBSplanned,present,100
+calle Ebro,True,0.045866897639797004,NBSplanned,present,100
+avenida Colón,True,0.004867449700189887,NBSplanned,present,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06094005994534845,NBSplanned,present,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01291948043575496,NBSplanned,present,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276564277,NBSplanned,present,100
+calle San Gregorio,True,0.3541024776167465,NBSplanned,present,100
+Paseo del Espolón,True,0.0,NBSplanned,present,100
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,present,100
+avenida de Burgos,True,0.007770256851635449,NBSplanned,present,100
+"calle Clavijo, bajo la N-111",False,0.36281060099702367,NBSplanned,present,200
+calle Clavijo,True,0.09716575714595521,NBSplanned,present,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.025917393554903478,NBSplanned,present,200
+circunvalación LO-20,False,0.052993080695629836,NBSplanned,present,200
+calle Ebro,True,0.05190916335855643,NBSplanned,present,200
+avenida Colón,True,0.005045597941294681,NBSplanned,present,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751844675,NBSplanned,present,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01600254456146261,NBSplanned,present,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07383698769289154,NBSplanned,present,200
+calle San Gregorio,True,0.3554878721448717,NBSplanned,present,200
+Paseo del Espolón,True,0.0,NBSplanned,present,200
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,present,200
+avenida de Burgos,True,0.009223856099113614,NBSplanned,present,200
+"calle Clavijo, bajo la N-111",False,0.29899264281166693,NBSplanned,CC_Q50,2
+calle Clavijo,True,0.019329536271665268,NBSplanned,CC_Q50,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,CC_Q50,2
+circunvalación LO-20,False,0.03787109296228355,NBSplanned,CC_Q50,2
+calle Ebro,True,0.0006716362019673548,NBSplanned,CC_Q50,2
+avenida Colón,True,0.004565388579565406,NBSplanned,CC_Q50,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.04054381073997276,NBSplanned,CC_Q50,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.001761743162796018,NBSplanned,CC_Q50,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04091575973543686,NBSplanned,CC_Q50,2
+calle San Gregorio,True,0.34662096628396805,NBSplanned,CC_Q50,2
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q50,2
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q50,2
+avenida de Burgos,True,0.0010948609524495747,NBSplanned,CC_Q50,2
+"calle Clavijo, bajo la N-111",False,0.3091819891563567,NBSplanned,CC_Q50,5
+calle Clavijo,True,0.09580967255102069,NBSplanned,CC_Q50,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,CC_Q50,5
+circunvalación LO-20,False,0.04580079659373333,NBSplanned,CC_Q50,5
+calle Ebro,True,0.009708539275322399,NBSplanned,CC_Q50,5
+avenida Colón,True,0.004565388579565406,NBSplanned,CC_Q50,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05677207367354258,NBSplanned,CC_Q50,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.004404363912548095,NBSplanned,CC_Q50,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05131081378401512,NBSplanned,CC_Q50,5
+calle San Gregorio,True,0.3466209664848125,NBSplanned,CC_Q50,5
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q50,5
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q50,5
+avenida de Burgos,True,0.0025884782148999333,NBSplanned,CC_Q50,5
+"calle Clavijo, bajo la N-111",False,0.31572206480702325,NBSplanned,CC_Q50,10
+calle Clavijo,True,0.09580967255102069,NBSplanned,CC_Q50,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,CC_Q50,10
+circunvalación LO-20,False,0.0478356748651656,NBSplanned,CC_Q50,10
+calle Ebro,True,0.01283753464238385,NBSplanned,CC_Q50,10
+avenida Colón,True,0.0047434269101517,NBSplanned,CC_Q50,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963525067,NBSplanned,CC_Q50,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0070469859919889575,NBSplanned,CC_Q50,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05621279415192734,NBSplanned,CC_Q50,10
+calle San Gregorio,True,0.3466209664848125,NBSplanned,CC_Q50,10
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q50,10
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q50,10
+avenida de Burgos,True,0.004354202360527879,NBSplanned,CC_Q50,10
+"calle Clavijo, bajo la N-111",False,0.3431903765909777,NBSplanned,CC_Q50,50
+calle Clavijo,True,0.09656654556858743,NBSplanned,CC_Q50,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942642866,NBSplanned,CC_Q50,50
+circunvalación LO-20,False,0.0511702218477135,NBSplanned,CC_Q50,50
+calle Ebro,True,0.045866897639797004,NBSplanned,CC_Q50,50
+avenida Colón,True,0.004867449700189887,NBSplanned,CC_Q50,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06094005994534845,NBSplanned,CC_Q50,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01291948043575496,NBSplanned,CC_Q50,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276564277,NBSplanned,CC_Q50,50
+calle San Gregorio,True,0.3541024776167465,NBSplanned,CC_Q50,50
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q50,50
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q50,50
+avenida de Burgos,True,0.007770256851635449,NBSplanned,CC_Q50,50
+"calle Clavijo, bajo la N-111",False,0.36281060099702367,NBSplanned,CC_Q50,100
+calle Clavijo,True,0.09716575714595521,NBSplanned,CC_Q50,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.025917393554903478,NBSplanned,CC_Q50,100
+circunvalación LO-20,False,0.053220297619853175,NBSplanned,CC_Q50,100
+calle Ebro,True,0.05190916335855643,NBSplanned,CC_Q50,100
+avenida Colón,True,0.005045597941294681,NBSplanned,CC_Q50,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751844675,NBSplanned,CC_Q50,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01600254456146261,NBSplanned,CC_Q50,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07430644659884744,NBSplanned,CC_Q50,100
+calle San Gregorio,True,0.3554878721448717,NBSplanned,CC_Q50,100
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q50,100
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q50,100
+avenida de Burgos,True,0.009328775231985845,NBSplanned,CC_Q50,100
+"calle Clavijo, bajo la N-111",False,0.3654266326975102,NBSplanned,CC_Q50,200
+calle Clavijo,True,0.09751697593420164,NBSplanned,CC_Q50,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534036877,NBSplanned,CC_Q50,200
+circunvalación LO-20,False,0.054286855879361356,NBSplanned,CC_Q50,200
+calle Ebro,True,0.07060303627153097,NBSplanned,CC_Q50,200
+avenida Colón,True,0.005045597941294681,NBSplanned,CC_Q50,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06366528207963988,NBSplanned,CC_Q50,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01849835357726349,NBSplanned,CC_Q50,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.0770470653215912,NBSplanned,CC_Q50,200
+calle San Gregorio,True,0.3554878721448717,NBSplanned,CC_Q50,200
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q50,200
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q50,200
+avenida de Burgos,True,0.011555675118605455,NBSplanned,CC_Q50,200
+"calle Clavijo, bajo la N-111",False,0.3039499325097715,NBSplanned,CC_Q90,2
+calle Clavijo,True,0.03373990117637381,NBSplanned,CC_Q90,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,CC_Q90,2
+circunvalación LO-20,False,0.040336358599461074,NBSplanned,CC_Q90,2
+calle Ebro,True,0.0006716362019673548,NBSplanned,CC_Q90,2
+avenida Colón,True,0.004565388579565406,NBSplanned,CC_Q90,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.056130845378957885,NBSplanned,CC_Q90,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0029362468548002362,NBSplanned,CC_Q90,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04550661367935595,NBSplanned,CC_Q90,2
+calle San Gregorio,True,0.34662096628396805,NBSplanned,CC_Q90,2
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q90,2
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q90,2
+avenida de Burgos,True,0.0015605102459875346,NBSplanned,CC_Q90,2
+"calle Clavijo, bajo la N-111",False,0.31572206480702325,NBSplanned,CC_Q90,5
+calle Clavijo,True,0.09580967255102069,NBSplanned,CC_Q90,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,CC_Q90,5
+circunvalación LO-20,False,0.04712198221646869,NBSplanned,CC_Q90,5
+calle Ebro,True,0.01283753464238385,NBSplanned,CC_Q90,5
+avenida Colón,True,0.0047434269101517,NBSplanned,CC_Q90,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963525067,NBSplanned,CC_Q90,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0070469859919889575,NBSplanned,CC_Q90,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05527387951058779,NBSplanned,CC_Q90,5
+calle San Gregorio,True,0.3466209664848125,NBSplanned,CC_Q90,5
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q90,5
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q90,5
+avenida de Burgos,True,0.0038135660762606753,NBSplanned,CC_Q90,5
+"calle Clavijo, bajo la N-111",False,0.32487816857823193,NBSplanned,CC_Q90,10
+calle Clavijo,True,0.09613001683309821,NBSplanned,CC_Q90,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned,CC_Q90,10
+circunvalación LO-20,False,0.049211413457458254,NBSplanned,CC_Q90,10
+calle Ebro,True,0.015391805318116663,NBSplanned,CC_Q90,10
+avenida Colón,True,0.004867449700189887,NBSplanned,CC_Q90,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05869575971940249,NBSplanned,CC_Q90,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011157733767471907,NBSplanned,CC_Q90,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06030604963365765,NBSplanned,CC_Q90,10
+calle San Gregorio,True,0.3466209664848125,NBSplanned,CC_Q90,10
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q90,10
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q90,10
+avenida de Burgos,True,0.00529900009545625,NBSplanned,CC_Q90,10
+"calle Clavijo, bajo la N-111",False,0.3431903765909777,NBSplanned,CC_Q90,25
+calle Clavijo,True,0.09656654556858743,NBSplanned,CC_Q90,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942642866,NBSplanned,CC_Q90,25
+circunvalación LO-20,False,0.051278623375328805,NBSplanned,CC_Q90,25
+calle Ebro,True,0.045866897639797004,NBSplanned,CC_Q90,25
+avenida Colón,True,0.004867449700189887,NBSplanned,CC_Q90,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06094005994534845,NBSplanned,CC_Q90,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01291948043575496,NBSplanned,CC_Q90,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276564277,NBSplanned,CC_Q90,25
+calle San Gregorio,True,0.3541024776167465,NBSplanned,CC_Q90,25
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q90,25
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q90,25
+avenida de Burgos,True,0.007770256851635449,NBSplanned,CC_Q90,25
+"calle Clavijo, bajo la N-111",False,0.36281060099702367,NBSplanned,CC_Q90,50
+calle Clavijo,True,0.09716575714595521,NBSplanned,CC_Q90,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.025917393554903478,NBSplanned,CC_Q90,50
+circunvalación LO-20,False,0.05340792407413537,NBSplanned,CC_Q90,50
+calle Ebro,True,0.05190916335855643,NBSplanned,CC_Q90,50
+avenida Colón,True,0.005045597941294681,NBSplanned,CC_Q90,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751844675,NBSplanned,CC_Q90,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01600254456146261,NBSplanned,CC_Q90,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07516922976650312,NBSplanned,CC_Q90,50
+calle San Gregorio,True,0.3554878721448717,NBSplanned,CC_Q90,50
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q90,50
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q90,50
+avenida de Burgos,True,0.009373109828955072,NBSplanned,CC_Q90,50
+"calle Clavijo, bajo la N-111",False,0.3745827392947658,NBSplanned,CC_Q90,100
+calle Clavijo,True,0.09751697593411793,NBSplanned,CC_Q90,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534036877,NBSplanned,CC_Q90,100
+circunvalación LO-20,False,0.05478210474715892,NBSplanned,CC_Q90,100
+calle Ebro,True,0.07555267791949719,NBSplanned,CC_Q90,100
+avenida Colón,True,0.0071833769128633075,NBSplanned,CC_Q90,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06478743251014524,NBSplanned,CC_Q90,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.020113297073191448,NBSplanned,CC_Q90,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.08866093703379174,NBSplanned,CC_Q90,100
+calle San Gregorio,True,0.3554878721448717,NBSplanned,CC_Q90,100
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q90,100
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q90,100
+avenida de Burgos,True,0.012865101101675639,NBSplanned,CC_Q90,100
+"calle Clavijo, bajo la N-111",False,0.385046858562174,NBSplanned,CC_Q90,200
+calle Clavijo,True,0.0977279001288028,NBSplanned,CC_Q90,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534036877,NBSplanned,CC_Q90,200
+circunvalación LO-20,False,0.05704588403202818,NBSplanned,CC_Q90,200
+calle Ebro,True,0.07911288671112092,NBSplanned,CC_Q90,200
+avenida Colón,True,0.00839167573566843,NBSplanned,CC_Q90,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06606988983150287,NBSplanned,CC_Q90,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.02466447239670892,NBSplanned,CC_Q90,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.10209122058821939,NBSplanned,CC_Q90,200
+calle San Gregorio,True,0.3600106866708609,NBSplanned,CC_Q90,200
+Paseo del Espolón,True,0.0,NBSplanned,CC_Q90,200
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned,CC_Q90,200
+avenida de Burgos,True,0.018015058669366188,NBSplanned,CC_Q90,200
+"calle Clavijo, bajo la N-111",False,0.2768213794183785,NBSplanned_plus,present,2
+calle Clavijo,True,0.0033325380581022837,NBSplanned_plus,present,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,present,2
+circunvalación LO-20,False,0.03714132048145394,NBSplanned_plus,present,2
+calle Ebro,True,0.0006716362019673548,NBSplanned_plus,present,2
+avenida Colón,True,0.001195058585610061,NBSplanned_plus,present,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.03681213310768257,NBSplanned_plus,present,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.001761743162796018,NBSplanned_plus,present,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04091575973543686,NBSplanned_plus,present,2
+calle San Gregorio,True,0.346314543035483,NBSplanned_plus,present,2
+Paseo del Espolón,True,0.0,NBSplanned_plus,present,2
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,present,2
+avenida de Burgos,True,0.0010415348736208324,NBSplanned_plus,present,2
+"calle Clavijo, bajo la N-111",False,0.30787397500083347,NBSplanned_plus,present,5
+calle Clavijo,True,0.07560398181959443,NBSplanned_plus,present,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,present,5
+circunvalación LO-20,False,0.04297556148090674,NBSplanned_plus,present,5
+calle Ebro,True,0.009063027684002467,NBSplanned_plus,present,5
+avenida Colón,True,0.004565388579565406,NBSplanned_plus,present,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05661176660064683,NBSplanned_plus,present,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.004404363912548095,NBSplanned_plus,present,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04902038038724868,NBSplanned_plus,present,5
+calle San Gregorio,True,0.34662096628396805,NBSplanned_plus,present,5
+Paseo del Espolón,True,0.0,NBSplanned_plus,present,5
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,present,5
+avenida de Burgos,True,0.0024665226267458805,NBSplanned_plus,present,5
+"calle Clavijo, bajo la N-111",False,0.31572206480702325,NBSplanned_plus,present,10
+calle Clavijo,True,0.09164990587739827,NBSplanned_plus,present,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,present,10
+circunvalación LO-20,False,0.05096287438040155,NBSplanned_plus,present,10
+calle Ebro,True,0.009708539275322399,NBSplanned_plus,present,10
+avenida Colón,True,0.0047434269101517,NBSplanned_plus,present,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963525067,NBSplanned_plus,present,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.14079303147908206,NBSplanned_plus,present,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.054804421499115775,NBSplanned_plus,present,10
+calle San Gregorio,True,0.3466209664848125,NBSplanned_plus,present,10
+Paseo del Espolón,True,0.0,NBSplanned_plus,present,10
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,present,10
+avenida de Burgos,True,0.003493981581191322,NBSplanned_plus,present,10
+"calle Clavijo, bajo la N-111",False,0.32487816857823193,NBSplanned_plus,present,25
+calle Clavijo,True,0.0919702501594758,NBSplanned_plus,present,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,present,25
+circunvalación LO-20,False,0.053255345823105274,NBSplanned_plus,present,25
+calle Ebro,True,0.015391805318116663,NBSplanned_plus,present,25
+avenida Colón,True,0.004867449700189887,NBSplanned_plus,present,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05869575971940249,NBSplanned_plus,present,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.15136086064027632,NBSplanned_plus,present,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05983659202931595,NBSplanned_plus,present,25
+calle San Gregorio,True,0.3466209664848125,NBSplanned_plus,present,25
+Paseo del Espolón,True,0.0,NBSplanned_plus,present,25
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,present,25
+avenida de Burgos,True,0.00529900009545625,NBSplanned_plus,present,25
+"calle Clavijo, bajo la N-111",False,0.33403427278578424,NBSplanned_plus,present,50
+calle Clavijo,True,0.0919702501594758,NBSplanned_plus,present,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0030854067660417905,NBSplanned_plus,present,50
+circunvalación LO-20,False,0.05440901562741968,NBSplanned_plus,present,50
+calle Ebro,True,0.024453785969948714,NBSplanned_plus,present,50
+avenida Colón,True,0.004867449700189887,NBSplanned_plus,present,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05981790985703154,NBSplanned_plus,present,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.15209492566504523,NBSplanned_plus,present,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06124496568869296,NBSplanned_plus,present,50
+calle San Gregorio,True,0.3541024776167465,NBSplanned_plus,present,50
+Paseo del Espolón,True,0.0,NBSplanned_plus,present,50
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,present,50
+avenida de Burgos,True,0.005695240471611063,NBSplanned_plus,present,50
+"calle Clavijo, bajo la N-111",False,0.3431903765909777,NBSplanned_plus,present,100
+calle Clavijo,True,0.092406778894965,NBSplanned_plus,present,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942642866,NBSplanned_plus,present,100
+circunvalación LO-20,False,0.05582226577819649,NBSplanned_plus,present,100
+calle Ebro,True,0.045866897639797004,NBSplanned_plus,present,100
+avenida Colón,True,0.004867449700189887,NBSplanned_plus,present,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06094005994534845,NBSplanned_plus,present,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.1531226073085594,NBSplanned_plus,present,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276564277,NBSplanned_plus,present,100
+calle San Gregorio,True,0.3541024776167465,NBSplanned_plus,present,100
+Paseo del Espolón,True,0.0,NBSplanned_plus,present,100
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,present,100
+avenida de Burgos,True,0.007770256851635449,NBSplanned_plus,present,100
+"calle Clavijo, bajo la N-111",False,0.36281060099702367,NBSplanned_plus,present,200
+calle Clavijo,True,0.0930059904723328,NBSplanned_plus,present,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.025917393554903478,NBSplanned_plus,present,200
+circunvalación LO-20,False,0.057582015208727334,NBSplanned_plus,present,200
+calle Ebro,True,0.05190916335855643,NBSplanned_plus,present,200
+avenida Colón,True,0.005045597941294681,NBSplanned_plus,present,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751844675,NBSplanned_plus,present,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.15620567143426697,NBSplanned_plus,present,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07383698769289154,NBSplanned_plus,present,200
+calle San Gregorio,True,0.3554878721448717,NBSplanned_plus,present,200
+Paseo del Espolón,True,0.0,NBSplanned_plus,present,200
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,present,200
+avenida de Burgos,True,0.009223856099113614,NBSplanned_plus,present,200
+"calle Clavijo, bajo la N-111",False,0.29899264281166693,NBSplanned_plus,CC_Q50,2
+calle Clavijo,True,0.014304061151531152,NBSplanned_plus,CC_Q50,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,CC_Q50,2
+circunvalación LO-20,False,0.03786581323006916,NBSplanned_plus,CC_Q50,2
+calle Ebro,True,0.0006716362019673548,NBSplanned_plus,CC_Q50,2
+avenida Colón,True,0.004565388579565406,NBSplanned_plus,CC_Q50,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.03954354642423036,NBSplanned_plus,CC_Q50,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.001761743162796018,NBSplanned_plus,CC_Q50,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04091575973543686,NBSplanned_plus,CC_Q50,2
+calle San Gregorio,True,0.34662096628396805,NBSplanned_plus,CC_Q50,2
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q50,2
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q50,2
+avenida de Burgos,True,0.0010948609524495747,NBSplanned_plus,CC_Q50,2
+"calle Clavijo, bajo la N-111",False,0.3091819891563567,NBSplanned_plus,CC_Q50,5
+calle Clavijo,True,0.09164990587739827,NBSplanned_plus,CC_Q50,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,CC_Q50,5
+circunvalación LO-20,False,0.04917497929021818,NBSplanned_plus,CC_Q50,5
+calle Ebro,True,0.009708539275322399,NBSplanned_plus,CC_Q50,5
+avenida Colón,True,0.004565388579565406,NBSplanned_plus,CC_Q50,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05677207367354258,NBSplanned_plus,CC_Q50,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.11363274351456329,NBSplanned_plus,CC_Q50,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05131081378401512,NBSplanned_plus,CC_Q50,5
+calle San Gregorio,True,0.3466209664848125,NBSplanned_plus,CC_Q50,5
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q50,5
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q50,5
+avenida de Burgos,True,0.0025884782148999333,NBSplanned_plus,CC_Q50,5
+"calle Clavijo, bajo la N-111",False,0.31572206480702325,NBSplanned_plus,CC_Q50,10
+calle Clavijo,True,0.09164990587739827,NBSplanned_plus,CC_Q50,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,CC_Q50,10
+circunvalación LO-20,False,0.052371267618883055,NBSplanned_plus,CC_Q50,10
+calle Ebro,True,0.01283753464238385,NBSplanned_plus,CC_Q50,10
+avenida Colón,True,0.0047434269101517,NBSplanned_plus,CC_Q50,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963525067,NBSplanned_plus,CC_Q50,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.1472501128647933,NBSplanned_plus,CC_Q50,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05621279415192734,NBSplanned_plus,CC_Q50,10
+calle San Gregorio,True,0.3466209664848125,NBSplanned_plus,CC_Q50,10
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q50,10
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q50,10
+avenida de Burgos,True,0.004354202360527879,NBSplanned_plus,CC_Q50,10
+"calle Clavijo, bajo la N-111",False,0.33403427278578424,NBSplanned_plus,CC_Q50,25
+calle Clavijo,True,0.0919702501594758,NBSplanned_plus,CC_Q50,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0030854067660417905,NBSplanned_plus,CC_Q50,25
+circunvalación LO-20,False,0.05438790119949101,NBSplanned_plus,CC_Q50,25
+calle Ebro,True,0.024453785969948714,NBSplanned_plus,CC_Q50,25
+avenida Colón,True,0.004867449700189887,NBSplanned_plus,CC_Q50,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05981790985703154,NBSplanned_plus,CC_Q50,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.15209492566504523,NBSplanned_plus,CC_Q50,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06124496568869296,NBSplanned_plus,CC_Q50,25
+calle San Gregorio,True,0.3541024776167465,NBSplanned_plus,CC_Q50,25
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q50,25
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q50,25
+avenida de Burgos,True,0.005641914301388323,NBSplanned_plus,CC_Q50,25
+"calle Clavijo, bajo la N-111",False,0.3431903765909777,NBSplanned_plus,CC_Q50,50
+calle Clavijo,True,0.092406778894965,NBSplanned_plus,CC_Q50,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942642866,NBSplanned_plus,CC_Q50,50
+circunvalación LO-20,False,0.0557163736187525,NBSplanned_plus,CC_Q50,50
+calle Ebro,True,0.045866897639797004,NBSplanned_plus,CC_Q50,50
+avenida Colón,True,0.004867449700189887,NBSplanned_plus,CC_Q50,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06094005994534845,NBSplanned_plus,CC_Q50,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.1531226073085594,NBSplanned_plus,CC_Q50,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276564277,NBSplanned_plus,CC_Q50,50
+calle San Gregorio,True,0.3541024776167465,NBSplanned_plus,CC_Q50,50
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q50,50
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q50,50
+avenida de Burgos,True,0.007770256851635449,NBSplanned_plus,CC_Q50,50
+"calle Clavijo, bajo la N-111",False,0.36281060099702367,NBSplanned_plus,CC_Q50,100
+calle Clavijo,True,0.0930059904723328,NBSplanned_plus,CC_Q50,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.025917393554903478,NBSplanned_plus,CC_Q50,100
+circunvalación LO-20,False,0.05780923213295068,NBSplanned_plus,CC_Q50,100
+calle Ebro,True,0.05190916335855643,NBSplanned_plus,CC_Q50,100
+avenida Colón,True,0.005045597941294681,NBSplanned_plus,CC_Q50,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751844675,NBSplanned_plus,CC_Q50,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.15620567143426697,NBSplanned_plus,CC_Q50,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07430644659884744,NBSplanned_plus,CC_Q50,100
+calle San Gregorio,True,0.3554878721448717,NBSplanned_plus,CC_Q50,100
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q50,100
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q50,100
+avenida de Burgos,True,0.009328775231985845,NBSplanned_plus,CC_Q50,100
+"calle Clavijo, bajo la N-111",False,0.3654266326975102,NBSplanned_plus,CC_Q50,200
+calle Clavijo,True,0.0933572092605792,NBSplanned_plus,CC_Q50,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534036877,NBSplanned_plus,CC_Q50,200
+circunvalación LO-20,False,0.05890049930258965,NBSplanned_plus,CC_Q50,200
+calle Ebro,True,0.07060303627153097,NBSplanned_plus,CC_Q50,200
+avenida Colón,True,0.005045597941294681,NBSplanned_plus,CC_Q50,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06366528207963988,NBSplanned_plus,CC_Q50,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.1587014804500679,NBSplanned_plus,CC_Q50,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.0770470653215912,NBSplanned_plus,CC_Q50,200
+calle San Gregorio,True,0.3554878721448717,NBSplanned_plus,CC_Q50,200
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q50,200
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q50,200
+avenida de Burgos,True,0.011555675118605455,NBSplanned_plus,CC_Q50,200
+"calle Clavijo, bajo la N-111",False,0.3039499325097715,NBSplanned_plus,CC_Q90,2
+calle Clavijo,True,0.03162458819847929,NBSplanned_plus,CC_Q90,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,CC_Q90,2
+circunvalación LO-20,False,0.03896364781045837,NBSplanned_plus,CC_Q90,2
+calle Ebro,True,0.0006716362019673548,NBSplanned_plus,CC_Q90,2
+avenida Colón,True,0.004565388579565406,NBSplanned_plus,CC_Q90,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.056130845378957885,NBSplanned_plus,CC_Q90,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0029362468548002362,NBSplanned_plus,CC_Q90,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04550661367935595,NBSplanned_plus,CC_Q90,2
+calle San Gregorio,True,0.34662096628396805,NBSplanned_plus,CC_Q90,2
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q90,2
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q90,2
+avenida de Burgos,True,0.0015605102459875346,NBSplanned_plus,CC_Q90,2
+"calle Clavijo, bajo la N-111",False,0.31572206480702325,NBSplanned_plus,CC_Q90,5
+calle Clavijo,True,0.09164990587739827,NBSplanned_plus,CC_Q90,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,CC_Q90,5
+circunvalación LO-20,False,0.05165757497039277,NBSplanned_plus,CC_Q90,5
+calle Ebro,True,0.01283753464238385,NBSplanned_plus,CC_Q90,5
+avenida Colón,True,0.0047434269101517,NBSplanned_plus,CC_Q90,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05757360963525067,NBSplanned_plus,CC_Q90,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.1472501128647933,NBSplanned_plus,CC_Q90,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05527387951058779,NBSplanned_plus,CC_Q90,5
+calle San Gregorio,True,0.3466209664848125,NBSplanned_plus,CC_Q90,5
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q90,5
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q90,5
+avenida de Burgos,True,0.0038135660762606753,NBSplanned_plus,CC_Q90,5
+"calle Clavijo, bajo la N-111",False,0.32487816857823193,NBSplanned_plus,CC_Q90,10
+calle Clavijo,True,0.0919702501594758,NBSplanned_plus,CC_Q90,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641974899736,NBSplanned_plus,CC_Q90,10
+circunvalación LO-20,False,0.053747006211175716,NBSplanned_plus,CC_Q90,10
+calle Ebro,True,0.015391805318116663,NBSplanned_plus,CC_Q90,10
+avenida Colón,True,0.004867449700189887,NBSplanned_plus,CC_Q90,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05869575971940249,NBSplanned_plus,CC_Q90,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.15136086064027632,NBSplanned_plus,CC_Q90,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06030604963365765,NBSplanned_plus,CC_Q90,10
+calle San Gregorio,True,0.3466209664848125,NBSplanned_plus,CC_Q90,10
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q90,10
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q90,10
+avenida de Burgos,True,0.00529900009545625,NBSplanned_plus,CC_Q90,10
+"calle Clavijo, bajo la N-111",False,0.3431903765909777,NBSplanned_plus,CC_Q90,25
+calle Clavijo,True,0.092406778894965,NBSplanned_plus,CC_Q90,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.005553727942642866,NBSplanned_plus,CC_Q90,25
+circunvalación LO-20,False,0.055779730860368,NBSplanned_plus,CC_Q90,25
+calle Ebro,True,0.045866897639797004,NBSplanned_plus,CC_Q90,25
+avenida Colón,True,0.004867449700189887,NBSplanned_plus,CC_Q90,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06094005994534845,NBSplanned_plus,CC_Q90,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.1531226073085594,NBSplanned_plus,CC_Q90,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06393781276564277,NBSplanned_plus,CC_Q90,25
+calle San Gregorio,True,0.3541024776167465,NBSplanned_plus,CC_Q90,25
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q90,25
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q90,25
+avenida de Burgos,True,0.007770256851635449,NBSplanned_plus,CC_Q90,25
+"calle Clavijo, bajo la N-111",False,0.36281060099702367,NBSplanned_plus,CC_Q90,50
+calle Clavijo,True,0.0930059904723328,NBSplanned_plus,CC_Q90,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.025917393554903478,NBSplanned_plus,CC_Q90,50
+circunvalación LO-20,False,0.058007417600158415,NBSplanned_plus,CC_Q90,50
+calle Ebro,True,0.05190916335855643,NBSplanned_plus,CC_Q90,50
+avenida Colón,True,0.005045597941294681,NBSplanned_plus,CC_Q90,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751844675,NBSplanned_plus,CC_Q90,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.15620567143426697,NBSplanned_plus,CC_Q90,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.07516922976650312,NBSplanned_plus,CC_Q90,50
+calle San Gregorio,True,0.3554878721448717,NBSplanned_plus,CC_Q90,50
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q90,50
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q90,50
+avenida de Burgos,True,0.009373109828955072,NBSplanned_plus,CC_Q90,50
+"calle Clavijo, bajo la N-111",False,0.3745827392947658,NBSplanned_plus,CC_Q90,100
+calle Clavijo,True,0.09335720926049548,NBSplanned_plus,CC_Q90,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534036877,NBSplanned_plus,CC_Q90,100
+circunvalación LO-20,False,0.05940630718166312,NBSplanned_plus,CC_Q90,100
+calle Ebro,True,0.07555267791949719,NBSplanned_plus,CC_Q90,100
+avenida Colón,True,0.0071833769128633075,NBSplanned_plus,CC_Q90,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06478743251014524,NBSplanned_plus,CC_Q90,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.16031642394599588,NBSplanned_plus,CC_Q90,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.08866093703379174,NBSplanned_plus,CC_Q90,100
+calle San Gregorio,True,0.3554878721448717,NBSplanned_plus,CC_Q90,100
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q90,100
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q90,100
+avenida de Burgos,True,0.012865101101675639,NBSplanned_plus,CC_Q90,100
+"calle Clavijo, bajo la N-111",False,0.385046858562174,NBSplanned_plus,CC_Q90,200
+calle Clavijo,True,0.09356813345518035,NBSplanned_plus,CC_Q90,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.06849596534036877,NBSplanned_plus,CC_Q90,200
+circunvalación LO-20,False,0.06167742589947851,NBSplanned_plus,CC_Q90,200
+calle Ebro,True,0.07911288671112092,NBSplanned_plus,CC_Q90,200
+avenida Colón,True,0.00839167573566843,NBSplanned_plus,CC_Q90,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06606988983150287,NBSplanned_plus,CC_Q90,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.16457397435379917,NBSplanned_plus,CC_Q90,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.10209122058821939,NBSplanned_plus,CC_Q90,200
+calle San Gregorio,True,0.3600106866708609,NBSplanned_plus,CC_Q90,200
+Paseo del Espolón,True,0.0,NBSplanned_plus,CC_Q90,200
+rotonda de club Deportivo,True,0.013696333218629298,NBSplanned_plus,CC_Q90,200
+avenida de Burgos,True,0.018015058669366188,NBSplanned_plus,CC_Q90,200
+"calle Clavijo, bajo la N-111",False,0.2780644004177142,Allgreen,present,2
+calle Clavijo,True,0.0166776151200598,Allgreen,present,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0006170821289469559,Allgreen,present,2
+circunvalación LO-20,False,0.034765472481680035,Allgreen,present,2
+calle Ebro,True,0.0,Allgreen,present,2
+avenida Colón,True,0.0011950585853829946,Allgreen,present,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.03696447477519641,Allgreen,present,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.001761743162710403,Allgreen,present,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.02293644488942284,Allgreen,present,2
+calle San Gregorio,True,0.33901119211395536,Allgreen,present,2
+Paseo del Espolón,True,0.0,Allgreen,present,2
+rotonda de club Deportivo,True,0.01369633321737294,Allgreen,present,2
+avenida de Burgos,True,0.00037561635072450066,Allgreen,present,2
+"calle Clavijo, bajo la N-111",False,0.3052579454386376,Allgreen,present,5
+calle Clavijo,True,0.08800184285026412,Allgreen,present,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Allgreen,present,5
+circunvalación LO-20,False,0.04056562174191651,Allgreen,present,5
+calle Ebro,True,0.0,Allgreen,present,5
+avenida Colón,True,0.0011950585853829946,Allgreen,present,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05629115230165156,Allgreen,present,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.004404363912343372,Allgreen,present,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.029611604091543606,Allgreen,present,5
+calle San Gregorio,True,0.3400394053494874,Allgreen,present,5
+Paseo del Espolón,True,0.0,Allgreen,present,5
+rotonda de club Deportivo,True,0.01369633321737294,Allgreen,present,5
+avenida de Burgos,True,0.0014652184663499802,Allgreen,present,5
+"calle Clavijo, bajo la N-111",False,0.3065659595939215,Allgreen,present,10
+calle Clavijo,True,0.09538217692510212,Allgreen,present,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Allgreen,present,10
+circunvalación LO-20,False,0.04542218423814681,Allgreen,present,10
+calle Ebro,True,0.0,Allgreen,present,10
+avenida Colón,True,0.004565388578648456,Allgreen,present,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.056451459374517975,Allgreen,present,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.007046985991352913,Allgreen,present,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.033711835192990945,Allgreen,present,10
+calle San Gregorio,True,0.3400394053494874,Allgreen,present,10
+Paseo del Espolón,True,0.0,Allgreen,present,10
+rotonda de club Deportivo,True,0.01369633321737294,Allgreen,present,10
+avenida de Burgos,True,0.0020946590635325018,Allgreen,present,10
+"calle Clavijo, bajo la N-111",False,0.317030078952218,Allgreen,present,25
+calle Clavijo,True,0.09580967254853093,Allgreen,present,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Allgreen,present,25
+circunvalación LO-20,False,0.047768435763300934,Allgreen,present,25
+calle Ebro,True,0.000671636201536968,Allgreen,present,25
+avenida Colón,True,0.004743426909262337,Allgreen,present,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05773391670701466,Allgreen,present,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011157733766634717,Allgreen,present,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04091575973339981,Allgreen,present,25
+calle San Gregorio,True,0.34631454298304915,Allgreen,present,25
+Paseo del Espolón,True,0.0,Allgreen,present,25
+rotonda de club Deportivo,True,0.01369633321737294,Allgreen,present,25
+avenida de Burgos,True,0.0031386317238306653,Allgreen,present,25
+"calle Clavijo, bajo la N-111",False,0.3196461072598499,Allgreen,present,50
+calle Clavijo,True,0.09580967254853093,Allgreen,present,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Allgreen,present,50
+circunvalación LO-20,False,0.04884229752483013,Allgreen,present,50
+calle Ebro,True,0.009708539275226911,Allgreen,present,50
+avenida Colón,True,0.004867449699308754,Allgreen,present,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05805453085238767,Allgreen,present,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011891798791524648,Allgreen,present,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.041281488956566637,Allgreen,present,50
+calle San Gregorio,True,0.3466209662320102,Allgreen,present,50
+Paseo del Espolón,True,0.0,Allgreen,present,50
+rotonda de club Deportivo,True,0.01369633321737294,Allgreen,present,50
+avenida de Burgos,True,0.003944310754939966,Allgreen,present,50
+"calle Clavijo, bajo la N-111",False,0.32880221090284606,Allgreen,present,100
+calle Clavijo,True,0.09580967254853093,Allgreen,present,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Allgreen,present,100
+circunvalación LO-20,False,0.04946471436309074,Allgreen,present,100
+calle Ebro,True,0.012837534640790538,Allgreen,present,100
+avenida Colón,True,0.004867449699308754,Allgreen,present,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.059176680920826084,Allgreen,present,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.012919480435116303,Allgreen,present,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04550661367991058,Allgreen,present,100
+calle San Gregorio,True,0.3466209662320102,Allgreen,present,100
+Paseo del Espolón,True,0.0,Allgreen,present,100
+rotonda de club Deportivo,True,0.01369633321737294,Allgreen,present,100
+avenida de Burgos,True,0.004598242829805809,Allgreen,present,100
+"calle Clavijo, bajo la N-111",False,0.337958314702245,Allgreen,present,200
+calle Clavijo,True,0.09580967254853093,Allgreen,present,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641978852748,Allgreen,present,200
+circunvalación LO-20,False,0.0510044814271152,Allgreen,present,200
+calle Ebro,True,0.015391805316501715,Allgreen,present,200
+avenida Colón,True,0.004867449699308754,Allgreen,present,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06029883100843284,Allgreen,present,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.016002544560630976,Allgreen,present,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04902038038565524,Allgreen,present,200
+calle San Gregorio,True,0.3466209662320102,Allgreen,present,200
+Paseo del Espolón,True,0.0,Allgreen,present,200
+rotonda de club Deportivo,True,0.01369633321737294,Allgreen,present,200
+avenida de Burgos,True,0.006465541740617414,Allgreen,present,200
+"calle Clavijo, bajo la N-111",False,0.2856377222201299,Allgreen,CC_Q50,2
+calle Clavijo,True,0.023025474139779428,Allgreen,CC_Q50,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q50,2
+circunvalación LO-20,False,0.03591848291857384,Allgreen,CC_Q50,2
+calle Ebro,True,0.0,Allgreen,CC_Q50,2
+avenida Colón,True,0.0011950585856551007,Allgreen,CC_Q50,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.03789264290353578,Allgreen,CC_Q50,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0017617431628344994,Allgreen,CC_Q50,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.024270882025948886,Allgreen,CC_Q50,2
+calle San Gregorio,True,0.3390111921639959,Allgreen,CC_Q50,2
+Paseo del Espolón,True,0.0,Allgreen,CC_Q50,2
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q50,2
+avenida de Burgos,True,0.0006952085899698454,Allgreen,CC_Q50,2
+"calle Clavijo, bajo la N-111",False,0.3065659596005605,Allgreen,CC_Q50,5
+calle Clavijo,True,0.0953821769265712,Allgreen,CC_Q50,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q50,5
+circunvalación LO-20,False,0.04350125245793579,Allgreen,CC_Q50,5
+calle Ebro,True,0.0,Allgreen,CC_Q50,5
+avenida Colón,True,0.004565388579575662,Allgreen,CC_Q50,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05645145937627024,Allgreen,CC_Q50,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0044043639122390175,Allgreen,CC_Q50,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.03371183519413554,Allgreen,CC_Q50,5
+calle San Gregorio,True,0.3400394053993048,Allgreen,CC_Q50,5
+Paseo del Espolón,True,0.0,Allgreen,CC_Q50,5
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q50,5
+avenida de Burgos,True,0.0015188525982205332,Allgreen,CC_Q50,5
+"calle Clavijo, bajo la N-111",False,0.30918198915163264,Allgreen,CC_Q50,10
+calle Clavijo,True,0.09559030513337535,Allgreen,CC_Q50,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q50,10
+circunvalación LO-20,False,0.04703811741786032,Allgreen,CC_Q50,10
+calle Ebro,True,0.0006716362020288386,Allgreen,CC_Q50,10
+avenida Colón,True,0.004565388579575662,Allgreen,CC_Q50,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.056772073674036305,Allgreen,CC_Q50,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.00704698599138725,Allgreen,CC_Q50,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.0388553548518939,Allgreen,CC_Q50,10
+calle San Gregorio,True,0.3400394053993048,Allgreen,CC_Q50,10
+Paseo del Espolón,True,0.0,Allgreen,CC_Q50,10
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q50,10
+avenida de Burgos,True,0.002276212718775953,Allgreen,CC_Q50,10
+"calle Clavijo, bajo la N-111",False,0.3196461072660374,Allgreen,CC_Q50,25
+calle Clavijo,True,0.09580967254994979,Allgreen,CC_Q50,25
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q50,25
+circunvalación LO-20,False,0.04882118309726396,Allgreen,CC_Q50,25
+calle Ebro,True,0.009708539275263647,Allgreen,CC_Q50,25
+avenida Colón,True,0.004867449700194369,Allgreen,CC_Q50,25
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05805453085408462,Allgreen,CC_Q50,25
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011891798791512866,Allgreen,CC_Q50,25
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04128148895900205,Allgreen,CC_Q50,25
+calle San Gregorio,True,0.34662096628365924,Allgreen,CC_Q50,25
+Paseo del Espolón,True,0.0,Allgreen,CC_Q50,25
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q50,25
+avenida de Burgos,True,0.00394431075505105,Allgreen,CC_Q50,25
+"calle Clavijo, bajo la N-111",False,0.3288022109082653,Allgreen,CC_Q50,50
+calle Clavijo,True,0.09580967254994979,Allgreen,CC_Q50,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q50,50
+circunvalación LO-20,False,0.04946471436340317,Allgreen,CC_Q50,50
+calle Ebro,True,0.012837534642675709,Allgreen,CC_Q50,50
+avenida Colón,True,0.004867449700194369,Allgreen,CC_Q50,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.059176680922428865,Allgreen,CC_Q50,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.012919480435027386,Allgreen,CC_Q50,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.045506613680030894,Allgreen,CC_Q50,50
+calle San Gregorio,True,0.34662096628365924,Allgreen,CC_Q50,50
+Paseo del Espolón,True,0.0,Allgreen,CC_Q50,50
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q50,50
+avenida de Burgos,True,0.004598242829798321,Allgreen,CC_Q50,50
+"calle Clavijo, bajo la N-111",False,0.33795831471389526,Allgreen,CC_Q50,100
+calle Clavijo,True,0.09580967254994979,Allgreen,CC_Q50,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q50,100
+circunvalación LO-20,False,0.051094228427265714,Allgreen,CC_Q50,100
+calle Ebro,True,0.015391805317900775,Allgreen,CC_Q50,100
+avenida Colón,True,0.004867449700194369,Allgreen,CC_Q50,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06029883101079928,Allgreen,CC_Q50,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.016002544560928204,Allgreen,CC_Q50,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05021611364189117,Allgreen,CC_Q50,100
+calle San Gregorio,True,0.34662096648438084,Allgreen,CC_Q50,100
+Paseo del Espolón,True,0.0,Allgreen,CC_Q50,100
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q50,100
+avenida de Burgos,True,0.00651886782448201,Allgreen,CC_Q50,100
+"calle Clavijo, bajo la N-111",False,0.34580640449095384,Allgreen,CC_Q50,200
+calle Clavijo,True,0.09580967254994979,Allgreen,CC_Q50,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q50,200
+circunvalación LO-20,False,0.05245860350600121,Allgreen,CC_Q50,200
+calle Ebro,True,0.024453785969806092,Allgreen,CC_Q50,200
+avenida Colón,True,0.0050455979412991625,Allgreen,CC_Q50,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06126067404183287,Allgreen,CC_Q50,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.01849835357652779,Allgreen,CC_Q50,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05433496274782857,Allgreen,CC_Q50,200
+calle San Gregorio,True,0.34662096648438084,Allgreen,CC_Q50,200
+Paseo del Espolón,True,0.0,Allgreen,CC_Q50,200
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q50,200
+avenida de Burgos,True,0.00746879865270066,Allgreen,CC_Q50,200
+"calle Clavijo, bajo la N-111",False,0.2856377222223252,Allgreen,CC_Q90,2
+calle Clavijo,True,0.050313226092789674,Allgreen,CC_Q90,2
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q90,2
+circunvalación LO-20,False,0.03699585485373781,Allgreen,CC_Q90,2
+calle Ebro,True,0.0,Allgreen,CC_Q90,2
+avenida Colón,True,0.0011950585856551007,Allgreen,CC_Q90,2
+"calle Clavijo, cerca del Palacio de Deportes",False,0.03890706375262903,Allgreen,CC_Q90,2
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.0029362468545875886,Allgreen,CC_Q90,2
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.02679485516254487,Allgreen,CC_Q90,2
+calle San Gregorio,True,0.3390111921639959,Allgreen,CC_Q90,2
+Paseo del Espolón,True,0.0,Allgreen,CC_Q90,2
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q90,2
+avenida de Burgos,True,0.0008432479698288575,Allgreen,CC_Q90,2
+"calle Clavijo, bajo la N-111",False,0.30918198915163264,Allgreen,CC_Q90,5
+calle Clavijo,True,0.09559030513337535,Allgreen,CC_Q90,5
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q90,5
+circunvalación LO-20,False,0.04619109506632991,Allgreen,CC_Q90,5
+calle Ebro,True,0.0006716362020288386,Allgreen,CC_Q90,5
+avenida Colón,True,0.004565388579575662,Allgreen,CC_Q90,5
+"calle Clavijo, cerca del Palacio de Deportes",False,0.056772073674036305,Allgreen,CC_Q90,5
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.00704698599138725,Allgreen,CC_Q90,5
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.03557692840324215,Allgreen,CC_Q90,5
+calle San Gregorio,True,0.3400394053993048,Allgreen,CC_Q90,5
+Paseo del Espolón,True,0.0,Allgreen,CC_Q90,5
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q90,5
+avenida de Burgos,True,0.002124973871175978,Allgreen,CC_Q90,5
+"calle Clavijo, bajo la N-111",False,0.3170300789580135,Allgreen,CC_Q90,10
+calle Clavijo,True,0.09580967254994979,Allgreen,CC_Q90,10
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q90,10
+circunvalación LO-20,False,0.04817221345788118,Allgreen,CC_Q90,10
+calle Ebro,True,0.0006716362020288386,Allgreen,CC_Q90,10
+avenida Colón,True,0.004743426910163405,Allgreen,CC_Q90,10
+"calle Clavijo, cerca del Palacio de Deportes",False,0.05773391670866357,Allgreen,CC_Q90,10
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.011157733766771405,Allgreen,CC_Q90,10
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.04091575973573996,Allgreen,CC_Q90,10
+calle San Gregorio,True,0.34631454303428555,Allgreen,CC_Q90,10
+Paseo del Espolón,True,0.0,Allgreen,CC_Q90,10
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q90,10
+avenida de Burgos,True,0.003618564941556846,Allgreen,CC_Q90,10
+"calle Clavijo, bajo la N-111",False,0.33795831471389526,Allgreen,CC_Q90,50
+calle Clavijo,True,0.09580967254994979,Allgreen,CC_Q90,50
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q90,50
+circunvalación LO-20,False,0.05150891258710094,Allgreen,CC_Q90,50
+calle Ebro,True,0.015391805317900775,Allgreen,CC_Q90,50
+avenida Colón,True,0.0050455979412991625,Allgreen,CC_Q90,50
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06029883101079928,Allgreen,CC_Q90,50
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.016002544560928204,Allgreen,CC_Q90,50
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05131081378353956,Allgreen,CC_Q90,50
+calle San Gregorio,True,0.34662096648438084,Allgreen,CC_Q90,50
+Paseo del Espolón,True,0.0,Allgreen,CC_Q90,50
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q90,50
+avenida de Burgos,True,0.00651886782448201,Allgreen,CC_Q90,50
+"calle Clavijo, bajo la N-111",False,0.3628106009938197,Allgreen,CC_Q90,100
+calle Clavijo,True,0.09580967254994979,Allgreen,CC_Q90,100
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q90,100
+circunvalación LO-20,False,0.05285087455047473,Allgreen,CC_Q90,100
+calle Ebro,True,0.03133267385620999,Allgreen,CC_Q90,100
+avenida Colón,True,0.0050455979412991625,Allgreen,CC_Q90,100
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06334466751912678,Allgreen,CC_Q90,100
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.02011329707247713,Allgreen,CC_Q90,100
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.05574333686400757,Allgreen,CC_Q90,100
+calle San Gregorio,True,0.34662096648438084,Allgreen,CC_Q90,100
+Paseo del Espolón,True,0.0,Allgreen,CC_Q90,100
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q90,100
+avenida de Burgos,True,0.009442559486923059,Allgreen,CC_Q90,100
+"calle Clavijo, bajo la N-111",False,0.3693506743465893,Allgreen,CC_Q90,200
+calle Clavijo,True,0.09592188863457278,Allgreen,CC_Q90,200
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",True,0.0012341641981574204,Allgreen,CC_Q90,200
+circunvalación LO-20,False,0.054195801413622804,Allgreen,CC_Q90,200
+calle Ebro,True,0.05190916335648492,Allgreen,CC_Q90,200
+avenida Colón,True,0.007183376912813818,Allgreen,CC_Q90,200
+"calle Clavijo, cerca del Palacio de Deportes",False,0.06414620319921013,Allgreen,CC_Q90,200
+"circunvalación LO-20, bajo la rotonda de la calle Chile",True,0.024664472396245037,Allgreen,CC_Q90,200
+"CARPA (Urgencias), aparcamiento y salas de espera",True,0.06030604963309039,Allgreen,CC_Q90,200
+calle San Gregorio,True,0.35410247760857494,Allgreen,CC_Q90,200
+Paseo del Espolón,True,0.0,Allgreen,CC_Q90,200
+rotonda de club Deportivo,True,0.013696333218489577,Allgreen,CC_Q90,200
+avenida de Burgos,True,0.014044509855812393,Allgreen,CC_Q90,200

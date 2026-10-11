@@ -1,0 +1,53 @@
+place,land_cover,mean_depth_5m,cells_ge30_5m,volume_change_20_150m_m3_vs_NBSplanned
+"calle Clavijo, bajo la N-111",Baseline,0.696380078792572,45,0.0
+"calle Clavijo, bajo la N-111",NBSplanned,0.696380078792572,45,0.0
+"calle Clavijo, bajo la N-111",NBSplanned_plus,0.6923124194145203,45,-816.5439453125
+"calle Clavijo, bajo la N-111",Allgreen,0.6834381222724915,45,-18.82421875
+calle Clavijo,Baseline,0.04525197669863701,27,0.0
+calle Clavijo,NBSplanned,0.04525197669863701,27,0.0
+calle Clavijo,NBSplanned_plus,0.04178911820054054,25,-1755.7835693359375
+calle Clavijo,Allgreen,0.04375433549284935,27,-1000.260986328125
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",Baseline,0.057411078363657,7,0.0
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",NBSplanned,0.057411078363657,7,0.0
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",NBSplanned_plus,0.057411078363657,7,0.0
+"el Adarraga (Centro de Tecnificación Deportiva Javier Adarraga, Las Norias)",Allgreen,0.001183210057206452,0,-846.8026123046875
+circunvalación LO-20,Baseline,0.18851333856582642,4227,-292.6781005859375
+circunvalación LO-20,NBSplanned,0.20031262934207916,4227,0.0
+circunvalación LO-20,NBSplanned_plus,0.25800570845603943,4957,486.482421875
+circunvalación LO-20,Allgreen,0.1862480640411377,4038,-5014.2138671875
+calle Ebro,Baseline,0.0,0,0.0
+calle Ebro,NBSplanned,0.0,0,0.0
+calle Ebro,NBSplanned_plus,0.0,0,0.0
+calle Ebro,Allgreen,0.0,0,-540.14111328125
+avenida Colón,Baseline,0.0021327482536435127,0,0.0
+avenida Colón,NBSplanned,0.0021327482536435127,0,0.0
+avenida Colón,NBSplanned_plus,0.0021327482536435127,0,0.0
+avenida Colón,Allgreen,0.0021327482536435127,0,-328.785888671875
+"calle Clavijo, cerca del Palacio de Deportes",Baseline,0.10733135044574738,120,0.0
+"calle Clavijo, cerca del Palacio de Deportes",NBSplanned,0.10733135044574738,120,0.0
+"calle Clavijo, cerca del Palacio de Deportes",NBSplanned_plus,0.10701588541269302,120,-798.5439453125
+"calle Clavijo, cerca del Palacio de Deportes",Allgreen,0.10489999502897263,116,-318.1400146484375
+"circunvalación LO-20, bajo la rotonda de la calle Chile",Baseline,0.03866143524646759,76,0.0
+"circunvalación LO-20, bajo la rotonda de la calle Chile",NBSplanned,0.03866143524646759,76,0.0
+"circunvalación LO-20, bajo la rotonda de la calle Chile",NBSplanned_plus,1.764639973640442,838,-3506.181640625
+"circunvalación LO-20, bajo la rotonda de la calle Chile",Allgreen,0.03866143524646759,76,-43.693115234375
+"CARPA (Urgencias), aparcamiento y salas de espera",Baseline,0.1563752442598343,136,0.0
+"CARPA (Urgencias), aparcamiento y salas de espera",NBSplanned,0.1563752442598343,136,0.0
+"CARPA (Urgencias), aparcamiento y salas de espera",NBSplanned_plus,0.1563752442598343,136,0.0
+"CARPA (Urgencias), aparcamiento y salas de espera",Allgreen,0.06979505717754364,99,-451.7012939453125
+calle San Gregorio,Baseline,0.0,0,0.0
+calle San Gregorio,NBSplanned,0.0,0,0.0
+calle San Gregorio,NBSplanned_plus,0.0,0,0.0
+calle San Gregorio,Allgreen,0.0,0,-6.76025390625
+Paseo del Espolón,Baseline,0.0,0,0.0
+Paseo del Espolón,NBSplanned,0.0,0,0.0
+Paseo del Espolón,NBSplanned_plus,0.0,0,0.0
+Paseo del Espolón,Allgreen,0.0,0,-95.0162353515625
+rotonda de club Deportivo,Baseline,0.0814502090215683,18,0.0
+rotonda de club Deportivo,NBSplanned,0.0814502090215683,18,0.0
+rotonda de club Deportivo,NBSplanned_plus,0.0814502090215683,18,0.0
+rotonda de club Deportivo,Allgreen,0.0814502090215683,18,-194.0198974609375
+avenida de Burgos,Baseline,0.0060264733619987965,11,0.0
+avenida de Burgos,NBSplanned,0.0060264733619987965,11,0.0
+avenida de Burgos,NBSplanned_plus,0.0060264733619987965,11,0.0
+avenida de Burgos,Allgreen,0.004003914538770914,3,-598.4564208984375

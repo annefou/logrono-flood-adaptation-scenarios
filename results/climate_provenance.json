@@ -1,0 +1,105 @@
+{
+  "cordex": {
+    "record": "14035736",
+    "md5": "md5:3f7b59afdbe00cb71e76234dffaaa014",
+    "skipped_files": [
+      {
+        "file": "Logrono/pr_rp_Logrono_3hr_cccma-canesm2_r1i1p1_clmcom-clm-cclm4-8-17.csv",
+        "header": [
+          "3-hr hist",
+          "6-hr hist",
+          "12-hr hist",
+          "24-hr hist",
+          "3-hr hist",
+          "6-hr hist",
+          "12-hr hist",
+          "24-hr hist",
+          "3-hr rcp85",
+          "6-hr rcp85",
+          "12-hr rcp85",
+          "24-hr rcp85"
+        ]
+      },
+      {
+        "file": "Logrono/pr_rp_Logrono_3hr_ichec-ec-earth_r12i1p1_gerics-remo2015.csv",
+        "header": [
+          "3-hr rcp45",
+          "6-hr rcp45",
+          "12-hr rcp45",
+          "24-hr rcp45"
+        ]
+      }
+    ]
+  },
+  "climatedt": {
+    "endpoint": "polytope.mn5.apps.dte.destination-earth.eu",
+    "models": [
+      "IFS-NEMO"
+    ],
+    "unavailable_models": [
+      "IFS-FESOM",
+      "ICON"
+    ],
+    "windows": {
+      "hist": {
+        "activity": "baseline",
+        "experiment": "hist",
+        "years": [
+          1990,
+          2009
+        ],
+        "label": "historical 1990-2009"
+      },
+      "ssp370": {
+        "activity": "projections",
+        "experiment": "SSP3-7.0",
+        "years": [
+          2030,
+          2049
+        ],
+        "label": "SSP3-7.0 2030-2049"
+      }
+    },
+    "storyline_members": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "durations_h": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "polygon": {
+      "name": "La Rioja, Spain",
+      "description": "Closed boundary ring of La Rioja (NUTS-2 ES23) as [latitude, longitude] pairs, in the vertex order Polytope's feature: {type: polygon} expects.",
+      "source": {
+        "dataset": "Eurostat GISCO NUTS 2021, level 2, 1:1 million, EPSG:4326",
+        "url": "https://gisco-services.ec.europa.eu/distribution/v2/nuts/geojson/NUTS_RG_01M_2021_4326_LEVL_2.geojson",
+        "feature": "NUTS_ID = ES23",
+        "accessed_on": "2026-10-10",
+        "licence": "Eurostat NUTS \u2014 free reuse with attribution (\u00a9 EuroGeographics for the administrative boundaries)"
+      },
+      "processing": "Largest polygon (1 part(s)); Douglas-Peucker simplification with epsilon = 0.005 degrees -> 202 vertices; longitude/latitude swapped to latitude/longitude; ring closed.",
+      "area_km2_approx": 5060.0,
+      "bbox_lat_lon": [
+        41.9193,
+        -3.1343,
+        42.6442,
+        -1.6809
+      ],
+      "n_vertices": 202
+    },
+    "attribution": "This data is created based on data of the European Union, using the Destination Earth Platform, but has been modified by Anne Fouilloux.",
+    "licence_note": "Derived product. Aggregation and transformation of Destination Earth Climate DT output (regional subset, hourly accumulation, maxima, extreme-value fitting). NOT original DestinE Data. DestinE Terms and Conditions v2.0, Art. 2.3 / 3.3 / 3.4.",
+    "source_terms": "https://platform.destine.eu/terms-and-conditions/"
+  },
+  "bootstrap": {
+    "n": 1000,
+    "seed": 20261010,
+    "resampled": "years (projections), member-years (storylines)"
+  }
+}

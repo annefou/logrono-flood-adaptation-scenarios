@@ -55,6 +55,7 @@ rule analysis:
         f"{RESULTS}/building_risk.parquet",
         f"{RESULTS}/vulnerability_comparisons.csv",
         f"{RESULTS}/vulnerability_by_building.csv",
+        f"{RESULTS}/impact_places_local_depth.csv",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 03_analysis.py"
 
