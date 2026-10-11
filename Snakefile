@@ -38,6 +38,9 @@ rule data_clean:
     output:
         f"{RESULTS}/reachout_inventory.csv",
         f"{RESULTS}/hazard_cell_changes.csv",
+        # Not committed (unlike the tables): a fresh checkout must re-run 01-02
+        # before 03, even though the committed results make the tables look done.
+        f"{DATA}/interim/domain.gpkg",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 02_data_clean.py"
 
@@ -45,6 +48,8 @@ rule data_clean:
 # ---------- 03: Building-level risk under every scenario ----------
 rule analysis:
     input:
+        f"{DATA}/raw/sources.json",
+        f"{DATA}/interim/domain.gpkg",
         f"{RESULTS}/reachout_inventory.csv",
         f"{RESULTS}/hazard_cell_changes.csv",
     output:
@@ -79,6 +84,7 @@ rule climate:
 # ---------- 05: Figures ----------
 rule figures:
     input:
+        f"{DATA}/raw/sources.json",
         f"{RESULTS}/cordex_match.csv",
         f"{RESULTS}/scenario_summary.csv",
         f"{RESULTS}/vulnerability_by_building.csv",
