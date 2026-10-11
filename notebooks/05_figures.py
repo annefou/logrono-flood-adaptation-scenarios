@@ -21,14 +21,19 @@
 #
 # Colours: the three climates (or rainfall sources) take the first three categorical slots
 # of a palette validated for colour-vision deficiency (blue, orange, aqua); every line is
-# labelled directly, because aqua is below 3:1 contrast on white.
+# labelled directly, because aqua is below 3:1 contrast on white. Before saving, every
+# figure passes `scripts/figcheck.py`: no overlapping text, no legend over data.
 
 # %%
+import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path("../scripts").resolve()))
+from figcheck import assert_layout, spread_labels  # noqa: E402
 
 RESULTS = Path("../results")
 FIGURES = Path("../figures")
@@ -62,17 +67,18 @@ def style_axis(ax) -> None:
 # %%
 fig, axes = plt.subplots(1, 2, figsize=(11, 4.2), sharex=True)
 base = counts[counts["land_cover"] == "Baseline"]
+line_labels = {}
 for ax, risk in zip(axes, ["PFRMA", "PFRWB"]):
     d = base[base["risk"] == risk]
+    line_labels[ax] = []
     for climate, colour in CLIMATE_COLOUR.items():
         c = d[d["climate"] == climate].sort_values("rp")
         ax.plot(c["rp"], c["residents_at_risk"] / 1000, color=colour, lw=2, marker="o", ms=5,
                 markeredgecolor="white", markeredgewidth=1.5)
-        ax.annotate(CLIMATE_LABEL[climate], (c["rp"].iloc[-1], c["residents_at_risk"].iloc[-1] / 1000),
-                    xytext=(6, 0), textcoords="offset points", va="center", fontsize=8.5, color=TEXT)
+        line_labels[ax].append((c["rp"].iloc[-1], c["residents_at_risk"].iloc[-1] / 1000, CLIMATE_LABEL[climate]))
     ax.set_xscale("log")
     ax.set_xticks([2, 5, 10, 25, 50, 100, 200], labels=["2", "5", "10", "25", "50", "100", "200"])
-    ax.set_xlim(1.7, 900)
+    ax.set_xlim(1.7, 3000)  # room for the direct labels
     ax.set_xlabel("Return period of the design storm (years)", color=MUTED, fontsize=9)
     ax.set_title(RISK_LABEL[risk], loc="left", fontsize=11, color=TEXT)
     style_axis(ax)
@@ -80,6 +86,9 @@ axes[0].set_ylabel("Residents in buildings at risk (thousands)", color=MUTED, fo
 fig.suptitle("Logroño: residents in buildings at risk by design storm and rainfall climate",
              x=0.01, ha="left", fontsize=12.5, color=TEXT)
 fig.tight_layout()
+for ax, items in line_labels.items():
+    spread_labels(ax, items, fontsize=8.5, color=TEXT)
+assert_layout(fig)
 fig.savefig(FIGURES / "main_result.png", dpi=DPI, bbox_inches="tight")
 plt.show()
 
@@ -106,11 +115,12 @@ for ax, risk in zip(axes, ["PFRMA", "PFRWB"]):
     ax.set_xlabel("Residents in buildings at risk (thousands)", color=MUTED, fontsize=9)
     ax.set_title(RISK_LABEL[risk], loc="left", fontsize=11, color=TEXT)
     style_axis(ax)
-fig.legend(*axes[0].get_legend_handles_labels(), loc="upper right", ncol=3, fontsize=8.5, frameon=False,
-           bbox_to_anchor=(1.0, 0.94))
+fig.legend(*axes[0].get_legend_handles_labels(), loc="upper center", ncol=3, fontsize=8.5, frameon=False,
+           bbox_to_anchor=(0.5, 0.0))
 fig.suptitle("100-year storm: residents in buildings at risk by land cover and rainfall climate",
              x=0.01, ha="left", fontsize=12.5, color=TEXT)
 fig.tight_layout()
+assert_layout(fig)
 fig.savefig(FIGURES / "land_cover_rp100.png", dpi=DPI, bbox_inches="tight")
 plt.show()
 
@@ -161,5 +171,6 @@ ax.set_title("Change in short-duration rainfall extremes: REACHOUT's scaling and
              loc="left", fontsize=12, color=TEXT)
 style_axis(ax)
 fig.tight_layout()
+assert_layout(fig)
 fig.savefig(FIGURES / "rainfall_change.png", dpi=DPI, bbox_inches="tight")
 plt.show()
