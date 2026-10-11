@@ -16,7 +16,7 @@ FIGURES = "figures"
 rule all:
     input:
         f"{FIGURES}/main_result.png",
-        f"{RESULTS}/storyline_storms.csv",
+        f"{RESULTS}/cordex_match.csv",
 
 
 # ---------- 01: Data download ----------
@@ -61,16 +61,17 @@ rule analysis:
 
 
 # ---------- 04: Rainfall change (EURO-CORDEX, Climate DT) ----------
-# Reads the monthly Climate DT files written by scripts/retrieve.py (hours of
-# requests, DestinE credentials): run that first.
+# The Climate DT sections read the monthly files written by scripts/retrieve.py
+# (hours of requests, DestinE credentials). Their result tables
+# (climatedt_projection_change.csv, storyline_*.csv) are committed and deliberately
+# NOT declared as outputs: Snakemake deletes a rule's outputs before re-running it,
+# and without the DestinE data (CI) the notebook falls back to those committed files.
 rule climate:
     input:
         f"{RESULTS}/reachout_inventory.csv",
     output:
         f"{RESULTS}/cordex_match.csv",
-        f"{RESULTS}/climatedt_projection_change.csv",
-        f"{RESULTS}/storyline_change.csv",
-        f"{RESULTS}/storyline_storms.csv",
+        f"{RESULTS}/cordex_factors.csv",
     shell:
         f"cd {{NOTEBOOKS}} && jupytext --to notebook --execute 04_climate.py"
 
@@ -78,6 +79,7 @@ rule climate:
 # ---------- 05: Figures ----------
 rule figures:
     input:
+        f"{RESULTS}/cordex_match.csv",
         f"{RESULTS}/scenario_summary.csv",
         f"{RESULTS}/vulnerability_by_building.csv",
         f"{RESULTS}/climatedt_projection_change.csv",

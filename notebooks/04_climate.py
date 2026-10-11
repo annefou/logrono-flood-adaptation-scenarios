@@ -41,6 +41,7 @@ import hashlib
 import io
 import json
 import sys
+import time
 import zipfile
 from pathlib import Path
 
@@ -54,7 +55,13 @@ import climatedt  # noqa: E402
 import extremes  # noqa: E402
 
 RAW = Path("../data/raw")
+RAW.mkdir(parents=True, exist_ok=True)
 CLIMATE = Path("../data/climate/raw")
+# The monthly Climate DT files need DestinE credentials (scripts/retrieve.py). Without them
+# (e.g. in CI), sections 2-3 show the committed results instead of recomputing them.
+HAVE_CLIMATEDT = CLIMATE.exists() and any(CLIMATE.glob("proj_*.nc"))
+COMMITTED_NOTE = ("Climate DT data not available on this machine (no DestinE credentials): showing the "
+                  "committed results in results/, computed by this notebook where the data were retrieved.")
 RESULTS = Path("../results")
 RNG_SEED, N_BOOT = 20261010, 1000
 RPS = np.array([2.0, 5.0, 10.0, 20.0])
@@ -76,12 +83,36 @@ print(reachout_factor.round(3).T.to_string())
 # historical per simulation, then the median and 90th percentile across simulations.
 
 # %%
-IDF = {"record": "14035736", "file": "IDF_Logrono.zip"}
-meta = requests.get(f"https://zenodo.org/api/records/{IDF['record']}", timeout=120).json()
-entry = next(f for f in meta["files"] if f["key"] == IDF["file"])
-blob = requests.get(entry["links"]["self"], timeout=300).content
-assert hashlib.md5(blob).hexdigest() == entry["checksum"].removeprefix("md5:")
-(RAW / IDF["file"]).write_bytes(blob)
+# Zenodo files are immutable: the MD5 below is the one Zenodo publishes for this file, so a
+# local copy that matches it is the same file and need not be fetched again.
+IDF = {"record": "14035736", "file": "IDF_Logrono.zip", "md5": "3f7b59afdbe00cb71e76234dffaaa014"}
+HEADERS = {"User-Agent": "logrono-flood-adaptation-scenarios (+https://github.com/annefou/logrono-flood-adaptation-scenarios)"}
+
+
+def get(url: str, attempts: int = 6) -> requests.Response:
+    """GET with retries and growing back-off: Zenodo throttles and answers 504 / empty bodies."""
+    for i in range(attempts):
+        try:
+            r = requests.get(url, timeout=300, headers=HEADERS)
+            r.raise_for_status()
+            if not r.content:
+                raise ValueError("empty response")
+            return r
+        except (requests.RequestException, ValueError) as e:
+            if i == attempts - 1:
+                raise
+            print(f"retry {i + 1} after: {str(e)[:120]}")
+            time.sleep(30 * (i + 1))
+
+
+idf_path = RAW / IDF["file"]
+if idf_path.exists() and hashlib.md5(idf_path.read_bytes()).hexdigest() == IDF["md5"]:
+    blob = idf_path.read_bytes()
+else:
+    blob = get(f"https://zenodo.org/records/{IDF['record']}/files/{IDF['file']}?download=1").content
+    assert hashlib.md5(blob).hexdigest() == IDF["md5"], "IDF file does not match Zenodo's MD5"
+    idf_path.write_bytes(blob)
+entry = {"checksum": f"md5:{IDF['md5']}"}
 
 ratios, skipped = [], []
 with zipfile.ZipFile(io.BytesIO(blob)) as z:
@@ -179,21 +210,26 @@ def change_with_ci(am_hist: np.ndarray, am_fut: np.ndarray, cells: np.ndarray) -
                          "ci_hi": np.nanpercentile(boot, 95, axis=0)})
 
 
-rows = []
-for model in climatedt.MODELS:
-    am = {}
-    for window, spec in climatedt.WINDOWS.items():
-        y0, y1 = spec["years"]
-        _, am[window], sample = annual_maxima(monthly_files(f"proj_{model}_{window}_{{ym}}.nc", range(y0, y1 + 1)))
-    lat, lon = sample["latitude"].values, sample["longitude"].values
-    domains = {"La Rioja": np.ones(lat.size, bool), "within 25 km of Logroño": distance_km(lat, lon, LOGRONO) <= 25}
-    for dname, cells in domains.items():
-        for d in climatedt.DURATIONS_H:
-            rows.append(change_with_ci(am["hist"][d], am["ssp370"][d], cells).assign(
-                model=model, domain=dname, n_cells=int(cells.sum()), duration_h=d))
-projection = pd.concat(rows, ignore_index=True)
-projection.to_csv(RESULTS / "climatedt_projection_change.csv", index=False)
-print(projection.pivot_table(index=["domain", "duration_h"], columns="rp", values="change").round(3).to_string())
+if HAVE_CLIMATEDT:
+    rows = []
+    for model in climatedt.MODELS:
+        am = {}
+        for window, spec in climatedt.WINDOWS.items():
+            y0, y1 = spec["years"]
+            _, am[window], sample = annual_maxima(monthly_files(f"proj_{model}_{window}_{{ym}}.nc", range(y0, y1 + 1)))
+        lat, lon = sample["latitude"].values, sample["longitude"].values
+        domains = {"La Rioja": np.ones(lat.size, bool), "within 25 km of Logroño": distance_km(lat, lon, LOGRONO) <= 25}
+        for dname, cells in domains.items():
+            for d in climatedt.DURATIONS_H:
+                rows.append(change_with_ci(am["hist"][d], am["ssp370"][d], cells).assign(
+                    model=model, domain=dname, n_cells=int(cells.sum()), duration_h=d))
+    projection = pd.concat(rows, ignore_index=True)
+    projection.to_csv(RESULTS / "climatedt_projection_change.csv", index=False)
+    print(projection.pivot_table(index=["domain", "duration_h"], columns="rp", values="change").round(3).to_string())
+else:
+    projection = pd.read_csv(RESULTS / "climatedt_projection_change.csv")
+    print(COMMITTED_NOTE)
+    print(projection.pivot_table(index=["domain", "duration_h"], columns="rp", values="change").round(3).to_string())
 
 # %% [markdown]
 # ## 3. Storylines: the same weather in three climates
@@ -204,8 +240,13 @@ print(projection.pivot_table(index=["domain", "duration_h"], columns="rp", value
 # over La Rioja in July 2018 (member 1).
 
 # %%
-JULY_2018_T2M_C = {c: float(xr.open_dataset(CLIMATE / f"story2t_{c}_m1_201807.nc")["2t"].mean()) - 273.15
-                   for c in climatedt.STORYLINE_CLIMATES}
+if HAVE_CLIMATEDT:
+    JULY_2018_T2M_C = {c: float(xr.open_dataset(CLIMATE / f"story2t_{c}_m1_201807.nc")["2t"].mean()) - 273.15
+                       for c in climatedt.STORYLINE_CLIMATES}
+    (RESULTS / "storyline_t2m_check.json").write_text(json.dumps(JULY_2018_T2M_C, indent=1))
+else:
+    JULY_2018_T2M_C = json.loads((RESULTS / "storyline_t2m_check.json").read_text())
+    print(COMMITTED_NOTE)
 print({c: round(t, 2) for c, t in JULY_2018_T2M_C.items()})
 order = sorted(JULY_2018_T2M_C, key=JULY_2018_T2M_C.get)
 assert order == ["cont", "hist", "Tplus2.0K"]
@@ -218,25 +259,30 @@ print("coolest → warmest:", [f"{c} ({CLIMATE_NAME[c]})" for c in order])
 # present (`hist`). Resampling: member-years.
 
 # %%
-STORY_YEARS = range(2017, 2025)
-story_am = {}
-for climate in climatedt.STORYLINE_CLIMATES:
-    per_member = []
-    for member in climatedt.STORYLINE_MEMBERS:
-        _, am, sample = annual_maxima(monthly_files(f"story_{climate}_m{member}_{{ym}}.nc", STORY_YEARS))
-        per_member.append(am)
-    story_am[climate] = {d: np.concatenate([m[d] for m in per_member]) for d in climatedt.DURATIONS_H}
-all_cells = np.ones(sample.sizes["cell"], bool)
-story_rows = []
-for climate in ("cont", "Tplus2.0K"):
-    for d in climatedt.DURATIONS_H:
-        story_rows.append(change_with_ci(story_am["hist"][d], story_am[climate][d], all_cells).assign(
-            climate=climate, against="hist", duration_h=d, n_cells=int(all_cells.sum())))
-storyline_change = pd.concat(story_rows, ignore_index=True)
-storyline_change["rp"] = storyline_change["rp"].astype(float)
-storyline_change = storyline_change[storyline_change["rp"] <= 10]
-storyline_change.to_csv(RESULTS / "storyline_change.csv", index=False)
-print(storyline_change.pivot_table(index=["climate", "duration_h"], columns="rp", values="change").round(3).to_string())
+if HAVE_CLIMATEDT:
+    STORY_YEARS = range(2017, 2025)
+    story_am = {}
+    for climate in climatedt.STORYLINE_CLIMATES:
+        per_member = []
+        for member in climatedt.STORYLINE_MEMBERS:
+            _, am, sample = annual_maxima(monthly_files(f"story_{climate}_m{member}_{{ym}}.nc", STORY_YEARS))
+            per_member.append(am)
+        story_am[climate] = {d: np.concatenate([m[d] for m in per_member]) for d in climatedt.DURATIONS_H}
+    all_cells = np.ones(sample.sizes["cell"], bool)
+    story_rows = []
+    for climate in ("cont", "Tplus2.0K"):
+        for d in climatedt.DURATIONS_H:
+            story_rows.append(change_with_ci(story_am["hist"][d], story_am[climate][d], all_cells).assign(
+                climate=climate, against="hist", duration_h=d, n_cells=int(all_cells.sum())))
+    storyline_change = pd.concat(story_rows, ignore_index=True)
+    storyline_change["rp"] = storyline_change["rp"].astype(float)
+    storyline_change = storyline_change[storyline_change["rp"] <= 10]
+    storyline_change.to_csv(RESULTS / "storyline_change.csv", index=False)
+    print(storyline_change.pivot_table(index=["climate", "duration_h"], columns="rp", values="change").round(3).to_string())
+else:
+    storyline_change = pd.read_csv(RESULTS / "storyline_change.csv")
+    print(COMMITTED_NOTE)
+    print(storyline_change.pivot_table(index=["climate", "duration_h"], columns="rp", values="change").round(3).to_string())
 
 # %% [markdown]
 # **The four storms.** For each storm, the regional maximum (over La Rioja's cells) of the
@@ -246,44 +292,51 @@ print(storyline_change.pivot_table(index=["climate", "duration_h"], columns="rp"
 # 1-hour maximum among all days of 2017–2024 (member by member).
 
 # %%
-def hourly_region(climate: str, member: str, first: pd.Timestamp, last: pd.Timestamp) -> xr.DataArray:
-    months = pd.period_range(first, last, freq="M")
-    files = [CLIMATE / f"story_{climate}_m{member}_{p.year}{p.month:02d}.nc" for p in months]
-    ds = xr.open_mfdataset(files, combine="nested", concat_dim="time")
-    return ds[climatedt.PARAM_PRECIP].sel(time=slice(first, last)) * climatedt.RATE_TO_MM_PER_HOUR
+if HAVE_CLIMATEDT:
+    def hourly_region(climate: str, member: str, first: pd.Timestamp, last: pd.Timestamp) -> xr.DataArray:
+        months = pd.period_range(first, last, freq="M")
+        files = [CLIMATE / f"story_{climate}_m{member}_{p.year}{p.month:02d}.nc" for p in months]
+        ds = xr.open_mfdataset(files, combine="nested", concat_dim="time")
+        return ds[climatedt.PARAM_PRECIP].sel(time=slice(first, last)) * climatedt.RATE_TO_MM_PER_HOUR
 
 
-storm_rows = []
-for storm in climatedt.STORMS:
-    day = pd.Timestamp(storm)
-    for climate in climatedt.STORYLINE_CLIMATES:
-        for member in climatedt.STORYLINE_MEMBERS:
-            pr = hourly_region(climate, member, day - pd.Timedelta("2D"), day + pd.Timedelta("1D 23h")).values
-            for d in climatedt.DURATIONS_H:
-                acc = extremes.rolling_sum(pr, d)[24:]          # windows ending on or after the day before
-                storm_rows.append({"storm": storm, "climate": climate, "member": member, "duration_h": d,
-                                   "regional_max_mm": float(np.nanmax(acc))})
-storms = pd.DataFrame(storm_rows)
-present = storms[storms["climate"] == "hist"].set_index(["storm", "member", "duration_h"])["regional_max_mm"]
-storms["ratio_to_present"] = storms["regional_max_mm"] / storms.set_index(["storm", "member", "duration_h"]).index.map(present)
+    storm_rows = []
+    for storm in climatedt.STORMS:
+        day = pd.Timestamp(storm)
+        for climate in climatedt.STORYLINE_CLIMATES:
+            for member in climatedt.STORYLINE_MEMBERS:
+                pr = hourly_region(climate, member, day - pd.Timedelta("2D"), day + pd.Timedelta("1D 23h")).values
+                for d in climatedt.DURATIONS_H:
+                    acc = extremes.rolling_sum(pr, d)[24:]          # windows ending on or after the day before
+                    storm_rows.append({"storm": storm, "climate": climate, "member": member, "duration_h": d,
+                                       "regional_max_mm": float(np.nanmax(acc))})
+    storms = pd.DataFrame(storm_rows)
+    present = storms[storms["climate"] == "hist"].set_index(["storm", "member", "duration_h"])["regional_max_mm"]
+    storms["ratio_to_present"] = storms["regional_max_mm"] / storms.set_index(["storm", "member", "duration_h"]).index.map(present)
 
 
-DAILY_MAX = {m: hourly_region("hist", m, pd.Timestamp("2017-01-01"), pd.Timestamp("2024-12-31 23:00"))
-             .max("cell").resample(time="1D").max().to_series() for m in climatedt.STORYLINE_MEMBERS}
+    DAILY_MAX = {m: hourly_region("hist", m, pd.Timestamp("2017-01-01"), pd.Timestamp("2024-12-31 23:00"))
+                 .max("cell").resample(time="1D").max().to_series() for m in climatedt.STORYLINE_MEMBERS}
 
 
-def storm_rank(storm: str, member: str) -> float:
-    daily_max = DAILY_MAX[member]
-    window = daily_max[pd.Timestamp(storm) - pd.Timedelta("1D"): pd.Timestamp(storm) + pd.Timedelta("1D")].max()
-    return float((daily_max < window).mean())
+    def storm_rank(storm: str, member: str) -> float:
+        daily_max = DAILY_MAX[member]
+        window = daily_max[pd.Timestamp(storm) - pd.Timedelta("1D"): pd.Timestamp(storm) + pd.Timedelta("1D")].max()
+        return float((daily_max < window).mean())
 
 
-ranks = pd.DataFrame([{"storm": s, "member": m, "percentile_of_day_in_present": storm_rank(s, m)}
-                      for s in climatedt.STORMS for m in climatedt.STORYLINE_MEMBERS])
-storms.to_csv(RESULTS / "storyline_storms.csv", index=False)
-ranks.to_csv(RESULTS / "storyline_storm_ranks.csv", index=False)
-print(storms.groupby(["storm", "climate", "duration_h"])["ratio_to_present"].median().unstack("climate").round(3).to_string())
-print(ranks.groupby("storm")["percentile_of_day_in_present"].describe()[["min", "50%", "max"]].round(3).to_string())
+    ranks = pd.DataFrame([{"storm": s, "member": m, "percentile_of_day_in_present": storm_rank(s, m)}
+                          for s in climatedt.STORMS for m in climatedt.STORYLINE_MEMBERS])
+    storms.to_csv(RESULTS / "storyline_storms.csv", index=False)
+    ranks.to_csv(RESULTS / "storyline_storm_ranks.csv", index=False)
+    print(storms.groupby(["storm", "climate", "duration_h"])["ratio_to_present"].median().unstack("climate").round(3).to_string())
+    print(ranks.groupby("storm")["percentile_of_day_in_present"].describe()[["min", "50%", "max"]].round(3).to_string())
+else:
+    storms = pd.read_csv(RESULTS / "storyline_storms.csv")
+    ranks = pd.read_csv(RESULTS / "storyline_storm_ranks.csv")
+    print(COMMITTED_NOTE)
+    print(storms.groupby(["storm", "climate", "duration_h"])["ratio_to_present"].median().unstack("climate").round(3).to_string())
+    print(ranks.groupby("storm")["percentile_of_day_in_present"].describe()[["min", "50%", "max"]].round(3).to_string())
 
 # %% [markdown]
 # ## Attribution
