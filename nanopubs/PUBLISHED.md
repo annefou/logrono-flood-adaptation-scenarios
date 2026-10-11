@@ -12,14 +12,14 @@ This repository is the shared analysis behind four findings. It has no FORRT cha
 
 ## AI plain-language summaries of the synthesis
 
-The summaries below retell the **three-chain** synthesis; summaries of the four-chain synthesis are to follow.
-
 Retellings of the synthesis for two audiences, signed by the AI agent identity (`claude-ai-agent`), written from `nanopubs/audience.json` by `scripts/publish_audience_summaries.py`. They feed the "For citizens" / "For schools" tabs of the story page.
 
 | Audience | URI | Published |
 |---|---|---|
-| General public | <https://w3id.org/np/RACDnq5lJ307TWOLMx1qjzANsc47Kbgjkf3Sh7STlGjPQ> | 2026-10-11 |
-| Secondary school (ages 13–16) | <https://w3id.org/np/RApNOm7iJ8fZrFH33FTIyMHwUwlpHmR4onxWghO6KCcn4> | 2026-10-11 |
+| General public | <https://w3id.org/np/RAz93ofHeIsBBpCs9MJsLkbV7KEfDy2VtAFyKr3bEB7Fc> | 2026-10-11 |
+| Secondary school (ages 13–16) | <https://w3id.org/np/RAi1P0HTwTkaYT2HXGol2dLjYFjeJez_zsY_JlfkmqqmE> | 2026-10-11 |
+
+These retell the four-chain synthesis and supersede (`npx:supersedes`, same agent key) the earlier summaries of the three-chain synthesis: general public <https://w3id.org/np/RACDnq5lJ307TWOLMx1qjzANsc47Kbgjkf3Sh7STlGjPQ>, school <https://w3id.org/np/RApNOm7iJ8fZrFH33FTIyMHwUwlpHmR4onxWghO6KCcn4>.
 
 ## Sources of the synthesis — the four finding chains
 
