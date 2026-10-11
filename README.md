@@ -22,11 +22,13 @@ For every residential building in Logroño, risk = social vulnerability × expos
 
 Each finding is a separate, question-rooted FORRT chain in its own repository, built on this analysis's release:
 
-| | Finding | Figure |
+| | Finding | Chain repository |
 |---|---|---|
-| 1 | Heavier future design rainfall increases the number of residents living in buildings at pluvial flood risk, at every return period; no building moves to a lower risk class. | [`main_result.png`](figures/main_result.png) |
-| 2 | REACHOUT's planned nature-based solutions reduce the number of residents at risk by less than 4 %, only for frequent storms; no reduction during the 100- and 200-year storms. | [`land_cover_rp100.png`](figures/land_cover_rp100.png) |
-| 3 | Converting all open space to green mainly takes less socially vulnerable residents out of risk. | [`priority_map.png`](figures/priority_map.png) |
+| 1 | Heavier future design rainfall increases the number of residents living in buildings at pluvial flood risk, at every return period; no building moves to a lower risk class. | [logrono-future-rainfall-flood-risk](https://github.com/annefou/logrono-future-rainfall-flood-risk) |
+| 2 | REACHOUT's planned nature-based solutions reduce the number of residents at risk by less than 4 %, only for frequent storms; no reduction during the 100- and 200-year storms. | [logrono-planned-nbs-flood-risk](https://github.com/annefou/logrono-planned-nbs-flood-risk) |
+| 3 | Converting all open space to green mainly takes less socially vulnerable residents out of risk. | [logrono-greening-flood-risk-vulnerability](https://github.com/annefou/logrono-greening-flood-risk-vulnerability) |
+
+Figures here: [`main_result.png`](figures/main_result.png), [`land_cover_rp100.png`](figures/land_cover_rp100.png), [`priority_map.png`](figures/priority_map.png).
 
 The future rainfall used by REACHOUT is checked in [`rainfall_change.png`](figures/rainfall_change.png): its median scenario is of the same order as the Climate DT; its 90th-percentile scenario lies above every Climate DT central estimate.
 
