@@ -1,0 +1,29 @@
+{
+  "_comment": "Hero, per-limb figures and framing for the Science Live story of the Research Synthesis RALq-EHW…. Figures are pinned to each repository's release tag and credited to that release's Zenodo version DOI; 'about' is the Outcome the figure depicts. The framing is the author's editorial intro.",
+  "hero": {
+    "contentUrl": "https://raw.githubusercontent.com/annefou/logrono-flood-adaptation-scenarios/v0.1.0/figures/priority_map.png",
+    "caption": "Logroño, 100-year storm: residential buildings at pluvial flood risk with present rainfall, and those newly at risk with future rainfall (90th percentile), by residents' social vulnerability",
+    "doi": "https://doi.org/10.5281/zenodo.23298913"
+  },
+  "figures": [
+    {
+      "contentUrl": "https://raw.githubusercontent.com/annefou/logrono-future-rainfall-flood-risk/v0.1.0/figures/main_result.png",
+      "caption": "Future design rainfall increases residents in buildings at pluvial flood risk in Logroño",
+      "doi": "https://doi.org/10.5281/zenodo.23299757",
+      "about": "https://w3id.org/sciencelive/np/RA0Xdfwi2iNgVwH3KD4Bx5-pZ4JqKAt3-I4iyJSojbfCg"
+    },
+    {
+      "contentUrl": "https://raw.githubusercontent.com/annefou/logrono-planned-nbs-flood-risk/v0.1.0/figures/main_result.png",
+      "caption": "REACHOUT's planned nature-based solutions reduce residents at pluvial flood risk in Logroño by less than 4 %",
+      "doi": "https://doi.org/10.5281/zenodo.23300575",
+      "about": "https://w3id.org/sciencelive/np/RAYfm7-Pxkf34WyNY81poZJ-_6z7kqROLOS_NUTGiXNTM"
+    },
+    {
+      "contentUrl": "https://raw.githubusercontent.com/annefou/logrono-greening-flood-risk-vulnerability/v0.1.0/figures/main_result.png",
+      "caption": "City-wide greening takes mainly less socially vulnerable residents out of pluvial flood risk in Logroño",
+      "doi": "https://doi.org/10.5281/zenodo.23300577",
+      "about": "https://w3id.org/sciencelive/np/RA7f_o-KNPr1Rq2OPPJD47XcUYtPvIRF4rRDqFg-tsZgA"
+    }
+  ],
+  "framing": "In Logroño, heavy rain already floods streets, garages and ground floors. This story follows one question through three FORRT studies built on the same open analysis: what happens to residents' pluvial flood risk as rainfall intensifies, and how much can nature-based solutions help? Under future rainfall, today's 100-year storm becomes a 50- or even 25-year storm, and more residents live in buildings at risk. The nature-based solutions planned so far offset little of this in the flood model used. Converting all open space to green surfaces helps more, but mainly protects the less socially vulnerable residents. The findings are scenarios for one city and one model; each figure below links to the signed result it shows."
+}
