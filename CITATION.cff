@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "logrono-flood-adaptation-scenarios"
+title: "Building-level pluvial flood risk in Logroño under future rainfall and nature-based solution scenarios"
 message: "If you use this software, please cite it as below."
 type: software
 authors:
@@ -10,7 +10,16 @@ authors:
 repository-code: "https://github.com/annefou/logrono-flood-adaptation-scenarios"
 license: MIT
 version: "0.1.0"
-date-released: "2026-10-10"
+date-released: "2026-10-11"
+abstract: >-
+  Building-level pluvial flood risk (social vulnerability x exposure x hazard) for
+  Logroño, Spain, under the REACHOUT flood scenarios: present and future design
+  rainfall (EURO-CORDEX median and 90th percentile) combined with current green cover,
+  the planned nature-based solutions and an all-green city. Uses the framework of
+  Vogelbacher et al. (2026) through building-climate-risk, the open city inputs of the
+  Logroño replication, and checks the future rainfall against Destination Earth Climate
+  DT projections and storylines. Shared analysis behind three FORRT nanopublication
+  chains (future rainfall, planned nature-based solutions, who greening protects).
 # Identifiers below are recorded AUTOMATICALLY on each release by
 # .github/workflows/release-identifiers.yml — don't fill them in by hand.
 #
@@ -32,8 +41,14 @@ identifiers:
   #   - type: doi   value: <version DOI>  "Version DOI for vX.Y.Z — pins this exact release; cite this from nanopubs"
   #   - type: swh   value: swh:1:rev:<commit>;origin=<repo>  "Software Heritage ID of the vX.Y.Z source tree"
 keywords:
-  - replication
-  - reproducibility
+  - pluvial flooding
+  - flood risk
+  - nature-based solutions
+  - climate change adaptation
+  - social vulnerability
+  - Logroño
+  - Destination Earth
+  - HEALPix
   - FORRT
   - nanopublication
   - Science-Live
@@ -43,18 +58,79 @@ references:
     authors:
       - family-names: "Vogelbacher"
         given-names: "Anastasia"
+      - family-names: "von Szombathely"
+        given-names: "Malte"
+      - family-names: "Lennartz"
+        given-names: "Marc"
+      - family-names: "Poschlod"
+        given-names: "Benjamin"
+      - family-names: "Sillmann"
+        given-names: "Jana"
+    journal: "Natural Hazards and Earth System Sciences"
+    volume: 26
+    start: 2765
+    end: 2783
     year: "2026"
     doi: "10.5194/nhess-26-2765-2026"
-  # Prior FORRT chain this replication extends or qualifies. The URI below
-  # is the canonical persistent pointer to the prior constellation; the
-  # imported summary itself (CHAIN_SUMMARY.md, constellation.json, cached
-  # TriG) is regenerated on demand via `/import-from-nanopub <URL>` and
-  # lives in the gitignored `nanopubs/imported/` directory.
-  #
-  # If your replication does NOT extend a prior chain, init-template
-  # removes this entry. If it does, init-template substitutes the URI
-  # and description below from your responses.
+  - type: software
+    title: "Logroño replication of Vogelbacher et al. (2026): building-level pluvial flood risk with open data, tested against recorded flood impacts"
+    authors:
+      - family-names: "Fouilloux"
+        given-names: "Anne"
+    version: "v0.1.1"
+    year: "2026"
+    doi: "10.5281/zenodo.23285198"
+    notes: "Source of the city inputs (buildings, residents, vulnerability indicators, streets, water, impact places); its pipeline is run by notebooks/01_data_download.py."
+  - type: software
+    title: "building-climate-risk: building-level climate risk (flood, and other hazards)"
+    authors:
+      - family-names: "Fouilloux"
+        given-names: "Anne"
+    version: "v0.2.1"
+    year: "2026"
+    doi: "10.5281/zenodo.23285504"
+  - type: dataset
+    title: "Urban pluvial flood maps under different green cover scenarios"
+    authors:
+      - family-names: "Staccione"
+        given-names: "Andrea"
+      - family-names: "Pal"
+        given-names: "Jeremy S."
+    year: "2024"
+    doi: "10.5281/zenodo.14035876"
+    notes: "REACHOUT flood depth maps for every scenario; also defines the planned nature-based solutions."
+  - type: dataset
+    title: "EURO-CORDEX Precipitation Intensity-Duration-Frequency Curves"
+    authors:
+      - family-names: "Pal"
+        given-names: "Jeremy S."
+      - family-names: "Staccione"
+        given-names: "Andrea"
+    year: "2024"
+    doi: "10.5281/zenodo.14035736"
+  - type: dataset
+    title: "Destination Earth Digital Twin for Climate Change Adaptation"
+    authors:
+      - name: "ECMWF"
+      - name: "Climate DT consortium (led by CSC)"
+    year: "2026"
+    doi: "10.21957/79c6af3105"
+    notes: "Generation-2 projections (IFS-NEMO, SSP3-7.0) and storylines, via Polytope. This data is created based on data of the European Union, using the Destination Earth Platform, but has been modified by Anne Fouilloux."
+  - type: article
+    title: "The Destination Earth digital twin for climate change adaptation"
+    authors:
+      - family-names: "Doblas-Reyes"
+        given-names: "Francisco J."
+      - name: "et al."
+    journal: "Geoscientific Model Development"
+    volume: 19
+    start: 2821
+    end: 2848
+    year: "2026"
+    doi: "10.5194/gmd-19-2821-2026"
+  # The FORRT chain of the Logroño replication, on which this analysis builds
+  # (persistent pointer; regenerate the local summary with /import-from-nanopub <URL>).
   - type: generic
     title: "Logroño pluvial-flood replication of Vogelbacher et al. (2026) — CiTO citation (partially supported; qualifies the paper, extends the Hamburg reproduction)"
     url: "https://w3id.org/sciencelive/np/RAoFYugT7OVk5eoHuxKCO9HeqA08jMfSn7TeUxwZcbezE"
-    notes: "Apex CiTO Citation of the prior FORRT chain this replication extends. Re-run `/import-from-nanopub <URL>` to repopulate nanopubs/imported/ locally."
+    notes: "Apex CiTO citation of the replication chain this analysis builds on. Study area: geographic coverage nanopub https://w3id.org/sciencelive/np/RAzds1z9t2ac7XFvx_Hsv18__p5nUTNA0NHIsskSyLVPQ"

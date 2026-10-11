@@ -1,11 +1,11 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "name": "logrono-flood-adaptation-scenarios",
-  "description": "Building-level pluvial flood risk in Logroño (Spain) under future rainfall and the city's planned nature-based solutions, using the open Vogelbacher et al. (2026) framework, REACHOUT flood scenarios and Destination Earth Climate DT storylines.",
+  "name": "Building-level pluvial flood risk in Logroño under future rainfall and nature-based solution scenarios",
+  "description": "Building-level pluvial flood risk for Logroño (Spain) under the REACHOUT flood scenarios: present and future design rainfall combined with current green cover, the planned nature-based solutions and an all-green city, using the Vogelbacher et al. (2026) framework (building-climate-risk) and the open city inputs of the Logroño replication; the future rainfall is checked against Destination Earth Climate DT projections and storylines. Shared analysis behind three FORRT nanopublication chains.",
   "version": "0.1.0",
   "dateCreated": "2026-10-10",
-  "dateModified": "2026-10-10",
+  "dateModified": "2026-10-11",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/annefou/logrono-flood-adaptation-scenarios",
   "identifier": "{{ZENODO_DOI}}",
@@ -15,7 +15,10 @@
     "name": "Python",
     "version": "3.12"
   },
-  "operatingSystem": ["Linux", "macOS"],
+  "operatingSystem": [
+    "Linux",
+    "macOS"
+  ],
   "author": [
     {
       "@type": "Person",
@@ -29,8 +32,14 @@
     }
   ],
   "keywords": [
-    "replication",
-    "reproducibility",
+    "pluvial flooding",
+    "flood risk",
+    "nature-based solutions",
+    "climate change adaptation",
+    "social vulnerability",
+    "Logroño",
+    "Destination Earth",
+    "HEALPix",
     "FORRT",
     "nanopublication",
     "Science-Live"
@@ -45,5 +54,56 @@
     "@type": "Organization",
     "name": "Science Live",
     "url": "https://platform.sciencelive4all.org"
-  }
+  },
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "building-climate-risk",
+      "version": "0.2.1",
+      "identifier": "https://doi.org/10.5281/zenodo.23285504"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "logrono-pluvial-flood-replication",
+      "version": "0.1.1",
+      "identifier": "https://doi.org/10.5281/zenodo.23285198"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "healpix-geo"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "earthkit-data"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "geopandas"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "rasterio"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "snakemake"
+    }
+  ],
+  "citation": [
+    {
+      "@id": "https://doi.org/10.5194/nhess-26-2765-2026"
+    },
+    {
+      "@id": "https://doi.org/10.5281/zenodo.14035876"
+    },
+    {
+      "@id": "https://doi.org/10.5281/zenodo.14035736"
+    },
+    {
+      "@id": "https://doi.org/10.21957/79c6af3105"
+    },
+    {
+      "@id": "https://doi.org/10.5194/gmd-19-2821-2026"
+    }
+  ]
 }

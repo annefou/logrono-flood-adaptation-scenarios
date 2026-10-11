@@ -6,17 +6,43 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![DOI](https://zenodo.org/badge/DOI/{{ZENODO_DOI}}.svg)]({{ZENODO_DOI}})
 [![FAIR4RS](https://img.shields.io/badge/FAIR4RS-conformant-brightgreen)](docs/fair4rs-checklist.md)
-[![FORRT](https://img.shields.io/badge/FORRT-replication-blue)](https://forrt.org/)
+[![FORRT](https://img.shields.io/badge/FORRT-analysis-blue)](https://forrt.org/)
 [![Science Live](https://img.shields.io/badge/Science%20Live-nanopub%20chain-purple)](nanopubs/PUBLISHED.md)
 [![RO-Crate](https://img.shields.io/badge/RO--Crate-1.2-orange)](ro-crate-metadata.json)
 [![Software Heritage](https://archive.softwareheritage.org/badge/origin/https://github.com/annefou/logrono-flood-adaptation-scenarios/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/annefou/logrono-flood-adaptation-scenarios)
 
-> **A high-resolution framework for urban pluvial flood risk mapping** — replication study.
-> Reference paper: [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026)
+> **Building-level pluvial flood risk in Logroño (Spain) under future rainfall and nature-based solution scenarios** — the shared analysis behind three FORRT nanopublication chains.
+> Method: [Vogelbacher et al. (2026), NHESS](https://doi.org/10.5194/nhess-26-2765-2026) through [building-climate-risk v0.2.1](https://doi.org/10.5281/zenodo.23285504). City inputs: [Logroño replication v0.1.1](https://doi.org/10.5281/zenodo.23285198).
 
-This is a self-contained replication of the headline claim of the reference paper. It produces a reproducible computational pipeline, a Zenodo-archived release with a citable DOI, and a FORRT-tagged nanopublication chain on the [Science Live platform](https://platform.sciencelive4all.org).
+For every residential building in Logroño, risk = social vulnerability × exposure × flood hazard is computed under the [REACHOUT flood scenarios](https://doi.org/10.5281/zenodo.14035876): present and future (EURO-CORDEX median and 90th percentile) 15-minute design storms of seven return periods, combined with four land covers (current green cover, the planned nature-based solutions with and without extra ponds, and all open space green). The future rainfall is checked against the [Destination Earth Climate DT](https://doi.org/10.21957/79c6af3105) projections and storylines over La Rioja.
 
----
+![How building-level risk is computed](figures/method.png)
+
+## Findings
+
+Each finding is a separate, question-rooted FORRT chain in its own repository, built on this analysis's release:
+
+| | Finding | Figure |
+|---|---|---|
+| 1 | Heavier future design rainfall increases the number of residents living in buildings at pluvial flood risk, at every return period; no building moves to a lower risk class. | [`main_result.png`](figures/main_result.png) |
+| 2 | REACHOUT's planned nature-based solutions reduce the number of residents at risk by less than 4 %, only for frequent storms; no reduction during the 100- and 200-year storms. | [`land_cover_rp100.png`](figures/land_cover_rp100.png) |
+| 3 | Converting all open space to green mainly takes less socially vulnerable residents out of risk. | [`priority_map.png`](figures/priority_map.png) |
+
+The future rainfall used by REACHOUT is checked in [`rainfall_change.png`](figures/rainfall_change.png): its median scenario is of the same order as the Climate DT; its 90th-percentile scenario lies above every Climate DT central estimate.
+
+These are model scenarios, not predictions: SaferRAIN represents the measures only as infiltration, without storage or sewers; social vulnerability comes from census-section rates and was not validated against impact data. See each notebook and the chains' limitations.
+
+## Pipeline
+
+| Step | Notebook | What it does |
+|---|---|---|
+| 1 | [`01_data_download`](notebooks/01_data_download.py) | Downloads the Logroño replication release (MD5-checked) and runs its pipeline up to the city inputs |
+| 2 | [`02_data_clean`](notebooks/02_data_clean.py) | Records REACHOUT's archive (files, rainfall, defects), finds the domain modelled by every map, polygonises flood depths ≥ 30–100 cm |
+| 3 | [`03_analysis`](notebooks/03_analysis.py) | Hazard, vulnerability and risk per building for 82 maps; class transitions; who is affected; recorded impact places |
+| 4 | [`04_climate`](notebooks/04_climate.py) | EURO-CORDEX check of REACHOUT's rainfall factors; Climate DT projections and storylines (HEALPix, sphere vs WGS84) |
+| 5 | [`05_figures`](notebooks/05_figures.py) | Figures, each checked for overlapping labels (`scripts/figcheck.py`) |
+
+Climate DT data need a DestinE account (see [`scripts/climatedt.py`](scripts/climatedt.py)); without it, step 4 shows the committed results in `results/`.
 
 ## Quick start
 
@@ -27,98 +53,22 @@ pixi install
 pixi run snakemake --cores 1
 ```
 
-(Pixi resolves `pixi.toml` against the per-platform `pixi.lock`, installs the env under `.pixi/`, and provides `pixi run` for any task without needing an `activate` step.)
+Or with Docker: `docker run --rm ghcr.io/annefou/logrono-flood-adaptation-scenarios:latest`. The Jupyter Book is at <https://annefou.github.io/logrono-flood-adaptation-scenarios/>.
 
-Or with Docker:
+## Related nanopublications
 
-```bash
-docker run --rm ghcr.io/annefou/logrono-flood-adaptation-scenarios:latest
-```
+- The Logroño replication's FORRT chain (CiTO citation): <https://w3id.org/sciencelive/np/RAoFYugT7OVk5eoHuxKCO9HeqA08jMfSn7TeUxwZcbezE>
+- Study area, Logroño (geographic coverage): <https://w3id.org/sciencelive/np/RAzds1z9t2ac7XFvx_Hsv18__p5nUTNA0NHIsskSyLVPQ>
+- The three finding chains and their Research Synthesis: listed in [`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md) once published.
 
-The Jupyter Book version is at <https://annefou.github.io/logrono-flood-adaptation-scenarios/>.
+## Data and credits
 
-## Built from a template
-
-This repository was created from [`sciencelivehub/forrt-replication-template`](https://github.com/sciencelivehub/forrt-replication-template). The template ships an operating manual for AI assistants ([`CLAUDE.md`](CLAUDE.md), [`AGENTS.md`](AGENTS.md)), domain conventions ([`DOMAIN.md`](DOMAIN.md)), and reference docs (`docs/`) so that an AI working only inside this repository can guide a researcher from "paper PDF + GitHub repo" to "published FORRT chain + Zenodo DOI" with no other context.
-
-If you are reading this in a fresh fork, run [`/init-template`](.claude/skills/init-template/SKILL.md) inside Claude Code to substitute the placeholder tokens with your details. (For other AI tools, see [`docs/ai-portability.md`](docs/ai-portability.md).)
-
-After `/init-template`, do these one-time setup steps to enable the full CI/CD path:
-
-- **Enable GitHub Pages** at *Settings → Pages → Source: GitHub Actions*. Until enabled, the Jupyter Book build runs but the deploy step is skipped (CI stays green).
-- All three workflows share one **readiness guard** (`.github/actions/check-ready`). Before `/init-template` runs, the `.template-uninitialised` sentinel makes them skip with an informative `::notice::` (badges stay green); `/init-template` deletes the sentinel, which activates them. They also skip while `notebooks/*.py` are still scaffolds (Phase 2). **Once you've published a nanopub chain** (real URIs in `nanopubs/PUBLISHED.md`), a skip is treated as a bug and **fails the run loudly** — so a finished replication can't sit on silently-green-but-empty CI.
-
-## Repository structure
-
-```
-.
-├── CLAUDE.md / AGENTS.md       # operating manual for AI assistants
-├── DOMAIN.md                   # domain flavour (current: biodiversity + earth observation)
-├── USER_PREFERENCES.md         # per-user style (edit on first clone)
-├── README.md                   # this file
-├── LICENSE                     # MIT
-├── CITATION.cff                # how to cite
-├── codemeta.json               # software metadata (CodeMeta-2.0)
-├── ro-crate-metadata.json      # research object packaging (RO-Crate 1.2)
-├── pixi.toml + pixi.lock       # pinned dependencies (single source of truth; lockfile is per-platform)
-├── Dockerfile                  # container build
-├── Snakefile                   # pipeline orchestration
-├── myst.yml + index.md         # Jupyter Book scaffold
-├── paper/                      # the source paper PDF
-├── data/                       # downloaded artefacts (gitignored)
-├── notebooks/                  # jupytext .py pipeline (01–04)
-├── nanopubs/                   # FORRT chain drafts + published-URI registry
-├── docs/                       # reference material
-├── figures/                    # curated figures used in the Jupyter Book
-├── .github/workflows/          # CI, Jupyter Book, Docker
-└── .claude/                    # Claude Code agents, skills, sandbox config
-```
-
-## What you get
-
-This template bakes in conventions that took multiple replications to discover. By using it, you inherit:
-
-- **FAIR4RS conformance** — see [`docs/fair4rs-checklist.md`](docs/fair4rs-checklist.md) for the principle-by-principle mapping.
-- **Self-contained data downloads** — the first notebook fetches everything; no manual data prep.
-- **`pixi.toml` + `pixi.lock` as single source of truth** — local dev, Docker, and CI all install the same per-platform-pinned env.
-- **`prefix-dev/setup-pixi`-based CI** — caches the env, runs the pipeline with `pixi run`, executes notebooks via a glob, fails fast on a stale lockfile.
-- **Jupyter Book deployment** — auto-deploys to GitHub Pages with `BASE_URL` set correctly. (Don't put `base_url` in `myst.yml` — MyST silently ignores it.)
-- **Docker + GHCR + Zenodo image archival** — `release` trigger pushes to GHCR and (optionally) archives to Zenodo for long-term preservation.
-- **RO-Crate packaging** — the entire repo is a navigable Research Object via `ro-crate-metadata.json` (Process Run Crate + Workflow RO-Crate profiles).
-- **Six-step FORRT chain workspace** — `nanopubs/drafts/` has a field-by-field skeleton for each step. `nanopubs/PUBLISHED.md` is the URI registry.
-- **Layered AI guidance** — `CLAUDE.md` (universal) + `DOMAIN.md` (swappable per field) + `USER_PREFERENCES.md` (per-user). See [`docs/ai-portability.md`](docs/ai-portability.md) for non-Claude AI tools.
-- **Sandbox by default** — `.claude/settings.json` denies file ops outside the repo, so a fresh AI session can't accidentally read `~/.ssh/` or write to `/etc/`.
-
-## The six FORRT chain steps
-
-A complete FORRT chain has six steps published on [platform.sciencelive4all.org](https://platform.sciencelive4all.org):
-
-```
-Quote-with-comment  →  AIDA  →  FORRT Claim  →  Replication Study  →  Replication Outcome  →  CiTO Citation
-```
-
-(For question-rooted chains with no upstream paper, replace step 1 with PICO or PCC. See [`docs/chain-decision-tree.md`](docs/chain-decision-tree.md).)
-
-Drafts live in [`nanopubs/drafts/`](nanopubs/drafts/) field-by-field. Published URIs go into [`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md).
-
-Optional further layers:
-
-- **Research Software nanopub** — for reusable upstream tools (not demo repos). See [`docs/forrt-form-fields.md`](docs/forrt-form-fields.md) § Research Software.
-- **Research Synthesis nanopub** — when this chain is part of a multi-chain story. See [`docs/forrt-form-fields.md`](docs/forrt-form-fields.md) § Research Synthesis.
-
-## After publishing
-
-When the chain is live and the FAIR4RS checklist is green, drafting an announcement post is the next step. See [`docs/announcement-template.md`](docs/announcement-template.md) for the structural template (vision-piece-first; the worked replication is the payoff, not the lead).
-
-For lower-level nanopub work — retraction, superseding, batch publishing — see [`docs/programmatic-nanopubs.md`](docs/programmatic-nanopubs.md).
+Framework: Vogelbacher, von Szombathely, Lennartz, Poschlod, Sillmann (2026). Flood maps and EURO-CORDEX IDF data: Andrea Staccione, Jeremy S. Pal (REACHOUT, CC BY 4.0). Buildings, parcels, addresses: Dirección General del Catastro. Census: INE. Urban Atlas: EEA / Copernicus Land Monitoring Service. Basemap: Esri. Climate DT: ECMWF and the Climate DT consortium (led by CSC), Destination Earth — *this data is created based on data of the European Union, using the Destination Earth Platform, but has been modified by Anne Fouilloux.*
 
 ## Citation
 
-If you use this work, please cite both:
+Cite this analysis via [`CITATION.cff`](CITATION.cff) → DOI [{{ZENODO_DOI}}]({{ZENODO_DOI}}), and the method paper [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026).
 
-- This software: [`CITATION.cff`](CITATION.cff) → DOI [{{ZENODO_DOI}}]({{ZENODO_DOI}})
-- The original paper: [10.5194/nhess-26-2765-2026](https://doi.org/10.5194/nhess-26-2765-2026)
+## Built from a template
 
-## Acknowledgements
-
-This repository was built from [`sciencelivehub/forrt-replication-template`](https://github.com/sciencelivehub/forrt-replication-template), part of the [Science Live platform](https://platform.sciencelive4all.org). The template is licensed MIT and contributions (especially new domain flavours under [`docs/domain-flavours/`](docs/domain-flavours/)) are welcome.
+Created from [`sciencelivehub/forrt-replication-template`](https://github.com/sciencelivehub/forrt-replication-template), part of the [Science Live platform](https://platform.sciencelive4all.org); see [`CLAUDE.md`](CLAUDE.md) for the workflow and [`docs/fair4rs-checklist.md`](docs/fair4rs-checklist.md) for FAIR4RS conformance.
