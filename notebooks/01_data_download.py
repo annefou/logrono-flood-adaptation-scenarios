@@ -27,7 +27,7 @@
 # | Component | Source (fetched by the replication's `01_data_download`) | Licence |
 # |---|---|---|
 # | Flood depths, all scenarios | REACHOUT pluvial flood maps for Logroño, Staccione and Pal (2024), Zenodo [10.5281/zenodo.14035876](https://doi.org/10.5281/zenodo.14035876) | CC BY 4.0 |
-# | Buildings, urban blocks, addresses | Spanish Cadastre, INSPIRE, municipality 26900 | CC BY 4.0 |
+# | Buildings, urban blocks, addresses | Spanish Cadastre, INSPIRE, municipality 26900 | Catastro INSPIRE licence of access and use (DG del Catastro, v1.0, 2016): use, including commercial, of transformed data; original files not redistributed; derived products not presented as cadastral information |
 # | Residents, vulnerability proxies | INE, Censo 2021, indicators per sección censal | INE terms (reuse with attribution) |
 # | Water, roads | Copernicus Urban Atlas 2018 (ES018L2), EU-Hydro v1.3 | Copernicus (free, full and open) |
 # | Recorded impacts | press reports, curated in the replication repository | see its `data/impacts/` |
