@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """build_story_draft.py — deterministic producer of ``story-draft.json`` from a published
 constellation: the editorial spec that fills the Science Live *story* template
-(https://w3id.org/np/RA-qSk1kdlC7e2d3kDurzMQ9_QaueAYb-NlqZw6wbobL8).
+(https://w3id.org/np/RAfjXiLtYji0w1Y3AtKmtL_S21esoh5jprGWAPpRQ1zUk).
 
 It REUSES ``build_story.py``'s gather — constellation fetch, per-outcome figure extraction from
 the Outcome's evidence, hero discovery, repo/DOI resolution — the SAME logic that builds the
